@@ -1,0 +1,1480 @@
+   1 {
+   2   "$id": "http://example.com/example.json", 
+   3   "type": "object", 
+   4   "definitions": {}, 
+   5   "$schema": "http://json-schema.org/draft-07/schema#", 
+   6   "properties": {
+   7     "records": {
+   8       "$id": "/properties/records", 
+   9       "type": "array", 
+  10       "items": {
+  11         "$id": "/properties/records/items", 
+  12         "type": "object", 
+  13         "properties": {
+  14           "record": {
+  15             "$id": "/properties/records/items/properties/record", 
+  16             "type": "object", 
+  17             "properties": {
+  18               "$attributes": {
+  19                 "$id": "/properties/records/items/properties/record/properties/$attributes", 
+  20                 "type": "object", 
+  21                 "properties": {
+  22                   "$xsiType": {
+  23                     "$id": "/properties/records/items/properties/record/properties/$attributes/properties/$xsiType", 
+  24                     "type": "object", 
+  25                     "properties": {
+  26                       "tranSales": {
+  27                         "$id": "/properties/records/items/properties/record/properties/$attributes/properties/$xsiType/properties/tranSales", 
+  28                         "type": "string", 
+  29                         "examples": [
+  30                           "urn:sales_2017_1.transactions.webservices.netsuite.com"
+  31                         ]
+  32                       }, 
+  33                       "type": {
+  34                         "$id": "/properties/records/items/properties/record/properties/$attributes/properties/$xsiType/properties/type", 
+  35                         "type": "string", 
+  36                         "examples": [
+  37                           "SalesOrder"
+  38                         ]
+  39                       }
+  40                     }
+  41                   }, 
+  42                   "internalId": {
+  43                     "$id": "/properties/records/items/properties/record/properties/$attributes/properties/internalId", 
+  44                     "type": "string", 
+  45                     "examples": [
+  46                       "5731"
+  47                     ]
+  48                   }
+  49                 }
+  50               }, 
+  51               "createdDate": {
+  52                 "$id": "/properties/records/items/properties/record/properties/createdDate", 
+  53                 "type": "string", 
+  54                 "examples": [
+  55                   "2018-04-01T15:33:46.000-07:00"
+  56                 ]
+  57               }, 
+  58               "customForm": {
+  59                 "$id": "/properties/records/items/properties/record/properties/customForm", 
+  60                 "type": "object", 
+  61                 "properties": {
+  62                   "$attributes": {
+  63                     "$id": "/properties/records/items/properties/record/properties/customForm/properties/$attributes", 
+  64                     "type": "object", 
+  65                     "properties": {
+  66                       "$xsiType": {
+  67                         "$id": "/properties/records/items/properties/record/properties/customForm/properties/$attributes/properties/$xsiType", 
+  68                         "type": "object", 
+  69                         "properties": {
+  70                           "platformCore": {
+  71                             "$id": "/properties/records/items/properties/record/properties/customForm/properties/$attributes/properties/$xsiType/properties/platformCore", 
+  72                             "type": "string", 
+  73                             "examples": [
+  74                               "urn:core_2017_1.platform.webservices.netsuite.com"
+  75                             ]
+  76                           }
+  77                         }
+  78                       }, 
+  79                       "internalId": {
+  80                         "$id": "/properties/records/items/properties/record/properties/customForm/properties/$attributes/properties/internalId", 
+  81                         "type": "string", 
+  82                         "examples": [
+  83                           "174"
+  84                         ]
+  85                       }
+  86                     }
+  87                   }, 
+  88                   "name": {
+  89                     "$id": "/properties/records/items/properties/record/properties/customForm/properties/name", 
+  90                     "type": "string", 
+  91                     "examples": [
+  92                       "Z - HM Sales Order Form"
+  93                     ]
+  94                   }
+  95                 }
+  96               }, 
+  97               "entity": {
+  98                 "$id": "/properties/records/items/properties/record/properties/entity", 
+  99                 "type": "object", 
+ 100                 "properties": {
+ 101                   "$attributes": {
+ 102                     "$id": "/properties/records/items/properties/record/properties/entity/properties/$attributes", 
+ 103                     "type": "object", 
+ 104                     "properties": {
+ 105                       "$xsiType": {
+ 106                         "$id": "/properties/records/items/properties/record/properties/entity/properties/$attributes/properties/$xsiType", 
+ 107                         "type": "object", 
+ 108                         "properties": {
+ 109                           "platformCore": {
+ 110                             "$id": "/properties/records/items/properties/record/properties/entity/properties/$attributes/properties/$xsiType/properties/platformCore", 
+ 111                             "type": "string", 
+ 112                             "examples": [
+ 113                               "urn:core_2017_1.platform.webservices.netsuite.com"
+ 114                             ]
+ 115                           }
+ 116                         }
+ 117                       }, 
+ 118                       "internalId": {
+ 119                         "$id": "/properties/records/items/properties/record/properties/entity/properties/$attributes/properties/internalId", 
+ 120                         "type": "string", 
+ 121                         "examples": [
+ 122                           "605"
+ 123                         ]
+ 124                       }
+ 125                     }
+ 126                   }, 
+ 127                   "name": {
+ 128                     "$id": "/properties/records/items/properties/record/properties/entity/properties/name", 
+ 129                     "type": "string", 
+ 130                     "examples": [
+ 131                       "Stower Electric Company"
+ 132                     ]
+ 133                   }
+ 134                 }
+ 135               }, 
+ 136               "currency": {
+ 137                 "$id": "/properties/records/items/properties/record/properties/currency", 
+ 138                 "type": "object", 
+ 139                 "properties": {
+ 140                   "$attributes": {
+ 141                     "$id": "/properties/records/items/properties/record/properties/currency/properties/$attributes", 
+ 142                     "type": "object", 
+ 143                     "properties": {
+ 144                       "$xsiType": {
+ 145                         "$id": "/properties/records/items/properties/record/properties/currency/properties/$attributes/properties/$xsiType", 
+ 146                         "type": "object", 
+ 147                         "properties": {
+ 148                           "platformCore": {
+ 149                             "$id": "/properties/records/items/properties/record/properties/currency/properties/$attributes/properties/$xsiType/properties/platformCore", 
+ 150                             "type": "string", 
+ 151                             "examples": [
+ 152                               "urn:core_2017_1.platform.webservices.netsuite.com"
+ 153                             ]
+ 154                           }
+ 155                         }
+ 156                       }, 
+ 157                       "internalId": {
+ 158                         "$id": "/properties/records/items/properties/record/properties/currency/properties/$attributes/properties/internalId", 
+ 159                         "type": "string", 
+ 160                         "examples": [
+ 161                           "1"
+ 162                         ]
+ 163                       }
+ 164                     }
+ 165                   }, 
+ 166                   "name": {
+ 167                     "$id": "/properties/records/items/properties/record/properties/currency/properties/name", 
+ 168                     "type": "string", 
+ 169                     "examples": [
+ 170                       "USA"
+ 171                     ]
+ 172                   }
+ 173                 }
+ 174               }, 
+ 175               "tranDate": {
+ 176                 "$id": "/properties/records/items/properties/record/properties/tranDate", 
+ 177                 "type": "string", 
+ 178                 "examples": [
+ 179                   "2018-04-02T00:00:00.000-07:00"
+ 180                 ]
+ 181               }, 
+ 182               "tranId": {
+ 183                 "$id": "/properties/records/items/properties/record/properties/tranId", 
+ 184                 "type": "string", 
+ 185                 "examples": [
+ 186                   "SLS00000549"
+ 187                 ]
+ 188               }, 
+ 189               "nextBill": {
+ 190                 "$id": "/properties/records/items/properties/record/properties/nextBill", 
+ 191                 "type": "string", 
+ 192                 "examples": [
+ 193                   "2018-04-02T00:00:00.000-07:00"
+ 194                 ]
+ 195               }, 
+ 196               "totalCostEstimate": {
+ 197                 "$id": "/properties/records/items/properties/record/properties/totalCostEstimate", 
+ 198                 "type": "string", 
+ 199                 "examples": [
+ 200                   "290.02"
+ 201                 ]
+ 202               }, 
+ 203               "estGrossProfit": {
+ 204                 "$id": "/properties/records/items/properties/record/properties/estGrossProfit", 
+ 205                 "type": "string", 
+ 206                 "examples": [
+ 207                   "440.93"
+ 208                 ]
+ 209               }, 
+ 210               "estGrossProfitPercent": {
+ 211                 "$id": "/properties/records/items/properties/record/properties/estGrossProfitPercent", 
+ 212                 "type": "string", 
+ 213                 "examples": [
+ 214                   "60.3229"
+ 215                 ]
+ 216               }, 
+ 217               "exchangeRate": {
+ 218                 "$id": "/properties/records/items/properties/record/properties/exchangeRate", 
+ 219                 "type": "string", 
+ 220                 "examples": [
+ 221                   "1.0"
+ 222                 ]
+ 223               }, 
+ 224               "currencyName": {
+ 225                 "$id": "/properties/records/items/properties/record/properties/currencyName", 
+ 226                 "type": "string", 
+ 227                 "examples": [
+ 228                   "USA"
+ 229                 ]
+ 230               }, 
+ 231               "toBePrinted": {
+ 232                 "$id": "/properties/records/items/properties/record/properties/toBePrinted", 
+ 233                 "type": "string", 
+ 234                 "examples": [
+ 235                   "false"
+ 236                 ]
+ 237               }, 
+ 238               "toBeEmailed": {
+ 239                 "$id": "/properties/records/items/properties/record/properties/toBeEmailed", 
+ 240                 "type": "string", 
+ 241                 "examples": [
+ 242                   "false"
+ 243                 ]
+ 244               }, 
+ 245               "email": {
+ 246                 "$id": "/properties/records/items/properties/record/properties/email", 
+ 247                 "type": "string", 
+ 248                 "examples": [
+ 249                   "DKuhnemund@laughers.net"
+ 250                 ]
+ 251               }, 
+ 252               "toBeFaxed": {
+ 253                 "$id": "/properties/records/items/properties/record/properties/toBeFaxed", 
+ 254                 "type": "string", 
+ 255                 "examples": [
+ 256                   "false"
+ 257                 ]
+ 258               }, 
+ 259               "billingAddress": {
+ 260                 "$id": "/properties/records/items/properties/record/properties/billingAddress", 
+ 261                 "type": "object", 
+ 262                 "properties": {
+ 263                   "$attributes": {
+ 264                     "$id": "/properties/records/items/properties/record/properties/billingAddress/properties/$attributes", 
+ 265                     "type": "object", 
+ 266                     "properties": {
+ 267                       "$xsiType": {
+ 268                         "$id": "/properties/records/items/properties/record/properties/billingAddress/properties/$attributes/properties/$xsiType", 
+ 269                         "type": "object", 
+ 270                         "properties": {
+ 271                           "platformCommon": {
+ 272                             "$id": "/properties/records/items/properties/record/properties/billingAddress/properties/$attributes/properties/$xsiType/properties/platformCommon", 
+ 273                             "type": "string", 
+ 274                             "examples": [
+ 275                               "urn:common_2017_1.platform.webservices.netsuite.com"
+ 276                             ]
+ 277                           }
+ 278                         }
+ 279                       }
+ 280                     }
+ 281                   }, 
+ 282                   "country": {
+ 283                     "$id": "/properties/records/items/properties/record/properties/billingAddress/properties/country", 
+ 284                     "type": "string", 
+ 285                     "examples": [
+ 286                       "_unitedStates"
+ 287                     ]
+ 288                   }, 
+ 289                   "addressee": {
+ 290                     "$id": "/properties/records/items/properties/record/properties/billingAddress/properties/addressee", 
+ 291                     "type": "string", 
+ 292                     "examples": [
+ 293                       "Stower Electric Company"
+ 294                     ]
+ 295                   }, 
+ 296                   "addr1": {
+ 297                     "$id": "/properties/records/items/properties/record/properties/billingAddress/properties/addr1", 
+ 298                     "type": "string", 
+ 299                     "examples": [
+ 300                       "8194 Bloomington  Road"
+ 301                     ]
+ 302                   }, 
+ 303                   "city": {
+ 304                     "$id": "/properties/records/items/properties/record/properties/billingAddress/properties/city", 
+ 305                     "type": "string", 
+ 306                     "examples": [
+ 307                       "La Habra"
+ 308                     ]
+ 309                   }, 
+ 310                   "state": {
+ 311                     "$id": "/properties/records/items/properties/record/properties/billingAddress/properties/state", 
+ 312                     "type": "string", 
+ 313                     "examples": [
+ 314                       "CA"
+ 315                     ]
+ 316                   }, 
+ 317                   "zip": {
+ 318                     "$id": "/properties/records/items/properties/record/properties/billingAddress/properties/zip", 
+ 319                     "type": "string", 
+ 320                     "examples": [
+ 321                       "90631"
+ 322                     ]
+ 323                   }, 
+ 324                   "addrText": {
+ 325                     "$id": "/properties/records/items/properties/record/properties/billingAddress/properties/addrText", 
+ 326                     "type": "string", 
+ 327                     "examples": [
+ 328                       "Stower Electric Company 8194 Bloomington Road La Habra, CA 90631"
+ 329                     ]
+ 330                   }, 
+ 331                   "override": {
+ 332                     "$id": "/properties/records/items/properties/record/properties/billingAddress/properties/override", 
+ 333                     "type": "string", 
+ 334                     "examples": [
+ 335                       "false"
+ 336                     ]
+ 337                   }
+ 338                 }
+ 339               }, 
+ 340               "billAddressList": {
+ 341                 "$id": "/properties/records/items/properties/record/properties/billAddressList", 
+ 342                 "type": "object", 
+ 343                 "properties": {
+ 344                   "$attributes": {
+ 345                     "$id": "/properties/records/items/properties/record/properties/billAddressList/properties/$attributes", 
+ 346                     "type": "object", 
+ 347                     "properties": {
+ 348                       "$xsiType": {
+ 349                         "$id": "/properties/records/items/properties/record/properties/billAddressList/properties/$attributes/properties/$xsiType", 
+ 350                         "type": "object", 
+ 351                         "properties": {
+ 352                           "platformCore": {
+ 353                             "$id": "/properties/records/items/properties/record/properties/billAddressList/properties/$attributes/properties/$xsiType/properties/platformCore", 
+ 354                             "type": "string", 
+ 355                             "examples": [
+ 356                               "urn:core_2017_1.platform.webservices.netsuite.com"
+ 357                             ]
+ 358                           }
+ 359                         }
+ 360                       }, 
+ 361                       "internalId": {
+ 362                         "$id": "/properties/records/items/properties/record/properties/billAddressList/properties/$attributes/properties/internalId", 
+ 363                         "type": "string", 
+ 364                         "examples": [
+ 365                           "244385"
+ 366                         ]
+ 367                       }
+ 368                     }
+ 369                   }, 
+ 370                   "name": {
+ 371                     "$id": "/properties/records/items/properties/record/properties/billAddressList/properties/name", 
+ 372                     "type": "string", 
+ 373                     "examples": [
+ 374                       "default bill address"
+ 375                     ]
+ 376                   }
+ 377                 }
+ 378               }, 
+ 379               "shippingAddress": {
+ 380                 "$id": "/properties/records/items/properties/record/properties/shippingAddress", 
+ 381                 "type": "object", 
+ 382                 "properties": {
+ 383                   "$attributes": {
+ 384                     "$id": "/properties/records/items/properties/record/properties/shippingAddress/properties/$attributes", 
+ 385                     "type": "object", 
+ 386                     "properties": {
+ 387                       "$xsiType": {
+ 388                         "$id": "/properties/records/items/properties/record/properties/shippingAddress/properties/$attributes/properties/$xsiType", 
+ 389                         "type": "object", 
+ 390                         "properties": {
+ 391                           "platformCommon": {
+ 392                             "$id": "/properties/records/items/properties/record/properties/shippingAddress/properties/$attributes/properties/$xsiType/properties/platformCommon", 
+ 393                             "type": "string", 
+ 394                             "examples": [
+ 395                               "urn:common_2017_1.platform.webservices.netsuite.com"
+ 396                             ]
+ 397                           }
+ 398                         }
+ 399                       }
+ 400                     }
+ 401                   }, 
+ 402                   "country": {
+ 403                     "$id": "/properties/records/items/properties/record/properties/shippingAddress/properties/country", 
+ 404                     "type": "string", 
+ 405                     "examples": [
+ 406                       "_unitedStates"
+ 407                     ]
+ 408                   }, 
+ 409                   "addressee": {
+ 410                     "$id": "/properties/records/items/properties/record/properties/shippingAddress/properties/addressee", 
+ 411                     "type": "string", 
+ 412                     "examples": [
+ 413                       "Stower Electric Company"
+ 414                     ]
+ 415                   }, 
+ 416                   "addr1": {
+ 417                     "$id": "/properties/records/items/properties/record/properties/shippingAddress/properties/addr1", 
+ 418                     "type": "string", 
+ 419                     "examples": [
+ 420                       "8194 Bloomington  Road"
+ 421                     ]
+ 422                   }, 
+ 423                   "city": {
+ 424                     "$id": "/properties/records/items/properties/record/properties/shippingAddress/properties/city", 
+ 425                     "type": "string", 
+ 426                     "examples": [
+ 427                       "La Habra"
+ 428                     ]
+ 429                   }, 
+ 430                   "state": {
+ 431                     "$id": "/properties/records/items/properties/record/properties/shippingAddress/properties/state", 
+ 432                     "type": "string", 
+ 433                     "examples": [
+ 434                       "CA"
+ 435                     ]
+ 436                   }, 
+ 437                   "zip": {
+ 438                     "$id": "/properties/records/items/properties/record/properties/shippingAddress/properties/zip", 
+ 439                     "type": "string", 
+ 440                     "examples": [
+ 441                       "90631"
+ 442                     ]
+ 443                   }, 
+ 444                   "addrText": {
+ 445                     "$id": "/properties/records/items/properties/record/properties/shippingAddress/properties/addrText", 
+ 446                     "type": "string", 
+ 447                     "examples": [
+ 448                       "Stower Electric Company 8194 Bloomington Road La Habra, CA 90631"
+ 449                     ]
+ 450                   }, 
+ 451                   "override": {
+ 452                     "$id": "/properties/records/items/properties/record/properties/shippingAddress/properties/override", 
+ 453                     "type": "string", 
+ 454                     "examples": [
+ 455                       "false"
+ 456                     ]
+ 457                   }
+ 458                 }
+ 459               }, 
+ 460               "shipIsResidential": {
+ 461                 "$id": "/properties/records/items/properties/record/properties/shipIsResidential", 
+ 462                 "type": "string", 
+ 463                 "examples": [
+ 464                   "false"
+ 465                 ]
+ 466               }, 
+ 467               "shipAddressList": {
+ 468                 "$id": "/properties/records/items/properties/record/properties/shipAddressList", 
+ 469                 "type": "object", 
+ 470                 "properties": {
+ 471                   "$attributes": {
+ 472                     "$id": "/properties/records/items/properties/record/properties/shipAddressList/properties/$attributes", 
+ 473                     "type": "object", 
+ 474                     "properties": {
+ 475                       "$xsiType": {
+ 476                         "$id": "/properties/records/items/properties/record/properties/shipAddressList/properties/$attributes/properties/$xsiType", 
+ 477                         "type": "object", 
+ 478                         "properties": {
+ 479                           "platformCore": {
+ 480                             "$id": "/properties/records/items/properties/record/properties/shipAddressList/properties/$attributes/properties/$xsiType/properties/platformCore", 
+ 481                             "type": "string", 
+ 482                             "examples": [
+ 483                               "urn:core_2017_1.platform.webservices.netsuite.com"
+ 484                             ]
+ 485                           }
+ 486                         }
+ 487                       }, 
+ 488                       "internalId": {
+ 489                         "$id": "/properties/records/items/properties/record/properties/shipAddressList/properties/$attributes/properties/internalId", 
+ 490                         "type": "string", 
+ 491                         "examples": [
+ 492                           "244385"
+ 493                         ]
+ 494                       }
+ 495                     }
+ 496                   }, 
+ 497                   "name": {
+ 498                     "$id": "/properties/records/items/properties/record/properties/shipAddressList/properties/name", 
+ 499                     "type": "string", 
+ 500                     "examples": [
+ 501                       "default bill address"
+ 502                     ]
+ 503                   }
+ 504                 }
+ 505               }, 
+ 506               "shipDate": {
+ 507                 "$id": "/properties/records/items/properties/record/properties/shipDate", 
+ 508                 "type": "string", 
+ 509                 "examples": [
+ 510                   "2018-04-04T00:00:00.000-07:00"
+ 511                 ]
+ 512               }, 
+ 513               "shipMethod": {
+ 514                 "$id": "/properties/records/items/properties/record/properties/shipMethod", 
+ 515                 "type": "object", 
+ 516                 "properties": {
+ 517                   "$attributes": {
+ 518                     "$id": "/properties/records/items/properties/record/properties/shipMethod/properties/$attributes", 
+ 519                     "type": "object", 
+ 520                     "properties": {
+ 521                       "$xsiType": {
+ 522                         "$id": "/properties/records/items/properties/record/properties/shipMethod/properties/$attributes/properties/$xsiType", 
+ 523                         "type": "object", 
+ 524                         "properties": {
+ 525                           "platformCore": {
+ 526                             "$id": "/properties/records/items/properties/record/properties/shipMethod/properties/$attributes/properties/$xsiType/properties/platformCore", 
+ 527                             "type": "string", 
+ 528                             "examples": [
+ 529                               "urn:core_2017_1.platform.webservices.netsuite.com"
+ 530                             ]
+ 531                           }
+ 532                         }
+ 533                       }, 
+ 534                       "internalId": {
+ 535                         "$id": "/properties/records/items/properties/record/properties/shipMethod/properties/$attributes/properties/internalId", 
+ 536                         "type": "string", 
+ 537                         "examples": [
+ 538                           "2"
+ 539                         ]
+ 540                       }
+ 541                     }
+ 542                   }, 
+ 543                   "name": {
+ 544                     "$id": "/properties/records/items/properties/record/properties/shipMethod/properties/name", 
+ 545                     "type": "string", 
+ 546                     "examples": [
+ 547                       "Pick-up at store"
+ 548                     ]
+ 549                   }
+ 550                 }
+ 551               }, 
+ 552               "shippingCost": {
+ 553                 "$id": "/properties/records/items/properties/record/properties/shippingCost", 
+ 554                 "type": "string", 
+ 555                 "examples": [
+ 556                   "0.0"
+ 557                 ]
+ 558               }, 
+ 559               "isMultiShipTo": {
+ 560                 "$id": "/properties/records/items/properties/record/properties/isMultiShipTo", 
+ 561                 "type": "string", 
+ 562                 "examples": [
+ 563                   "false"
+ 564                 ]
+ 565               }, 
+ 566               "shippingTaxCode": {
+ 567                 "$id": "/properties/records/items/properties/record/properties/shippingTaxCode", 
+ 568                 "type": "object", 
+ 569                 "properties": {
+ 570                   "$attributes": {
+ 571                     "$id": "/properties/records/items/properties/record/properties/shippingTaxCode/properties/$attributes", 
+ 572                     "type": "object", 
+ 573                     "properties": {
+ 574                       "$xsiType": {
+ 575                         "$id": "/properties/records/items/properties/record/properties/shippingTaxCode/properties/$attributes/properties/$xsiType", 
+ 576                         "type": "object", 
+ 577                         "properties": {
+ 578                           "platformCore": {
+ 579                             "$id": "/properties/records/items/properties/record/properties/shippingTaxCode/properties/$attributes/properties/$xsiType/properties/platformCore", 
+ 580                             "type": "string", 
+ 581                             "examples": [
+ 582                               "urn:core_2017_1.platform.webservices.netsuite.com"
+ 583                             ]
+ 584                           }
+ 585                         }
+ 586                       }, 
+ 587                       "internalId": {
+ 588                         "$id": "/properties/records/items/properties/record/properties/shippingTaxCode/properties/$attributes/properties/internalId", 
+ 589                         "type": "string", 
+ 590                         "examples": [
+ 591                           "-7"
+ 592                         ]
+ 593                       }
+ 594                     }
+ 595                   }, 
+ 596                   "name": {
+ 597                     "$id": "/properties/records/items/properties/record/properties/shippingTaxCode/properties/name", 
+ 598                     "type": "string", 
+ 599                     "examples": [
+ 600                       "-Not Taxable-"
+ 601                     ]
+ 602                   }
+ 603                 }
+ 604               }, 
+ 605               "handlingCost": {
+ 606                 "$id": "/properties/records/items/properties/record/properties/handlingCost", 
+ 607                 "type": "string", 
+ 608                 "examples": [
+ 609                   "0.0"
+ 610                 ]
+ 611               }, 
+ 612               "shipComplete": {
+ 613                 "$id": "/properties/records/items/properties/record/properties/shipComplete", 
+ 614                 "type": "string", 
+ 615                 "examples": [
+ 616                   "false"
+ 617                 ]
+ 618               }, 
+ 619               "saveOnAuthDecline": {
+ 620                 "$id": "/properties/records/items/properties/record/properties/saveOnAuthDecline", 
+ 621                 "type": "string", 
+ 622                 "examples": [
+ 623                   "true"
+ 624                 ]
+ 625               }, 
+ 626               "canHaveStackable": {
+ 627                 "$id": "/properties/records/items/properties/record/properties/canHaveStackable", 
+ 628                 "type": "string", 
+ 629                 "examples": [
+ 630                   "false"
+ 631                 ]
+ 632               }, 
+ 633               "ccApproved": {
+ 634                 "$id": "/properties/records/items/properties/record/properties/ccApproved", 
+ 635                 "type": "string", 
+ 636                 "examples": [
+ 637                   "false"
+ 638                 ]
+ 639               }, 
+ 640               "getAuth": {
+ 641                 "$id": "/properties/records/items/properties/record/properties/getAuth", 
+ 642                 "type": "string", 
+ 643                 "examples": [
+ 644                   "false"
+ 645                 ]
+ 646               }, 
+ 647               "isRecurringPayment": {
+ 648                 "$id": "/properties/records/items/properties/record/properties/isRecurringPayment", 
+ 649                 "type": "string", 
+ 650                 "examples": [
+ 651                   "false"
+ 652                 ]
+ 653               }, 
+ 654               "subTotal": {
+ 655                 "$id": "/properties/records/items/properties/record/properties/subTotal", 
+ 656                 "type": "string", 
+ 657                 "examples": [
+ 658                   "730.95"
+ 659                 ]
+ 660               }, 
+ 661               "discountTotal": {
+ 662                 "$id": "/properties/records/items/properties/record/properties/discountTotal", 
+ 663                 "type": "string", 
+ 664                 "examples": [
+ 665                   "0.0"
+ 666                 ]
+ 667               }, 
+ 668               "taxTotal": {
+ 669                 "$id": "/properties/records/items/properties/record/properties/taxTotal", 
+ 670                 "type": "string", 
+ 671                 "examples": [
+ 672                   "0.0"
+ 673                 ]
+ 674               }, 
+ 675               "altShippingCost": {
+ 676                 "$id": "/properties/records/items/properties/record/properties/altShippingCost", 
+ 677                 "type": "string", 
+ 678                 "examples": [
+ 679                   "0.0"
+ 680                 ]
+ 681               }, 
+ 682               "total": {
+ 683                 "$id": "/properties/records/items/properties/record/properties/total", 
+ 684                 "type": "string", 
+ 685                 "examples": [
+ 686                   "730.95"
+ 687                 ]
+ 688               }, 
+ 689               "balance": {
+ 690                 "$id": "/properties/records/items/properties/record/properties/balance", 
+ 691                 "type": "string", 
+ 692                 "examples": [
+ 693                   "31.95"
+ 694                 ]
+ 695               }, 
+ 696               "paypalProcess": {
+ 697                 "$id": "/properties/records/items/properties/record/properties/paypalProcess", 
+ 698                 "type": "string", 
+ 699                 "examples": [
+ 700                   "false"
+ 701                 ]
+ 702               }, 
+ 703               "subsidiary": {
+ 704                 "$id": "/properties/records/items/properties/record/properties/subsidiary", 
+ 705                 "type": "object", 
+ 706                 "properties": {
+ 707                   "$attributes": {
+ 708                     "$id": "/properties/records/items/properties/record/properties/subsidiary/properties/$attributes", 
+ 709                     "type": "object", 
+ 710                     "properties": {
+ 711                       "$xsiType": {
+ 712                         "$id": "/properties/records/items/properties/record/properties/subsidiary/properties/$attributes/properties/$xsiType", 
+ 713                         "type": "object", 
+ 714                         "properties": {
+ 715                           "platformCore": {
+ 716                             "$id": "/properties/records/items/properties/record/properties/subsidiary/properties/$attributes/properties/$xsiType/properties/platformCore", 
+ 717                             "type": "string", 
+ 718                             "examples": [
+ 719                               "urn:core_2017_1.platform.webservices.netsuite.com"
+ 720                             ]
+ 721                           }
+ 722                         }
+ 723                       }, 
+ 724                       "internalId": {
+ 725                         "$id": "/properties/records/items/properties/record/properties/subsidiary/properties/$attributes/properties/internalId", 
+ 726                         "type": "string", 
+ 727                         "examples": [
+ 728                           "1"
+ 729                         ]
+ 730                       }
+ 731                     }
+ 732                   }, 
+ 733                   "name": {
+ 734                     "$id": "/properties/records/items/properties/record/properties/subsidiary/properties/name", 
+ 735                     "type": "string", 
+ 736                     "examples": [
+ 737                       "Honeycomb Mfg."
+ 738                     ]
+ 739                   }
+ 740                 }
+ 741               }, 
+ 742               "lastModifiedDate": {
+ 743                 "$id": "/properties/records/items/properties/record/properties/lastModifiedDate", 
+ 744                 "type": "string", 
+ 745                 "examples": [
+ 746                   "2018-04-05T06:42:10.000-07:00"
+ 747                 ]
+ 748               }, 
+ 749               "location": {
+ 750                 "$id": "/properties/records/items/properties/record/properties/location", 
+ 751                 "type": "object", 
+ 752                 "properties": {
+ 753                   "$attributes": {
+ 754                     "$id": "/properties/records/items/properties/record/properties/location/properties/$attributes", 
+ 755                     "type": "object", 
+ 756                     "properties": {
+ 757                       "$xsiType": {
+ 758                         "$id": "/properties/records/items/properties/record/properties/location/properties/$attributes/properties/$xsiType", 
+ 759                         "type": "object", 
+ 760                         "properties": {
+ 761                           "platformCore": {
+ 762                             "$id": "/properties/records/items/properties/record/properties/location/properties/$attributes/properties/$xsiType/properties/platformCore", 
+ 763                             "type": "string", 
+ 764                             "examples": [
+ 765                               "urn:core_2017_1.platform.webservices.netsuite.com"
+ 766                             ]
+ 767                           }
+ 768                         }
+ 769                       }, 
+ 770                       "internalId": {
+ 771                         "$id": "/properties/records/items/properties/record/properties/location/properties/$attributes/properties/internalId", 
+ 772                         "type": "string", 
+ 773                         "examples": [
+ 774                           "2"
+ 775                         ]
+ 776                       }
+ 777                     }
+ 778                   }, 
+ 779                   "name": {
+ 780                     "$id": "/properties/records/items/properties/record/properties/location/properties/name", 
+ 781                     "type": "string", 
+ 782                     "examples": [
+ 783                       "01: San Francisco"
+ 784                     ]
+ 785                   }
+ 786                 }
+ 787               }, 
+ 788               "status": {
+ 789                 "$id": "/properties/records/items/properties/record/properties/status", 
+ 790                 "type": "string", 
+ 791                 "examples": [
+ 792                   "Partially Fulfilled"
+ 793                 ]
+ 794               }, 
+ 795               "terms": {
+ 796                 "$id": "/properties/records/items/properties/record/properties/terms", 
+ 797                 "type": "object", 
+ 798                 "properties": {
+ 799                   "$attributes": {
+ 800                     "$id": "/properties/records/items/properties/record/properties/terms/properties/$attributes", 
+ 801                     "type": "object", 
+ 802                     "properties": {
+ 803                       "$xsiType": {
+ 804                         "$id": "/properties/records/items/properties/record/properties/terms/properties/$attributes/properties/$xsiType", 
+ 805                         "type": "object", 
+ 806                         "properties": {
+ 807                           "platformCore": {
+ 808                             "$id": "/properties/records/items/properties/record/properties/terms/properties/$attributes/properties/$xsiType/properties/platformCore", 
+ 809                             "type": "string", 
+ 810                             "examples": [
+ 811                               "urn:core_2017_1.platform.webservices.netsuite.com"
+ 812                             ]
+ 813                           }
+ 814                         }
+ 815                       }, 
+ 816                       "internalId": {
+ 817                         "$id": "/properties/records/items/properties/record/properties/terms/properties/$attributes/properties/internalId", 
+ 818                         "type": "string", 
+ 819                         "examples": [
+ 820                           "2"
+ 821                         ]
+ 822                       }
+ 823                     }
+ 824                   }, 
+ 825                   "name": {
+ 826                     "$id": "/properties/records/items/properties/record/properties/terms/properties/name", 
+ 827                     "type": "string", 
+ 828                     "examples": [
+ 829                       "Net 30"
+ 830                     ]
+ 831                   }
+ 832                 }
+ 833               }, 
+ 834               "itemList": {
+ 835                 "$id": "/properties/records/items/properties/record/properties/itemList", 
+ 836                 "type": "object", 
+ 837                 "properties": {
+ 838                   "item": {
+ 839                     "$id": "/properties/records/items/properties/record/properties/itemList/properties/item", 
+ 840                     "type": "array", 
+ 841                     "items": {
+ 842                       "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items", 
+ 843                       "type": "object", 
+ 844                       "properties": {
+ 845                         "item": {
+ 846                           "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/item", 
+ 847                           "type": "object", 
+ 848                           "properties": {
+ 849                             "$attributes": {
+ 850                               "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/item/properties/$attributes", 
+ 851                               "type": "object", 
+ 852                               "properties": {
+ 853                                 "$xsiType": {
+ 854                                   "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/item/properties/$attributes/properties/$xsiType", 
+ 855                                   "type": "object", 
+ 856                                   "properties": {
+ 857                                     "platformCore": {
+ 858                                       "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/item/properties/$attributes/properties/$xsiType/properties/platformCore", 
+ 859                                       "type": "string", 
+ 860                                       "examples": [
+ 861                                         "urn:core_2017_1.platform.webservices.netsuite.com"
+ 862                                       ]
+ 863                                     }
+ 864                                   }
+ 865                                 }, 
+ 866                                 "internalId": {
+ 867                                   "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/item/properties/$attributes/properties/internalId", 
+ 868                                   "type": "string", 
+ 869                                   "examples": [
+ 870                                     "38"
+ 871                                   ]
+ 872                                 }
+ 873                               }
+ 874                             }, 
+ 875                             "name": {
+ 876                               "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/item/properties/name", 
+ 877                               "type": "string", 
+ 878                               "examples": [
+ 879                                 "PRI00002"
+ 880                               ]
+ 881                             }
+ 882                           }
+ 883                         }, 
+ 884                         "quantityAvailable": {
+ 885                           "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/quantityAvailable", 
+ 886                           "type": "string", 
+ 887                           "examples": [
+ 888                             "0.0"
+ 889                           ]
+ 890                         }, 
+ 891                         "expandItemGroup": {
+ 892                           "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/expandItemGroup", 
+ 893                           "type": "string", 
+ 894                           "examples": [
+ 895                             "false"
+ 896                           ]
+ 897                         }, 
+ 898                         "lineUniqueKey": {
+ 899                           "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/lineUniqueKey", 
+ 900                           "type": "string", 
+ 901                           "examples": [
+ 902                             "25304"
+ 903                           ]
+ 904                         }, 
+ 905                         "quantityOnHand": {
+ 906                           "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/quantityOnHand", 
+ 907                           "type": "string", 
+ 908                           "examples": [
+ 909                             "-3.0"
+ 910                           ]
+ 911                         }, 
+ 912                         "quantity": {
+ 913                           "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/quantity", 
+ 914                           "type": "string", 
+ 915                           "examples": [
+ 916                             "1.0"
+ 917                           ]
+ 918                         }, 
+ 919                         "units": {
+ 920                           "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/units", 
+ 921                           "type": "object", 
+ 922                           "properties": {
+ 923                             "$attributes": {
+ 924                               "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/units/properties/$attributes", 
+ 925                               "type": "object", 
+ 926                               "properties": {
+ 927                                 "$xsiType": {
+ 928                                   "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/units/properties/$attributes/properties/$xsiType", 
+ 929                                   "type": "object", 
+ 930                                   "properties": {
+ 931                                     "platformCore": {
+ 932                                       "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/units/properties/$attributes/properties/$xsiType/properties/platformCore", 
+ 933                                       "type": "string", 
+ 934                                       "examples": [
+ 935                                         "urn:core_2017_1.platform.webservices.netsuite.com"
+ 936                                       ]
+ 937                                     }
+ 938                                   }
+ 939                                 }, 
+ 940                                 "internalId": {
+ 941                                   "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/units/properties/$attributes/properties/internalId", 
+ 942                                   "type": "string", 
+ 943                                   "examples": [
+ 944                                     "1"
+ 945                                   ]
+ 946                                 }
+ 947                               }
+ 948                             }, 
+ 949                             "name": {
+ 950                               "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/units/properties/name", 
+ 951                               "type": "string", 
+ 952                               "examples": [
+ 953                                 "Ea"
+ 954                               ]
+ 955                             }
+ 956                           }
+ 957                         }, 
+ 958                         "description": {
+ 959                           "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/description", 
+ 960                           "type": "string", 
+ 961                           "examples": [
+ 962                             "ManuScript 1000 Laser Printer - 1200 dpi b&w"
+ 963                           ]
+ 964                         }, 
+ 965                         "price": {
+ 966                           "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/price", 
+ 967                           "type": "object", 
+ 968                           "properties": {
+ 969                             "$attributes": {
+ 970                               "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/price/properties/$attributes", 
+ 971                               "type": "object", 
+ 972                               "properties": {
+ 973                                 "$xsiType": {
+ 974                                   "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/price/properties/$attributes/properties/$xsiType", 
+ 975                                   "type": "object", 
+ 976                                   "properties": {
+ 977                                     "platformCore": {
+ 978                                       "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/price/properties/$attributes/properties/$xsiType/properties/platformCore", 
+ 979                                       "type": "string", 
+ 980                                       "examples": [
+ 981                                         "urn:core_2017_1.platform.webservices.netsuite.com"
+ 982                                       ]
+ 983                                     }
+ 984                                   }
+ 985                                 }, 
+ 986                                 "internalId": {
+ 987                                   "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/price/properties/$attributes/properties/internalId", 
+ 988                                   "type": "string", 
+ 989                                   "examples": [
+ 990                                     "1"
+ 991                                   ]
+ 992                                 }
+ 993                               }
+ 994                             }, 
+ 995                             "name": {
+ 996                               "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/price/properties/name", 
+ 997                               "type": "string", 
+ 998                               "examples": [
+ 999                                 "List Price"
+1000                               ]
+1001                             }
+1002                           }
+1003                         }, 
+1004                         "rate": {
+1005                           "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/rate", 
+1006                           "type": "string", 
+1007                           "examples": [
+1008                             "699.00"
+1009                           ]
+1010                         }, 
+1011                         "amount": {
+1012                           "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/amount", 
+1013                           "type": "string", 
+1014                           "examples": [
+1015                             "699.0"
+1016                           ]
+1017                         }, 
+1018                         "commitInventory": {
+1019                           "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/commitInventory", 
+1020                           "type": "string", 
+1021                           "examples": [
+1022                             "_availableQty"
+1023                           ]
+1024                         }, 
+1025                         "location": {
+1026                           "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/location", 
+1027                           "type": "object", 
+1028                           "properties": {
+1029                             "$attributes": {
+1030                               "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/location/properties/$attributes", 
+1031                               "type": "object", 
+1032                               "properties": {
+1033                                 "$xsiType": {
+1034                                   "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/location/properties/$attributes/properties/$xsiType", 
+1035                                   "type": "object", 
+1036                                   "properties": {
+1037                                     "platformCore": {
+1038                                       "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/location/properties/$attributes/properties/$xsiType/properties/platformCore", 
+1039                                       "type": "string", 
+1040                                       "examples": [
+1041                                         "urn:core_2017_1.platform.webservices.netsuite.com"
+1042                                       ]
+1043                                     }
+1044                                   }
+1045                                 }, 
+1046                                 "internalId": {
+1047                                   "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/location/properties/$attributes/properties/internalId", 
+1048                                   "type": "string", 
+1049                                   "examples": [
+1050                                     "2"
+1051                                   ]
+1052                                 }
+1053                               }
+1054                             }, 
+1055                             "name": {
+1056                               "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/location/properties/name", 
+1057                               "type": "string", 
+1058                               "examples": [
+1059                                 "01: San Francisco"
+1060                               ]
+1061                             }
+1062                           }
+1063                         }, 
+1064                         "createWo": {
+1065                           "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/createWo", 
+1066                           "type": "string", 
+1067                           "examples": [
+1068                             "false"
+1069                           ]
+1070                         }, 
+1071                         "fromJob": {
+1072                           "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/fromJob", 
+1073                           "type": "string", 
+1074                           "examples": [
+1075                             "false"
+1076                           ]
+1077                         }, 
+1078                         "isEstimate": {
+1079                           "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/isEstimate", 
+1080                           "type": "string", 
+1081                           "examples": [
+1082                             "false"
+1083                           ]
+1084                         }, 
+1085                         "line": {
+1086                           "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/line", 
+1087                           "type": "string", 
+1088                           "examples": [
+1089                             "1"
+1090                           ]
+1091                         }, 
+1092                         "taxCode": {
+1093                           "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/taxCode", 
+1094                           "type": "object", 
+1095                           "properties": {
+1096                             "$attributes": {
+1097                               "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/taxCode/properties/$attributes", 
+1098                               "type": "object", 
+1099                               "properties": {
+1100                                 "$xsiType": {
+1101                                   "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/taxCode/properties/$attributes/properties/$xsiType", 
+1102                                   "type": "object", 
+1103                                   "properties": {
+1104                                     "platformCore": {
+1105                                       "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/taxCode/properties/$attributes/properties/$xsiType/properties/platformCore", 
+1106                                       "type": "string", 
+1107                                       "examples": [
+1108                                         "urn:core_2017_1.platform.webservices.netsuite.com"
+1109                                       ]
+1110                                     }
+1111                                   }
+1112                                 }, 
+1113                                 "internalId": {
+1114                                   "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/taxCode/properties/$attributes/properties/internalId", 
+1115                                   "type": "string", 
+1116                                   "examples": [
+1117                                     "-7"
+1118                                   ]
+1119                                 }
+1120                               }
+1121                             }, 
+1122                             "name": {
+1123                               "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/taxCode/properties/name", 
+1124                               "type": "string", 
+1125                               "examples": [
+1126                                 "-Not Taxable-"
+1127                               ]
+1128                             }
+1129                           }
+1130                         }, 
+1131                         "shipGroup": {
+1132                           "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/shipGroup", 
+1133                           "type": "string", 
+1134                           "examples": [
+1135                             "1"
+1136                           ]
+1137                         }, 
+1138                         "itemIsFulfilled": {
+1139                           "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/itemIsFulfilled", 
+1140                           "type": "string", 
+1141                           "examples": [
+1142                             "false"
+1143                           ]
+1144                         }
+1145                       }
+1146                     }
+1147                   }
+1148                 }
+1149               }, 
+1150               "shipGroupList": {
+1151                 "$id": "/properties/records/items/properties/record/properties/shipGroupList", 
+1152                 "type": "object", 
+1153                 "properties": {
+1154                   "shipGroup": {
+1155                     "$id": "/properties/records/items/properties/record/properties/shipGroupList/properties/shipGroup", 
+1156                     "type": "object", 
+1157                     "properties": {
+1158                       "id": {
+1159                         "$id": "/properties/records/items/properties/record/properties/shipGroupList/properties/shipGroup/properties/id", 
+1160                         "type": "string", 
+1161                         "examples": [
+1162                           "1"
+1163                         ]
+1164                       }, 
+1165                       "isFulfilled": {
+1166                         "$id": "/properties/records/items/properties/record/properties/shipGroupList/properties/shipGroup/properties/isFulfilled", 
+1167                         "type": "string", 
+1168                         "examples": [
+1169                           "false"
+1170                         ]
+1171                       }, 
+1172                       "weight": {
+1173                         "$id": "/properties/records/items/properties/record/properties/shipGroupList/properties/shipGroup/properties/weight", 
+1174                         "type": "string", 
+1175                         "examples": [
+1176                           "33.0"
+1177                         ]
+1178                       }, 
+1179                       "sourceAddressRef": {
+1180                         "$id": "/properties/records/items/properties/record/properties/shipGroupList/properties/shipGroup/properties/sourceAddressRef", 
+1181                         "type": "object", 
+1182                         "properties": {
+1183                           "$attributes": {
+1184                             "$id": "/properties/records/items/properties/record/properties/shipGroupList/properties/shipGroup/properties/sourceAddressRef/properties/$attributes", 
+1185                             "type": "object", 
+1186                             "properties": {
+1187                               "$xsiType": {
+1188                                 "$id": "/properties/records/items/properties/record/properties/shipGroupList/properties/shipGroup/properties/sourceAddressRef/properties/$attributes/properties/$xsiType", 
+1189                                 "type": "object", 
+1190                                 "properties": {
+1191                                   "platformCore": {
+1192                                     "$id": "/properties/records/items/properties/record/properties/shipGroupList/properties/shipGroup/properties/sourceAddressRef/properties/$attributes/properties/$xsiType/properties/platformCore", 
+1193                                     "type": "string", 
+1194                                     "examples": [
+1195                                       "urn:core_2017_1.platform.webservices.netsuite.com"
+1196                                     ]
+1197                                   }
+1198                                 }
+1199                               }, 
+1200                               "internalId": {
+1201                                 "$id": "/properties/records/items/properties/record/properties/shipGroupList/properties/shipGroup/properties/sourceAddressRef/properties/$attributes/properties/internalId", 
+1202                                 "type": "string", 
+1203                                 "examples": [
+1204                                   "DEFAULT"
+1205                                 ]
+1206                               }
+1207                             }
+1208                           }
+1209                         }
+1210                       }, 
+1211                       "destinationAddressRef": {
+1212                         "$id": "/properties/records/items/properties/record/properties/shipGroupList/properties/shipGroup/properties/destinationAddressRef", 
+1213                         "type": "object", 
+1214                         "properties": {
+1215                           "$attributes": {
+1216                             "$id": "/properties/records/items/properties/record/properties/shipGroupList/properties/shipGroup/properties/destinationAddressRef/properties/$attributes", 
+1217                             "type": "object", 
+1218                             "properties": {
+1219                               "$xsiType": {
+1220                                 "$id": "/properties/records/items/properties/record/properties/shipGroupList/properties/shipGroup/properties/destinationAddressRef/properties/$attributes/properties/$xsiType", 
+1221                                 "type": "object", 
+1222                                 "properties": {
+1223                                   "platformCore": {
+1224                                     "$id": "/properties/records/items/properties/record/properties/shipGroupList/properties/shipGroup/properties/destinationAddressRef/properties/$attributes/properties/$xsiType/properties/platformCore", 
+1225                                     "type": "string", 
+1226                                     "examples": [
+1227                                       "urn:core_2017_1.platform.webservices.netsuite.com"
+1228                                     ]
+1229                                   }
+1230                                 }
+1231                               }, 
+1232                               "internalId": {
+1233                                 "$id": "/properties/records/items/properties/record/properties/shipGroupList/properties/shipGroup/properties/destinationAddressRef/properties/$attributes/properties/internalId", 
+1234                                 "type": "string", 
+1235                                 "examples": [
+1236                                   "244385"
+1237                                 ]
+1238                               }
+1239                             }
+1240                           }
+1241                         }
+1242                       }, 
+1243                       "destinationAddress": {
+1244                         "$id": "/properties/records/items/properties/record/properties/shipGroupList/properties/shipGroup/properties/destinationAddress", 
+1245                         "type": "string", 
+1246                         "examples": [
+1247                           "8194 Bloomington Road La Habra CA 90631 United States"
+1248                         ]
+1249                       }, 
+1250                       "shippingMethodRef": {
+1251                         "$id": "/properties/records/items/properties/record/properties/shipGroupList/properties/shipGroup/properties/shippingMethodRef", 
+1252                         "type": "object", 
+1253                         "properties": {
+1254                           "$attributes": {
+1255                             "$id": "/properties/records/items/properties/record/properties/shipGroupList/properties/shipGroup/properties/shippingMethodRef/properties/$attributes", 
+1256                             "type": "object", 
+1257                             "properties": {
+1258                               "$xsiType": {
+1259                                 "$id": "/properties/records/items/properties/record/properties/shipGroupList/properties/shipGroup/properties/shippingMethodRef/properties/$attributes/properties/$xsiType", 
+1260                                 "type": "object", 
+1261                                 "properties": {
+1262                                   "platformCore": {
+1263                                     "$id": "/properties/records/items/properties/record/properties/shipGroupList/properties/shipGroup/properties/shippingMethodRef/properties/$attributes/properties/$xsiType/properties/platformCore", 
+1264                                     "type": "string", 
+1265                                     "examples": [
+1266                                       "urn:core_2017_1.platform.webservices.netsuite.com"
+1267                                     ]
+1268                                   }
+1269                                 }
+1270                               }, 
+1271                               "internalId": {
+1272                                 "$id": "/properties/records/items/properties/record/properties/shipGroupList/properties/shipGroup/properties/shippingMethodRef/properties/$attributes/properties/internalId", 
+1273                                 "type": "string", 
+1274                                 "examples": [
+1275                                   "2"
+1276                                 ]
+1277                               }
+1278                             }
+1279                           }
+1280                         }
+1281                       }, 
+1282                       "shippingMethod": {
+1283                         "$id": "/properties/records/items/properties/record/properties/shipGroupList/properties/shipGroup/properties/shippingMethod", 
+1284                         "type": "string", 
+1285                         "examples": [
+1286                           "Pick-up at store"
+1287                         ]
+1288                       }, 
+1289                       "handlingTaxCode": {
+1290                         "$id": "/properties/records/items/properties/record/properties/shipGroupList/properties/shipGroup/properties/handlingTaxCode", 
+1291                         "type": "object", 
+1292                         "properties": {
+1293                           "$attributes": {
+1294                             "$id": "/properties/records/items/properties/record/properties/shipGroupList/properties/shipGroup/properties/handlingTaxCode/properties/$attributes", 
+1295                             "type": "object", 
+1296                             "properties": {
+1297                               "$xsiType": {
+1298                                 "$id": "/properties/records/items/properties/record/properties/shipGroupList/properties/shipGroup/properties/handlingTaxCode/properties/$attributes/properties/$xsiType", 
+1299                                 "type": "object", 
+1300                                 "properties": {
+1301                                   "platformCore": {
+1302                                     "$id": "/properties/records/items/properties/record/properties/shipGroupList/properties/shipGroup/properties/handlingTaxCode/properties/$attributes/properties/$xsiType/properties/platformCore", 
+1303                                     "type": "string", 
+1304                                     "examples": [
+1305                                       "urn:core_2017_1.platform.webservices.netsuite.com"
+1306                                     ]
+1307                                   }
+1308                                 }
+1309                               }, 
+1310                               "internalId": {
+1311                                 "$id": "/properties/records/items/properties/record/properties/shipGroupList/properties/shipGroup/properties/handlingTaxCode/properties/$attributes/properties/internalId", 
+1312                                 "type": "string", 
+1313                                 "examples": [
+1314                                   "-7"
+1315                                 ]
+1316                               }
+1317                             }
+1318                           }, 
+1319                           "name": {
+1320                             "$id": "/properties/records/items/properties/record/properties/shipGroupList/properties/shipGroup/properties/handlingTaxCode/properties/name", 
+1321                             "type": "string", 
+1322                             "examples": [
+1323                               "-Not Taxable-"
+1324                             ]
+1325                           }
+1326                         }
+1327                       }, 
+1328                       "handlingRate": {
+1329                         "$id": "/properties/records/items/properties/record/properties/shipGroupList/properties/shipGroup/properties/handlingRate", 
+1330                         "type": "string", 
+1331                         "examples": [
+1332                           "0.0"
+1333                         ]
+1334                       }, 
+1335                       "handlingTaxAmt": {
+1336                         "$id": "/properties/records/items/properties/record/properties/shipGroupList/properties/shipGroup/properties/handlingTaxAmt", 
+1337                         "type": "string", 
+1338                         "examples": [
+1339                           "0.0"
+1340                         ]
+1341                       }, 
+1342                       "shippingTaxCode": {
+1343                         "$id": "/properties/records/items/properties/record/properties/shipGroupList/properties/shipGroup/properties/shippingTaxCode", 
+1344                         "type": "object", 
+1345                         "properties": {
+1346                           "$attributes": {
+1347                             "$id": "/properties/records/items/properties/record/properties/shipGroupList/properties/shipGroup/properties/shippingTaxCode/properties/$attributes", 
+1348                             "type": "object", 
+1349                             "properties": {
+1350                               "$xsiType": {
+1351                                 "$id": "/properties/records/items/properties/record/properties/shipGroupList/properties/shipGroup/properties/shippingTaxCode/properties/$attributes/properties/$xsiType", 
+1352                                 "type": "object", 
+1353                                 "properties": {
+1354                                   "platformCore": {
+1355                                     "$id": "/properties/records/items/properties/record/properties/shipGroupList/properties/shipGroup/properties/shippingTaxCode/properties/$attributes/properties/$xsiType/properties/platformCore", 
+1356                                     "type": "string", 
+1357                                     "examples": [
+1358                                       "urn:core_2017_1.platform.webservices.netsuite.com"
+1359                                     ]
+1360                                   }
+1361                                 }
+1362                               }, 
+1363                               "internalId": {
+1364                                 "$id": "/properties/records/items/properties/record/properties/shipGroupList/properties/shipGroup/properties/shippingTaxCode/properties/$attributes/properties/internalId", 
+1365                                 "type": "string", 
+1366                                 "examples": [
+1367                                   "-7"
+1368                                 ]
+1369                               }
+1370                             }
+1371                           }, 
+1372                           "name": {
+1373                             "$id": "/properties/records/items/properties/record/properties/shipGroupList/properties/shipGroup/properties/shippingTaxCode/properties/name", 
+1374                             "type": "string", 
+1375                             "examples": [
+1376                               "-Not Taxable-"
+1377                             ]
+1378                           }
+1379                         }
+1380                       }, 
+1381                       "shippingRate": {
+1382                         "$id": "/properties/records/items/properties/record/properties/shipGroupList/properties/shipGroup/properties/shippingRate", 
+1383                         "type": "string", 
+1384                         "examples": [
+1385                           "0.0"
+1386                         ]
+1387                       }, 
+1388                       "shippingTaxAmt": {
+1389                         "$id": "/properties/records/items/properties/record/properties/shipGroupList/properties/shipGroup/properties/shippingTaxAmt", 
+1390                         "type": "string", 
+1391                         "examples": [
+1392                           "0.0"
+1393                         ]
+1394                       }
+1395                     }
+1396                   }
+1397                 }
+1398               }, 
+1399               "customFieldList": {
+1400                 "$id": "/properties/records/items/properties/record/properties/customFieldList", 
+1401                 "type": "object", 
+1402                 "properties": {
+1403                   "$attributes": {
+1404                     "$id": "/properties/records/items/properties/record/properties/customFieldList/properties/$attributes", 
+1405                     "type": "object", 
+1406                     "properties": {
+1407                       "$xsiType": {
+1408                         "$id": "/properties/records/items/properties/record/properties/customFieldList/properties/$attributes/properties/$xsiType", 
+1409                         "type": "object", 
+1410                         "properties": {
+1411                           "platformCore": {
+1412                             "$id": "/properties/records/items/properties/record/properties/customFieldList/properties/$attributes/properties/$xsiType/properties/platformCore", 
+1413                             "type": "string", 
+1414                             "examples": [
+1415                               "urn:core_2017_1.platform.webservices.netsuite.com"
+1416                             ]
+1417                           }
+1418                         }
+1419                       }
+1420                     }
+1421                   }, 
+1422                   "customField": {
+1423                     "$id": "/properties/records/items/properties/record/properties/customFieldList/properties/customField", 
+1424                     "type": "array", 
+1425                     "items": {
+1426                       "$id": "/properties/records/items/properties/record/properties/customFieldList/properties/customField/items", 
+1427                       "type": "object", 
+1428                       "properties": {
+1429                         "$attributes": {
+1430                           "$id": "/properties/records/items/properties/record/properties/customFieldList/properties/customField/items/properties/$attributes", 
+1431                           "type": "object", 
+1432                           "properties": {
+1433                             "$xsiType": {
+1434                               "$id": "/properties/records/items/properties/record/properties/customFieldList/properties/customField/items/properties/$attributes/properties/$xsiType", 
+1435                               "type": "object", 
+1436                               "properties": {
+1437                                 "type": {
+1438                                   "$id": "/properties/records/items/properties/record/properties/customFieldList/properties/customField/items/properties/$attributes/properties/$xsiType/properties/type", 
+1439                                   "type": "string", 
+1440                                   "examples": [
+1441                                     "DateCustomFieldRef"
+1442                                   ]
+1443                                 }
+1444                               }
+1445                             }, 
+1446                             "internalId": {
+1447                               "$id": "/properties/records/items/properties/record/properties/customFieldList/properties/customField/items/properties/$attributes/properties/internalId", 
+1448                               "type": "string", 
+1449                               "examples": [
+1450                                 "4"
+1451                               ]
+1452                             }, 
+1453                             "scriptId": {
+1454                               "$id": "/properties/records/items/properties/record/properties/customFieldList/properties/customField/items/properties/$attributes/properties/scriptId", 
+1455                               "type": "string", 
+1456                               "examples": [
+1457                                 "script_name"
+1458                               ]
+1459                             }
+1460                           }
+1461                         }, 
+1462                         "value": {
+1463                           "$id": "/properties/records/items/properties/record/properties/customFieldList/properties/customField/items/properties/value", 
+1464                           "type": "string", 
+1465                           "examples": [
+1466                             "2018-04-05T00:00:00.000-07:00"
+1467                           ]
+1468                         }
+1469                       }
+1470                     }
+1471                   }
+1472                 }
+1473               }
+1474             }
+1475           }
+1476         }
+1477       }
+1478     }
+1479   }
+1480 }

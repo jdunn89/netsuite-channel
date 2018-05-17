@@ -1,6 +1,6 @@
 'use strict'
 
-let UpdateCustomer = function (ncUtil, channelProfile, flowContext, payload, callback) {
+let InsertCustomerAddress = function (ncUtil, channelProfile, flowContext, payload, callback) {
     const _ = require('lodash');
     const soap = require('strong-soap/src/soap');
     const nc = require('../util/common');
@@ -12,8 +12,6 @@ let UpdateCustomer = function (ncUtil, channelProfile, flowContext, payload, cal
         payload: {}
     };
 
-    let cacheAddress = null;
-
     if (!callback) {
         throw new Error("A callback function was not provided");
     } else if (typeof callback !== 'function') {
@@ -22,7 +20,9 @@ let UpdateCustomer = function (ncUtil, channelProfile, flowContext, payload, cal
 
     validateFunction()
         .then(createSoapClient)
-        .then(updateCustomer)
+        .then(insertCustomerAddress)
+        .then(checkResponse)
+        .then(getUpdatedAddresses)
         .then(buildResponse)
         .catch(handleError)
         .then(() => callback(out))
@@ -102,7 +102,7 @@ let UpdateCustomer = function (ncUtil, channelProfile, flowContext, payload, cal
             client.addSoapHeader(headers);
 
             soapClient = client;
-            resolve();
+            resolve(client);
           } else {
             reject(err);
           }
@@ -110,15 +110,12 @@ let UpdateCustomer = function (ncUtil, channelProfile, flowContext, payload, cal
       });
     }
 
-    async function updateCustomer() {
+    async function insertCustomerAddress() {
       return new Promise((resolve, reject) => {
-        logInfo("Updating Customer in NetSuite...");
+        logInfo("Inserting Customer Address into NetSuite...");
 
         let recordPayload = payload.doc;
         recordPayload.record.$attributes.internalId = payload.customerRemoteID;
-
-        cacheAddress = recordPayload.record.addressbookList;
-        delete recordPayload.record.addressbookList;
 
         soapClient.update(recordPayload, function(err, result) {
           if (!err) {
@@ -130,17 +127,68 @@ let UpdateCustomer = function (ncUtil, channelProfile, flowContext, payload, cal
       });
     }
 
-    async function buildResponse(result) {
-      if (result.writeResponse) {
-        if (result.writeResponse.status.$attributes.isSuccess === "true") {
-          payload.doc.record.addressbookList = cacheAddress;
-
-          out.ncStatusCode = 200;
-          out.payload.customerBusinessReference = nc.extractBusinessReference(channelProfile.customerBusinessReferences, payload.doc);
+    async function checkResponse(result) {
+      return new Promise((resolve, reject) => {
+        if (result.writeResponse) {
+          if (result.writeResponse.status.$attributes.isSuccess === "true") {
+              resolve(result);
+          } else {
+            if (result.writeResponse.status.statusDetail) {
+              out.ncStatusCode = 400;
+              reject(result.writeResponse.status.statusDetail);
+            } else {
+              out.ncStatusCode = 400;
+              reject(result);
+            }
+          }
         } else {
-          if (result.writeResponse.status.statusDetail) {
+          out.ncStatusCode = 400;
+          reject(result);
+        }
+      });
+    }
+
+    async function getUpdatedAddresses(customerResult) {
+      return new Promise((resolve, reject) => {
+        logInfo("Retrieving Updated Addresses...");
+
+        let getPayload = {
+          "baseRef": {
+            "$attributes": {
+              "$xsiType": {
+                "xmlns": channelProfile.channelSettingsValues.namespaces.platformCore,
+                "type": "RecordRef"
+              },
+              "internalId": customerResult.writeResponse.baseRef.$attributes.internalId,
+              "type": "customer"
+            }
+          }
+        };
+
+        soapClient.clearSoapHeaders();
+        let headers = nc.generateHeaders(channelProfile);
+        soapClient.addSoapHeader(headers);
+
+        soapClient.get(getPayload, function(err, result) {
+          if (!err) {
+            resolve(result);
+          } else {
+            reject(err);
+          }
+        });
+      });
+    }
+
+    async function buildResponse(result) {
+      if (result.readResponse) {
+        if (result.readResponse.status.$attributes.isSuccess === "true") {
+          out.ncStatusCode = 201;
+          out.payload.customerAddressRemoteID = result.readResponse.record.$attributes.internalId;
+          out.payload.customerAddressBusinessReference = nc.extractBusinessReference(channelProfile.customerBusinessReferences, result.readResponse);
+        } else {
+          if (result.readResponse.status.statusDetail) {
             out.ncStatusCode = 400;
-            out.payload.error = result.writeResponse.status.statusDetail;
+            out.payload.error = result.readResponse.status.statusDetail;
           } else {
             out.ncStatusCode = 400;
             out.payload.error = result;
@@ -181,4 +229,4 @@ let UpdateCustomer = function (ncUtil, channelProfile, flowContext, payload, cal
     }
 }
 
-module.exports.UpdateCustomer = UpdateCustomer;
+module.exports.InsertCustomerAddress = InsertCustomerAddress;

@@ -1,0 +1,438 @@
+  1 {
+  2   "$id": "http://example.com/example.json", 
+  3   "type": "object", 
+  4   "definitions": {}, 
+  5   "$schema": "http://json-schema.org/draft-07/schema#", 
+  6   "properties": {
+  7     "record": {
+  8       "$id": "/properties/record", 
+  9       "type": "object", 
+ 10       "properties": {
+ 11         "$attributes": {
+ 12           "$id": "/properties/record/properties/$attributes", 
+ 13           "type": "object", 
+ 14           "properties": {
+ 15             "$xsiType": {
+ 16               "$id": "/properties/record/properties/$attributes/properties/$xsiType", 
+ 17               "type": "object", 
+ 18               "properties": {
+ 19                 "listRel": {
+ 20                   "$id": "/properties/record/properties/$attributes/properties/$xsiType/properties/listRel", 
+ 21                   "type": "string", 
+ 22                   "title": "The Listrel Schema ", 
+ 23                   "default": "", 
+ 24                   "examples": [
+ 25                     "urn:relationships_2017_1.lists.webservices.netsuite.com"
+ 26                   ]
+ 27                 }, 
+ 28                 "type": {
+ 29                   "$id": "/properties/record/properties/$attributes/properties/$xsiType/properties/type", 
+ 30                   "type": "string", 
+ 31                   "title": "The Type Schema ", 
+ 32                   "default": "", 
+ 33                   "examples": [
+ 34                     "Customer"
+ 35                   ]
+ 36                 }
+ 37               }
+ 38             }, 
+ 39             "internalId": {
+ 40               "$id": "/properties/record/properties/$attributes/properties/internalId", 
+ 41               "type": "string", 
+ 42               "title": "The Internalid Schema ", 
+ 43               "default": "", 
+ 44               "examples": [
+ 45                 "1646"
+ 46               ]
+ 47             }
+ 48           }
+ 49         }, 
+ 50         "customForm": {
+ 51           "$id": "/properties/record/properties/customForm", 
+ 52           "type": "object", 
+ 53           "properties": {
+ 54             "$attributes": {
+ 55               "$id": "/properties/record/properties/customForm/properties/$attributes", 
+ 56               "type": "object", 
+ 57               "properties": {
+ 58                 "$xsiType": {
+ 59                   "$id": "/properties/record/properties/customForm/properties/$attributes/properties/$xsiType", 
+ 60                   "type": "object", 
+ 61                   "properties": {
+ 62                     "platformCore": {
+ 63                       "$id": "/properties/record/properties/customForm/properties/$attributes/properties/$xsiType/properties/platformCore", 
+ 64                       "type": "string", 
+ 65                       "title": "The Platformcore Schema ", 
+ 66                       "default": "", 
+ 67                       "examples": [
+ 68                         "urn:core_2017_1.platform.webservices.netsuite.com"
+ 69                       ]
+ 70                     }
+ 71                   }
+ 72                 }, 
+ 73                 "internalId": {
+ 74                   "$id": "/properties/record/properties/customForm/properties/$attributes/properties/internalId", 
+ 75                   "type": "string", 
+ 76                   "title": "The Internalid Schema ", 
+ 77                   "default": "", 
+ 78                   "examples": [
+ 79                     "16"
+ 80                   ]
+ 81                 }
+ 82               }
+ 83             }, 
+ 84             "name": {
+ 85               "$id": "/properties/record/properties/customForm/properties/name", 
+ 86               "type": "string", 
+ 87               "title": "The Name Schema ", 
+ 88               "default": "", 
+ 89               "examples": [
+ 90                 "Ramsey Default Customer Form"
+ 91               ]
+ 92             }
+ 93           }
+ 94         }, 
+ 95         "entityId": {
+ 96           "$id": "/properties/record/properties/entityId", 
+ 97           "type": "string", 
+ 98           "title": "The Entityid Schema ", 
+ 99           "default": "", 
+100           "examples": [
+101             "Kyle A Rainier"
+102           ]
+103         }, 
+104         "isPerson": {
+105           "$id": "/properties/record/properties/isPerson", 
+106           "type": "string", 
+107           "title": "The Isperson Schema ", 
+108           "default": "", 
+109           "examples": [
+110             "true"
+111           ]
+112         }, 
+113         "salutation": {
+114           "$id": "/properties/record/properties/salutation", 
+115           "type": "string", 
+116           "title": "The Salutation Schema ", 
+117           "default": "", 
+118           "examples": [
+119             "Mr."
+120           ]
+121         }, 
+122         "firstName": {
+123           "$id": "/properties/record/properties/firstName", 
+124           "type": "string", 
+125           "title": "The Firstname Schema ", 
+126           "default": "", 
+127           "examples": [
+128             "Kyle"
+129           ]
+130         }, 
+131         "middleName": {
+132           "$id": "/properties/record/properties/middleName", 
+133           "type": "string", 
+134           "title": "The Middlename Schema ", 
+135           "default": "", 
+136           "examples": [
+137             "A"
+138           ]
+139         }, 
+140         "lastName": {
+141           "$id": "/properties/record/properties/lastName", 
+142           "type": "string", 
+143           "title": "The Lastname Schema ", 
+144           "default": "", 
+145           "examples": [
+146             "Rainier"
+147           ]
+148         }, 
+149         "parent": {
+150           "$id": "/properties/record/properties/parent", 
+151           "type": "object", 
+152           "properties": {
+153             "$attributes": {
+154               "$id": "/properties/record/properties/parent/properties/$attributes", 
+155               "type": "object", 
+156               "properties": {
+157                 "$xsiType": {
+158                   "$id": "/properties/record/properties/parent/properties/$attributes/properties/$xsiType", 
+159                   "type": "object", 
+160                   "properties": {
+161                     "platformCore": {
+162                       "$id": "/properties/record/properties/parent/properties/$attributes/properties/$xsiType/properties/platformCore", 
+163                       "type": "string", 
+164                       "title": "The Platformcore Schema ", 
+165                       "default": "", 
+166                       "examples": [
+167                         "urn:core_2017_1.platform.webservices.netsuite.com"
+168                       ]
+169                     }
+170                   }
+171                 }, 
+172                 "internalId": {
+173                   "$id": "/properties/record/properties/parent/properties/$attributes/properties/internalId", 
+174                   "type": "string", 
+175                   "title": "The Internalid Schema ", 
+176                   "default": "", 
+177                   "examples": [
+178                     "317"
+179                   ]
+180                 }
+181               }
+182             }, 
+183             "name": {
+184               "$id": "/properties/record/properties/parent/properties/name", 
+185               "type": "string", 
+186               "title": "The Name Schema ", 
+187               "default": "", 
+188               "examples": [
+189                 "Acme Systems Incorporated"
+190               ]
+191             }
+192           }
+193         }, 
+194         "phone": {
+195           "$id": "/properties/record/properties/phone", 
+196           "type": "string", 
+197           "title": "The Phone Schema ", 
+198           "default": "", 
+199           "examples": [
+200             "(614) 310-8874"
+201           ]
+202         }, 
+203         "email": {
+204           "$id": "/properties/record/properties/email", 
+205           "type": "string", 
+206           "title": "The Email Schema ", 
+207           "default": "", 
+208           "examples": [
+209             "karainier@gmail.com"
+210           ]
+211         }, 
+212         "defaultAddress": {
+213           "$id": "/properties/record/properties/defaultAddress", 
+214           "type": "string", 
+215           "title": "The Defaultaddress Schema ", 
+216           "default": "", 
+217           "examples": [
+218             "Mr. Kyle A Rainier 8874 Orion PKWY Suite 201 Columbus OH 43 United States"
+219           ]
+220         }, 
+221         "isInactive": {
+222           "$id": "/properties/record/properties/isInactive", 
+223           "type": "string", 
+224           "title": "The Isinactive Schema ", 
+225           "default": "", 
+226           "examples": [
+227             "false"
+228           ]
+229         }, 
+230         "homePhone": {
+231           "$id": "/properties/record/properties/homePhone", 
+232           "type": "string", 
+233           "title": "The Homephone Schema ", 
+234           "default": "", 
+235           "examples": [
+236             "(555) 555-5556"
+237           ]
+238         }, 
+239         "mobilePhone": {
+240           "$id": "/properties/record/properties/mobilePhone", 
+241           "type": "string", 
+242           "title": "The Mobilephone Schema ", 
+243           "default": "", 
+244           "examples": [
+245             "(555) 555-5555"
+246           ]
+247         }, 
+248         "altEmail": {
+249           "$id": "/properties/record/properties/altEmail", 
+250           "type": "string", 
+251           "title": "The Altemail Schema ", 
+252           "default": "", 
+253           "examples": [
+254             "karainier@nchannel.com"
+255           ]
+256         }, 
+257         "addressbookList": {
+258           "$id": "/properties/record/properties/addressbookList", 
+259           "type": "object", 
+260           "properties": {
+261             "addressbook": {
+262               "$id": "/properties/record/properties/addressbookList/properties/addressbook", 
+263               "type": "array", 
+264               "items": {
+265                 "$id": "/properties/record/properties/addressbookList/properties/addressbook/items", 
+266                 "type": "object", 
+267                 "properties": {
+268                   "defaultShipping": {
+269                     "$id": "/properties/record/properties/addressbookList/properties/addressbook/items/properties/defaultShipping", 
+270                     "type": "string", 
+271                     "title": "The Defaultshipping Schema ", 
+272                     "default": "", 
+273                     "examples": [
+274                       "true"
+275                     ]
+276                   }, 
+277                   "defaultBilling": {
+278                     "$id": "/properties/record/properties/addressbookList/properties/addressbook/items/properties/defaultBilling", 
+279                     "type": "string", 
+280                     "title": "The Defaultbilling Schema ", 
+281                     "default": "", 
+282                     "examples": [
+283                       "true"
+284                     ]
+285                   }, 
+286                   "isResidential": {
+287                     "$id": "/properties/record/properties/addressbookList/properties/addressbook/items/properties/isResidential", 
+288                     "type": "string", 
+289                     "title": "The Isresidential Schema ", 
+290                     "default": "", 
+291                     "examples": [
+292                       "false"
+293                     ]
+294                   }, 
+295                   "label": {
+296                     "$id": "/properties/record/properties/addressbookList/properties/addressbook/items/properties/label", 
+297                     "type": "string", 
+298                     "title": "The Label Schema ", 
+299                     "default": "", 
+300                     "examples": [
+301                       "nChannel Corp"
+302                     ]
+303                   }, 
+304                   "addressbookAddress": {
+305                     "$id": "/properties/record/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress", 
+306                     "type": "object", 
+307                     "properties": {
+308                       "$attributes": {
+309                         "$id": "/properties/record/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/$attributes", 
+310                         "type": "object", 
+311                         "properties": {
+312                           "$xsiType": {
+313                             "$id": "/properties/record/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/$attributes/properties/$xsiType", 
+314                             "type": "object", 
+315                             "properties": {
+316                               "platformCommon": {
+317                                 "$id": "/properties/record/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/$attributes/properties/$xsiType/properties/platformCommon", 
+318                                 "type": "string", 
+319                                 "title": "The Platformcommon Schema ", 
+320                                 "default": "", 
+321                                 "examples": [
+322                                   "urn:common_2017_1.platform.webservices.netsuite.com"
+323                                 ]
+324                               }
+325                             }
+326                           }
+327                         }
+328                       }, 
+329                       "country": {
+330                         "$id": "/properties/record/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/country", 
+331                         "type": "string", 
+332                         "title": "The Country Schema ", 
+333                         "default": "", 
+334                         "examples": [
+335                           "_unitedStates"
+336                         ]
+337                       }, 
+338                       "addressee": {
+339                         "$id": "/properties/record/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/addressee", 
+340                         "type": "string", 
+341                         "title": "The Addressee Schema ", 
+342                         "default": "", 
+343                         "examples": [
+344                           "Mr. Kyle A Rainier"
+345                         ]
+346                       }, 
+347                       "addrPhone": {
+348                         "$id": "/properties/record/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/addrPhone", 
+349                         "type": "string", 
+350                         "title": "The Addrphone Schema ", 
+351                         "default": "", 
+352                         "examples": [
+353                           "(614) 561-6596"
+354                         ]
+355                       }, 
+356                       "addr1": {
+357                         "$id": "/properties/record/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/addr1", 
+358                         "type": "string", 
+359                         "title": "The Addr1 Schema ", 
+360                         "default": "", 
+361                         "examples": [
+362                           "8874 Orion PKWY"
+363                         ]
+364                       }, 
+365                       "addr2": {
+366                         "$id": "/properties/record/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/addr2", 
+367                         "type": "string", 
+368                         "title": "The Addr2 Schema ", 
+369                         "default": "", 
+370                         "examples": [
+371                           "Suite 201"
+372                         ]
+373                       }, 
+374                       "city": {
+375                         "$id": "/properties/record/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/city", 
+376                         "type": "string", 
+377                         "title": "The City Schema ", 
+378                         "default": "", 
+379                         "examples": [
+380                           "Columbus"
+381                         ]
+382                       }, 
+383                       "state": {
+384                         "$id": "/properties/record/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/state", 
+385                         "type": "string", 
+386                         "title": "The State Schema ", 
+387                         "default": "", 
+388                         "examples": [
+389                           "OH"
+390                         ]
+391                       }, 
+392                       "zip": {
+393                         "$id": "/properties/record/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/zip", 
+394                         "type": "string", 
+395                         "title": "The Zip Schema ", 
+396                         "default": "", 
+397                         "examples": [
+398                           "43"
+399                         ]
+400                       }, 
+401                       "addrText": {
+402                         "$id": "/properties/record/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/addrText", 
+403                         "type": "string", 
+404                         "title": "The Addrtext Schema ", 
+405                         "default": "", 
+406                         "examples": [
+407                           "Mr. Kyle A Rainier 8874 Orion PKWY Suite 201 Columbus OH 43112 United States"
+408                         ]
+409                       }, 
+410                       "override": {
+411                         "$id": "/properties/record/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/override", 
+412                         "type": "string", 
+413                         "title": "The Override Schema ", 
+414                         "default": "", 
+415                         "examples": [
+416                           "false"
+417                         ]
+418                       }
+419                     }
+420                   }, 
+421                   "internalId": {
+422                     "$id": "/properties/record/properties/addressbookList/properties/addressbook/items/properties/internalId", 
+423                     "type": "string", 
+424                     "title": "The Internalid Schema ", 
+425                     "default": "", 
+426                     "examples": [
+427                       "244972"
+428                     ]
+429                   }
+430                 }
+431               }
+432             }
+433           }
+434         }
+435       }
+436     }
+437   }
+438 }

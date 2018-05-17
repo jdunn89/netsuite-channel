@@ -1,137 +1,185 @@
-let InsertCustomer = function (ncUtil,
-                                 channelProfile,
-                                 flowContext,
-                                 payload,
-                                 callback) {
+'use strict'
 
-  log("Building response object...", ncUtil);
-  let out = {
-    ncStatusCode: null,
-    response: {},
-    payload: {}
-  };
+let InsertCustomer = function (ncUtil, channelProfile, flowContext, payload, callback) {
+    const _ = require('lodash');
+    const soap = require('strong-soap/src/soap');
+    const nc = require('../util/common');
 
-  let invalid = false;
-  let invalidMsg = "";
+    let soapClient = null;
 
-  //If ncUtil does not contain a request object, the request can't be sent
-  if (!ncUtil) {
-    invalid = true;
-    invalidMsg = "ncUtil was not provided"
-  }
-
-  //If channelProfile does not contain channelSettingsValues, channelAuthValues or customerBusinessReferences, the request can't be sent
-  if (!channelProfile) {
-    invalid = true;
-    invalidMsg = "channelProfile was not provided"
-  } else if (!channelProfile.channelSettingsValues) {
-    invalid = true;
-    invalidMsg = "channelProfile.channelSettingsValues was not provided"
-  } else if (!channelProfile.channelSettingsValues.protocol) {
-    invalid = true;
-    invalidMsg = "channelProfile.channelSettingsValues.protocol was not provided"
-  } else if (!channelProfile.channelAuthValues) {
-    invalid = true;
-    invalidMsg = "channelProfile.channelAuthValues was not provided"
-  } else if (!channelProfile.customerBusinessReferences) {
-    invalid = true;
-    invalidMsg = "channelProfile.customerBusinessReferences was not provided"
-  } else if (!Array.isArray(channelProfile.customerBusinessReferences)) {
-    invalid = true;
-    invalidMsg = "channelProfile.customerBusinessReferences is not an array"
-  } else if (channelProfile.customerBusinessReferences.length === 0) {
-    invalid = true;
-    invalidMsg = "channelProfile.customerBusinessReferences is empty"
-  }
-
-  //If a sales order document was not passed in, the request is invalid
-  if (!payload) {
-    invalid = true;
-    invalidMsg = "payload was not provided"
-  } else if (!payload.doc) {
-    invalid = true;
-    invalidMsg = "payload.doc was not provided";
-  }
-
-  //If callback is not a function
-  if (!callback) {
-    throw new Error("A callback function was not provided");
-  } else if (typeof callback !== 'function') {
-    throw new TypeError("callback is not a function")
-  }
-
-  if (!invalid) {
-    // Using request for example - A different npm module may be needed depending on the API communication is being made to
-    // The `soap` module can be used in place of `request` but the logic and data being sent will be different
-    let request = require('request');
-
-    let url = "https://localhost/";
-
-    // Add any headers for the request
-    let headers = {
-
+    let out = {
+        ncStatusCode: null,
+        payload: {}
     };
 
-    // Log URL
-    log("Using URL [" + url + "]", ncUtil);
+    let cacheAddress = null;
 
-    // Set options
-    let options = {
-      url: url,
-      method: "POST",
-      headers: headers,
-      body: payload.doc,
-      json: true
-    };
+    if (!callback) {
+        throw new Error("A callback function was not provided");
+    } else if (typeof callback !== 'function') {
+        throw new TypeError("callback is not a function")
+    }
 
-    try {
-      // Pass in our URL and headers
-      request(options, function (error, response, body) {
-        if (!error) {
-          // If no errors, process results here
-          if (response.statusCode === 201) {
-            out.ncStatusCode = 201;
-          } else if (response.statusCode == 429) {
-            out.ncStatusCode = 429;
-            out.payload.error = body;
-          } else if (response.statusCode == 500) {
-            out.ncStatusCode = 500;
-            out.payload.error = body;
+    validateFunction()
+        .then(createSoapClient)
+        .then(insertCustomer)
+        .then(buildResponse)
+        .catch(handleError)
+        .then(() => callback(out))
+        .catch(error => {
+            logError(`The callback function threw an exception: ${error}`);
+            setTimeout(() => {
+                throw error;
+            });
+        });
+
+    function logInfo(msg) {
+        nc.log(msg, "info");
+    }
+
+    function logWarn(msg) {
+        nc.log(msg, "warn");
+    }
+
+    function logError(msg) {
+        nc.log(msg, "error");
+    }
+
+    async function validateFunction() {
+        let messages = [];
+
+        if (!ncUtil)
+            messages.push("ncUtil was not provided");
+        else if (!channelProfile)
+            messages.push("channelProfile was not provided");
+        else if (!channelProfile.channelSettingsValues)
+            messages.push("channelProfile.channelSettingsValues was not provided");
+        else if (!channelProfile.channelSettingsValues.namespaces)
+            messages.push("channelProfile.channelSettingsValues.protocol was not provided");
+        else if (!channelProfile.channelSettingsValues.wsdl_uri)
+            messages.push("channelProfile.channelSettingsValues.api_uri was not provided");
+        else if (!channelProfile.channelAuthValues)
+            messages.push("channelProfile.channelAuthValues was not provided");
+        else if (!channelProfile.channelAuthValues.account)
+            messages.push("channelProfile.channelAuthValues.account was not provided");
+        else if (!channelProfile.channelAuthValues.consumerKey)
+            messages.push("channelProfile.channelAuthValues.consumerKey was not provided");
+        else if (!channelProfile.channelAuthValues.consumerSecret)
+            messages.push("channelProfile.channelAuthValues.consumerSecret was not provided");
+        else if (!channelProfile.channelAuthValues.tokenID)
+            messages.push("channelProfile.channelAuthValues.tokenID was not provided");
+        else if (!channelProfile.channelAuthValues.tokenSecret)
+            messages.push("channelProfile.channelAuthValues.tokenSecret was not provided");
+        else if (!channelProfile.customerBusinessReferences)
+            messages.push("channelProfile.customerBusinessReferences was not provided");
+        else if (!nc.isArray(channelProfile.customerBusinessReferences))
+            messages.push("channelProfile.customerBusinessReferences is not an array");
+        else if (!nc.isNonEmptyArray(channelProfile.customerBusinessReferences))
+            messages.push("channelProfile.customerBusinessReferences is empty");
+        else if (!payload)
+            messages.push("payload was not provided");
+        else if (!payload.doc)
+            messages.push("payload.doc was not provided");
+
+        if (messages.length > 0) {
+            messages.forEach(msg => logError(msg));
+            out.ncStatusCode = 400;
+            throw new Error(`Invalid request [${messages.join(", ")}]`);
+        }
+        logInfo("Function is valid.");
+    }
+
+    async function createSoapClient() {
+      return new Promise((resolve, reject) => {
+        logInfo("Creating NetSuite Client...");
+        soap.createClient(channelProfile.channelSettingsValues.wsdl_uri, {}, function(err, client) {
+          if (!err) {
+            // Add namespaces to the wsdl
+            _.assign(client.wsdl.definitions.xmlns, channelProfile.channelSettingsValues.namespaces);
+            client.wsdl.xmlnsInEnvelope = client.wsdl._xmlnsMap();
+
+            let headers = nc.generateHeaders(channelProfile);
+            client.addSoapHeader(headers);
+
+            soapClient = client;
+            resolve();
+          } else {
+            reject(err);
+          }
+        });
+      });
+    }
+
+    async function insertCustomer() {
+      return new Promise((resolve, reject) => {
+        logInfo("Inserting Customer into NetSuite...");
+
+        let recordPayload = payload.doc;
+
+        cacheAddress = recordPayload.record.addressbookList;
+        delete recordPayload.record.addressbookList;
+
+        soapClient.add(recordPayload, function(err, result) {
+          if (!err) {
+            resolve(result);
+          } else {
+            reject(err);
+          }
+        });
+      });
+    }
+
+    async function buildResponse(result) {
+      if (result.writeResponse) {
+        if (result.writeResponse.status.$attributes.isSuccess === "true") {
+
+          payload.doc.record.addressbookList = cacheAddress;
+
+          out.ncStatusCode = 201;
+          out.payload.customerRemoteID = result.writeResponse.baseRef.$attributes.internalId;
+          out.payload.customerBusinessReference = nc.extractBusinessReference(channelProfile.customerBusinessReferences, payload.doc);
+        } else {
+          if (result.writeResponse.status.statusDetail) {
+            out.ncStatusCode = 400;
+            out.payload.error = result.writeResponse.status.statusDetail;
           } else {
             out.ncStatusCode = 400;
-            out.payload.error = body;
+            out.payload.error = result;
           }
-          callback(out);
-        } else {
-          // If an error occurs, log the error here
-          logError("Do InsertCustomer Callback error - " + error, ncUtil);
-          out.ncStatusCode = 500;
-          out.payload.error = {err: error};
-          callback(out);
         }
-      });
-    } catch (err) {
-      // Exception Handling
-      logError("Exception occurred in InsertSalesOrder - " + err, ncUtil);
-      out.ncStatusCode = 500;
-      out.payload.error = {err: err, stack: err.stackTrace};
-      callback(out);
+      } else {
+        out.ncStatusCode = 400;
+        out.payload.error = result;
+      }
     }
-  } else {
-    // Invalid Request
-    log("Callback with an invalid request - " + invalidMsg, ncUtil);
-    out.ncStatusCode = 400;
-    out.payload.error = invalidMsg;
-    callback(out);
-  }
-};
 
-function logError(msg, ncUtil) {
-  console.log("[error] " + msg);
-}
+    async function handleError(error) {
+        if (error.response) {
+          let err = String(error.response.body);
 
-function log(msg, ncUtil) {
-  console.log("[info] " + msg);
+          if (err.indexOf("soapenv:Fault") !== -1) {
+            if (err.indexOf("platformFaults:exceededConcurrentRequestLimitFault") !== -1) {
+              logError(`Concurrency Request Limit Exceeded: ${err}`);
+              out.ncStatusCode = 429;
+              out.payload.error = error;
+            } else if (err.indexOf("platformFaults:exceededRequestLimitFault") !== -1) {
+              logError(`Request Limit Exceeded: ${err}`);
+              out.ncStatusCode = 429;
+              out.payload.error = error;
+            } else {
+              logError(`SOAP Fault Found: ${err}`);
+              out.ncStatusCode = 400;
+              out.payload.error = error;
+            }
+          } else {
+            out.ncStatusCode = 500;
+            out.payload.error = error;
+          }
+        } else {
+          out.payload.error = error;
+          out.ncStatusCode = out.ncStatusCode || 500;
+        }
+    }
 }
 
 module.exports.InsertCustomer = InsertCustomer;

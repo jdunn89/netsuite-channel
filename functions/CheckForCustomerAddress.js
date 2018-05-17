@@ -1,8 +1,9 @@
 'use strict'
 
-let UpdateCustomer = function (ncUtil, channelProfile, flowContext, payload, callback) {
+let CheckForCustomerAddress = function (ncUtil, channelProfile, flowContext, payload, callback) {
     const _ = require('lodash');
     const soap = require('strong-soap/src/soap');
+    const jsonata = require('jsonata');
     const nc = require('../util/common');
 
     let soapClient = null;
@@ -12,8 +13,6 @@ let UpdateCustomer = function (ncUtil, channelProfile, flowContext, payload, cal
         payload: {}
     };
 
-    let cacheAddress = null;
-
     if (!callback) {
         throw new Error("A callback function was not provided");
     } else if (typeof callback !== 'function') {
@@ -22,8 +21,9 @@ let UpdateCustomer = function (ncUtil, channelProfile, flowContext, payload, cal
 
     validateFunction()
         .then(createSoapClient)
-        .then(updateCustomer)
-        .then(buildResponse)
+        .then(searchForCustomerAddress)
+        .then(checkResponse)
+        .then(compareAddresses)
         .catch(handleError)
         .then(() => callback(out))
         .catch(error => {
@@ -110,17 +110,41 @@ let UpdateCustomer = function (ncUtil, channelProfile, flowContext, payload, cal
       });
     }
 
-    async function updateCustomer() {
+    async function searchForCustomerAddress() {
       return new Promise((resolve, reject) => {
-        logInfo("Updating Customer in NetSuite...");
+        logInfo("Searching NetSuite for existing customer...");
 
-        let recordPayload = payload.doc;
-        recordPayload.record.$attributes.internalId = payload.customerRemoteID;
+        let searchPayload = {
+          "searchRecord": {
+            "$attributes": {
+              "$xsiType": {
+                "xmlns": channelProfile.channelSettingsValues.namespaces.listRel,
+                "type": "CustomerSearch"
+              }
+            },
+            "basic":{}
+          }
+        };
 
-        cacheAddress = recordPayload.record.addressbookList;
-        delete recordPayload.record.addressbookList;
+        channelProfile.customerBusinessReferences.forEach(function (businessReference) {
+            let expression = jsonata(businessReference);
+            let value = expression.evaluate(payload.doc);
+            let netsuiteValue = businessReference.split('.').pop();
 
-        soapClient.update(recordPayload, function(err, result) {
+            if (!value) {
+              logWarn(`Customer business reference '${businessReference}' is missing or has no value.`);
+            }
+            // Note that certain fields can only use certain operators
+            // An operator of 'is' on the 'email' will work but will not on others
+            searchPayload["searchRecord"]["basic"][netsuiteValue] = {
+              "$attributes": {
+                "operator": "is"
+              },
+              "searchValue": value
+            }
+        });
+
+        soapClient.search(searchPayload, function(err, result) {
           if (!err) {
             resolve(result);
           } else {
@@ -130,25 +154,80 @@ let UpdateCustomer = function (ncUtil, channelProfile, flowContext, payload, cal
       });
     }
 
-    async function buildResponse(result) {
-      if (result.writeResponse) {
-        if (result.writeResponse.status.$attributes.isSuccess === "true") {
-          payload.doc.record.addressbookList = cacheAddress;
-
-          out.ncStatusCode = 200;
-          out.payload.customerBusinessReference = nc.extractBusinessReference(channelProfile.customerBusinessReferences, payload.doc);
-        } else {
-          if (result.writeResponse.status.statusDetail) {
-            out.ncStatusCode = 400;
-            out.payload.error = result.writeResponse.status.statusDetail;
+    async function checkResponse(result) {
+      return new Promise((resolve, reject) => {
+        if (result.searchResult) {
+          if (result.searchResult.status.$attributes.isSuccess === "true") {
+            // recordList is only returned if there are results in the query
+            if (result.searchResult.recordList) {
+              if (!nc.isArray(result.searchResult.recordList.record)) {
+                resolve(result.searchResult.recordList);
+              } else {
+                out.ncStatusCode = 400;
+                reject("Multiple Customers Found");
+              }
+            } else {
+              out.ncStatusCode = 400;
+              reject("No Customer Found");
+            }
           } else {
-            out.ncStatusCode = 400;
-            out.payload.error = result;
+            if (result.searchResult.status.statusDetail) {
+              out.ncStatusCode = 400;
+              reject(result.searchResult.status.statusDetail);
+            } else {
+              out.ncStatusCode = 400;
+              reject(result);
+            }
           }
+        } else {
+          out.ncStatusCode = 400;
+          reject(result);
         }
+      });
+    }
+
+    async function compareAddresses(result) {
+      logInfo("Comparing Addresses...");
+
+      let resultCompare = null;
+      let addressBook = [];
+
+      if (!result.record.addressbookList.addressbook) {
+        logInfo("204 - No customer addresses found");
+        out.ncStatusCode = 204;
       } else {
-        out.ncStatusCode = 400;
-        out.payload.error = result;
+        if (nc.isObject(result.record.addressbookList.addressbook)) {
+          addressBook.push(result.record.addressbookList.addressbook);
+          result.record.addressbookList.addressbook = addressBook;
+        }
+
+        let matchingAddresses = [];
+        payload.doc.record.addressbookList.addressbook.forEach(function (addressbook) {
+            let payloadCopy = JSON.parse(JSON.stringify(payload.doc));
+            payloadCopy.record.addressbookList.addressbook = addressbook;
+            let baseReference = nc.extractBusinessReference(channelProfile.customerAddressBusinessReferences, payloadCopy);
+            result.record.addressbookList.addressbook.forEach(function (address) {
+                let resultCopy = JSON.parse(JSON.stringify(result));
+                resultCopy.record.addressbookList.addressbook = address;
+                let addressReference = nc.extractBusinessReference(channelProfile.customerAddressBusinessReferences, resultCopy);
+                if (addressReference === baseReference) {
+                    matchingAddresses.push(address);
+                }
+            });
+        });
+
+        if (matchingAddresses.length === 1) {
+            logInfo("Found a matching address.");
+            out.ncStatusCode = 200;
+            out.payload.customerAddressRemoteID = matchingAddresses[0].internalId;
+            out.payload.customerAddressBusinessReference = nc.extractBusinessReference(channelProfile.customerAddressBusinessReferences, matchingAddresses[0]);
+        } else if (matchingAddresses.length === 0) {
+            logInfo("No matching address found on customer.");
+            out.ncStatusCode = 204;
+        } else {
+            out.payload.error = `Multiple Addresses Found: ${JSON.stringify(matchingAddresses, null, 2)}`;
+            out.ncStatusCode = 409;
+        }
       }
     }
 
@@ -181,4 +260,4 @@ let UpdateCustomer = function (ncUtil, channelProfile, flowContext, payload, cal
     }
 }
 
-module.exports.UpdateCustomer = UpdateCustomer;
+module.exports.CheckForCustomerAddress = CheckForCustomerAddress;

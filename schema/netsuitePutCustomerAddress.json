@@ -1,0 +1,186 @@
+  1 {
+  2   "$id": "http://example.com/example.json", 
+  3   "type": "object", 
+  4   "definitions": {}, 
+  5   "$schema": "http://json-schema.org/draft-07/schema#", 
+  6   "properties": {
+  7     "addressbookList": {
+  8       "$id": "/properties/addressbookList", 
+  9       "type": "object", 
+ 10       "properties": {
+ 11         "addressbook": {
+ 12           "$id": "/properties/addressbookList/properties/addressbook", 
+ 13           "type": "array", 
+ 14           "items": {
+ 15             "$id": "/properties/addressbookList/properties/addressbook/items", 
+ 16             "type": "object", 
+ 17             "properties": {
+ 18               "defaultShipping": {
+ 19                 "$id": "/properties/addressbookList/properties/addressbook/items/properties/defaultShipping", 
+ 20                 "type": "string", 
+ 21                 "title": "The Defaultshipping Schema ", 
+ 22                 "default": "", 
+ 23                 "examples": [
+ 24                   "true"
+ 25                 ]
+ 26               }, 
+ 27               "defaultBilling": {
+ 28                 "$id": "/properties/addressbookList/properties/addressbook/items/properties/defaultBilling", 
+ 29                 "type": "string", 
+ 30                 "title": "The Defaultbilling Schema ", 
+ 31                 "default": "", 
+ 32                 "examples": [
+ 33                   "true"
+ 34                 ]
+ 35               }, 
+ 36               "isResidential": {
+ 37                 "$id": "/properties/addressbookList/properties/addressbook/items/properties/isResidential", 
+ 38                 "type": "string", 
+ 39                 "title": "The Isresidential Schema ", 
+ 40                 "default": "", 
+ 41                 "examples": [
+ 42                   "false"
+ 43                 ]
+ 44               }, 
+ 45               "label": {
+ 46                 "$id": "/properties/addressbookList/properties/addressbook/items/properties/label", 
+ 47                 "type": "string", 
+ 48                 "title": "The Label Schema ", 
+ 49                 "default": "", 
+ 50                 "examples": [
+ 51                   "nChannel Corp"
+ 52                 ]
+ 53               }, 
+ 54               "addressbookAddress": {
+ 55                 "$id": "/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress", 
+ 56                 "type": "object", 
+ 57                 "properties": {
+ 58                   "$attributes": {
+ 59                     "$id": "/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/$attributes", 
+ 60                     "type": "object", 
+ 61                     "properties": {
+ 62                       "$xsiType": {
+ 63                         "$id": "/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/$attributes/properties/$xsiType", 
+ 64                         "type": "object", 
+ 65                         "properties": {
+ 66                           "platformCommon": {
+ 67                             "$id": "/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/$attributes/properties/$xsiType/properties/platformCommon", 
+ 68                             "type": "string", 
+ 69                             "title": "The Platformcommon Schema ", 
+ 70                             "default": "", 
+ 71                             "examples": [
+ 72                               "urn:common_2017_1.platform.webservices.netsuite.com"
+ 73                             ]
+ 74                           }
+ 75                         }
+ 76                       }
+ 77                     }
+ 78                   }, 
+ 79                   "country": {
+ 80                     "$id": "/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/country", 
+ 81                     "type": "string", 
+ 82                     "title": "The Country Schema ", 
+ 83                     "default": "", 
+ 84                     "examples": [
+ 85                       "_unitedStates"
+ 86                     ]
+ 87                   }, 
+ 88                   "addressee": {
+ 89                     "$id": "/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/addressee", 
+ 90                     "type": "string", 
+ 91                     "title": "The Addressee Schema ", 
+ 92                     "default": "", 
+ 93                     "examples": [
+ 94                       "Mr. Kyle A Rainier"
+ 95                     ]
+ 96                   }, 
+ 97                   "addrPhone": {
+ 98                     "$id": "/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/addrPhone", 
+ 99                     "type": "string", 
+100                     "title": "The Addrphone Schema ", 
+101                     "default": "", 
+102                     "examples": [
+103                       "(614) 561-6596"
+104                     ]
+105                   }, 
+106                   "addr1": {
+107                     "$id": "/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/addr1", 
+108                     "type": "string", 
+109                     "title": "The Addr1 Schema ", 
+110                     "default": "", 
+111                     "examples": [
+112                       "8874 Orion PKWY"
+113                     ]
+114                   }, 
+115                   "addr2": {
+116                     "$id": "/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/addr2", 
+117                     "type": "string", 
+118                     "title": "The Addr2 Schema ", 
+119                     "default": "", 
+120                     "examples": [
+121                       "Suite 201"
+122                     ]
+123                   }, 
+124                   "city": {
+125                     "$id": "/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/city", 
+126                     "type": "string", 
+127                     "title": "The City Schema ", 
+128                     "default": "", 
+129                     "examples": [
+130                       "Columbus"
+131                     ]
+132                   }, 
+133                   "state": {
+134                     "$id": "/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/state", 
+135                     "type": "string", 
+136                     "title": "The State Schema ", 
+137                     "default": "", 
+138                     "examples": [
+139                       "OH"
+140                     ]
+141                   }, 
+142                   "zip": {
+143                     "$id": "/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/zip", 
+144                     "type": "string", 
+145                     "title": "The Zip Schema ", 
+146                     "default": "", 
+147                     "examples": [
+148                       "43"
+149                     ]
+150                   }, 
+151                   "addrText": {
+152                     "$id": "/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/addrText", 
+153                     "type": "string", 
+154                     "title": "The Addrtext Schema ", 
+155                     "default": "", 
+156                     "examples": [
+157                       "Mr. Kyle A Rainier 8874 Orion PKWY Suite 201 Columbus OH 43112 United States"
+158                     ]
+159                   }, 
+160                   "override": {
+161                     "$id": "/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/override", 
+162                     "type": "string", 
+163                     "title": "The Override Schema ", 
+164                     "default": "", 
+165                     "examples": [
+166                       "false"
+167                     ]
+168                   }
+169                 }
+170               }, 
+171               "internalId": {
+172                 "$id": "/properties/addressbookList/properties/addressbook/items/properties/internalId", 
+173                 "type": "string", 
+174                 "title": "The Internalid Schema ", 
+175                 "default": "", 
+176                 "examples": [
+177                   "244972"
+178                 ]
+179               }
+180             }
+181           }
+182         }
+183       }
+184     }
+185   }
+186 }
