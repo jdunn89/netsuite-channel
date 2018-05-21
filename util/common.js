@@ -8,9 +8,10 @@ function log(msg, level = "info") {
     console.log(`${prefix} | ${msg}`);
 };
 
-function generateHeaders(channelProfile) {
+function generateHeaders(channelProfile, size) {
   let timestamp = Math.floor(Date.now() / 1000);
   let nonce = computeNonce(10);
+  let pageSize = 20;
 
   // Prepare strings for generating the signature
   let base = channelProfile.channelAuthValues.account + "&" +
@@ -24,10 +25,21 @@ function generateHeaders(channelProfile) {
   // Generate Signature
   let signature = hmacsha1(key, base);
 
+  if (size != null) {
+    if (isNumber(size) && (size >= 5 && size <= 1000)) {
+      pageSize = size;
+    } else {
+      log("Page size was not provided, contains an invalid value, or is outside the allowed range (5-1000). Defaulting to page size of 20.");
+      if (size != null) {
+        log(`Provided Value: ${size}`);
+      }
+    }
+  }
+
   let headers = {
     "searchPreferences": {
       "bodyFieldsOnly": false,
-      "pageSize": 10
+      "pageSize": pageSize
     },
     "tokenPassport": {
       "account": channelProfile.channelAuthValues.account,
@@ -100,7 +112,7 @@ function isNonEmptyArray(arr) {
 }
 
 function isNumber(num) {
-    return typeof num === "number" && !isNaN(num);
+    return parseInt(num, 10) && !isNaN(num);
 }
 
 function isInteger(int) {

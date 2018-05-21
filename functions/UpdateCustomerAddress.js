@@ -113,8 +113,18 @@ let UpdateCustomerAddress = function (ncUtil, channelProfile, flowContext, paylo
       return new Promise((resolve, reject) => {
         logInfo("Searching NetSuite for existing customer...");
 
-        let recordPayload = payload.doc;
-        recordPayload.record.$attributes.internalId = payload.customerAddressRemoteID;
+        let recordPayload = {
+          "record": {
+            "$attributes": {
+              "internalId": payload.customerRemoteID,
+              "$xsiType": {
+                "xmlns": channelProfile.channelSettingsValues.namespaces.listRel,
+                "type": "Customer"
+              }
+            },
+            "$value": payload.doc
+          }
+        }
 
         soapClient.update(recordPayload, function(err, result) {
           if (!err) {
@@ -181,9 +191,15 @@ let UpdateCustomerAddress = function (ncUtil, channelProfile, flowContext, paylo
     async function buildResponse(result) {
       if (result.readResponse) {
         if (result.readResponse.status.$attributes.isSuccess === "true") {
-          out.ncStatusCode = 201;
-          out.payload.customerAddressRemoteID = result.readResponse.record.$attributes.internalId;
-          out.payload.customerAddressBusinessReference = nc.extractBusinessReference(channelProfile.customerBusinessReferences, result.readResponse);
+          for (let i = 0; i < result.readResponse.record.addressbookList.addressbook.length; i++) {
+            if (result.readResponse.record.addressbookList.addressbook[i].internalId == payload.customerAddressRemoteID) {
+              result.readResponse.record.addressbookList.addressbook = result.readResponse.record.addressbookList.addressbook[i];
+              break;
+            }
+          };
+
+          out.ncStatusCode = 200;
+          out.payload.customerAddressBusinessReference = nc.extractBusinessReference(channelProfile.customerAddressBusinessReferences, result.readResponse);
         } else {
           if (result.readResponse.status.statusDetail) {
             out.ncStatusCode = 400;

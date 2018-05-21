@@ -202,9 +202,10 @@ let CheckForCustomerAddress = function (ncUtil, channelProfile, flowContext, pay
         }
 
         let matchingAddresses = [];
-        payload.doc.record.addressbookList.addressbook.forEach(function (addressbook) {
+        // Commenting out until multiple address IDs are supported
+        //payload.doc.record.addressbookList.addressbook.forEach(function (addressbook) {
             let payloadCopy = JSON.parse(JSON.stringify(payload.doc));
-            payloadCopy.record.addressbookList.addressbook = addressbook;
+            payloadCopy.record.addressbookList.addressbook = payload.doc.record.addressbookList.addressbook[0];
             let baseReference = nc.extractBusinessReference(channelProfile.customerAddressBusinessReferences, payloadCopy);
             result.record.addressbookList.addressbook.forEach(function (address) {
                 let resultCopy = JSON.parse(JSON.stringify(result));
@@ -214,13 +215,14 @@ let CheckForCustomerAddress = function (ncUtil, channelProfile, flowContext, pay
                     matchingAddresses.push(address);
                 }
             });
-        });
+        //});
 
         if (matchingAddresses.length === 1) {
             logInfo("Found a matching address.");
+            result.record.addressbookList.addressbook = matchingAddresses[0];
             out.ncStatusCode = 200;
             out.payload.customerAddressRemoteID = matchingAddresses[0].internalId;
-            out.payload.customerAddressBusinessReference = nc.extractBusinessReference(channelProfile.customerAddressBusinessReferences, matchingAddresses[0]);
+            out.payload.customerAddressBusinessReference = nc.extractBusinessReference(channelProfile.customerAddressBusinessReferences, result);
         } else if (matchingAddresses.length === 0) {
             logInfo("No matching address found on customer.");
             out.ncStatusCode = 204;

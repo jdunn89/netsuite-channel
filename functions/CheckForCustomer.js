@@ -145,8 +145,6 @@ let CheckForCustomer = function (ncUtil, channelProfile, flowContext, payload, c
         });
 
         soapClient.search(searchPayload, function(err, result) {
-          console.log(err);
-          console.log(result);
           if (!err) {
             resolve(result);
           } else {
