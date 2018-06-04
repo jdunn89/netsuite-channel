@@ -139,6 +139,7 @@ let InsertCustomerAddress = function (ncUtil, channelProfile, flowContext, paylo
 
     async function checkResponse(result) {
       return new Promise((resolve, reject) => {
+        logInfo("Checking for Successful Insert...");
         if (result.writeResponse) {
           if (result.writeResponse.status.$attributes.isSuccess === "true") {
               resolve(result);
@@ -190,6 +191,7 @@ let InsertCustomerAddress = function (ncUtil, channelProfile, flowContext, paylo
     }
 
     async function buildResponse(result) {
+      logInfo("Processing Response...");
       if (result.readResponse) {
         if (result.readResponse.status.$attributes.isSuccess === "true") {
           result.readResponse.record.addressbookList.addressbook = result.readResponse.record.addressbookList.addressbook[0];

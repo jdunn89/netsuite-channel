@@ -66,14 +66,14 @@
       },
       "documentDef" : {
         "schema": {},
-        "referenceLocation": {"salesOrderBusinessReferences": ["salesOrder.otherRefNum"]},
-        "remoteID": "salesOrder.$attributes.internalId",
-        "businessReferences": ["salesOrder.otherRefNum"],
+        "referenceLocation": {"salesOrderBusinessReferences": ["record.otherRefNum"]},
+        "remoteID": "record.$attributes.internalId",
+        "businessReferences": ["record.otherRefNum"],
         "children": [
           {
             "name": "SalesOrderItem",
-            "location": "salesOrder.itemList.item",
-            "remoteID": "salesOrder.itemList.item.$attributes.internalId",
+            "location": "record.itemList.item",
+            "remoteID": "record.itemList.item.$attributes.internalId",
             "businessReferences": ["name"]
           }
         ]
@@ -88,17 +88,64 @@
         "ruleSchema": {},
         "defaultRuleValues": {}
       },
-      "configDef": {
-        "configModel": {},
-        "configView": [],
-        "configValues": {}
+      "configDef" : {
+        "configValues" : {
+          "shipStatus" : "_picked",
+          "entity_id" : "",
+          "created_at" : "",
+          "updated_at" : ""
+        },
+        "configView" : [
+          "shipStatus",
+          "entity_id",
+          "created_at",
+          "updated_at"
+        ],
+        "configModel" : {
+          "required" : [
+            "shipStatus"
+          ],
+          "properties" : {
+            "shipStatus": {
+              "type": "string",
+              "title": "Status",
+              "enum": [
+                "_picked",
+                "_packed",
+                "_shipped"
+              ]
+            },
+            "entity_id": {
+              "type": "number",
+              "title": "Remote ID"
+            },
+            "created_at": {
+              "type": "date",
+              "title": "Created Date"
+            },
+            "updated_at": {
+              "type": "date",
+              "title": "Last Modified Date"
+            }
+          }
+        }
       },
       "documentDef": {
         "schema": {},
         "referenceLocation": {
-          "fulfillmentBusinessReferences": [""],
-          "salesOrderBusinessReferences": ["salesOrder.otherRefNum"]
-        }
+          "fulfillmentBusinessReferences": ["record.$attributes.internalId"],
+          "salesOrderBusinessReferences": ["record.otherRefNum"]
+        },
+        "remoteID": "record.$attributes.internalId",
+        "businessReferences": [""],
+        "children": [
+          {
+            "name": "Item ID",
+            "location": "record.itemList.item",
+            "remoteID": "record.itemList.item.attributes.internalId",
+            "businessReferences": ["record.itemList.item.itemName"]
+          }
+        ]
       }
     },
     {

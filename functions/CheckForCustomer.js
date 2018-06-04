@@ -155,6 +155,7 @@ let CheckForCustomer = function (ncUtil, channelProfile, flowContext, payload, c
     }
 
     async function buildResponse(result) {
+      logInfo("Processing Response...");
       if (result.searchResult) {
         if (result.searchResult.status.$attributes.isSuccess === "true") {
           // recordList is only returned if there are results in the query

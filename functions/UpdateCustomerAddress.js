@@ -189,6 +189,7 @@ let UpdateCustomerAddress = function (ncUtil, channelProfile, flowContext, paylo
     }
 
     async function buildResponse(result) {
+      logInfo("Processing Response...");
       if (result.readResponse) {
         if (result.readResponse.status.$attributes.isSuccess === "true") {
           for (let i = 0; i < result.readResponse.record.addressbookList.addressbook.length; i++) {

@@ -156,6 +156,7 @@ let CheckForCustomerAddress = function (ncUtil, channelProfile, flowContext, pay
 
     async function checkResponse(result) {
       return new Promise((resolve, reject) => {
+        logInfo("Processing Response...");
         if (result.searchResult) {
           if (result.searchResult.status.$attributes.isSuccess === "true") {
             // recordList is only returned if there are results in the query

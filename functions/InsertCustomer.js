@@ -130,6 +130,7 @@ let InsertCustomer = function (ncUtil, channelProfile, flowContext, payload, cal
     }
 
     async function buildResponse(result) {
+      logInfo("Processing Response...");
       if (result.writeResponse) {
         if (result.writeResponse.status.$attributes.isSuccess === "true") {
 

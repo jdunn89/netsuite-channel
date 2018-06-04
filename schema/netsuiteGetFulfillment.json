@@ -1,0 +1,744 @@
+{
+  "$id": "http://example.com/example.json",
+  "type": "object", 
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "records": {
+      "$id": "/properties/records",
+      "type": "array",
+      "items": {
+        "$id": "/properties/records/items",
+        "type": "object",
+        "properties": {
+          "record": {
+            "$id": "/properties/records/items/properties/record",
+            "type": "object",
+            "properties": {
+              "$attributes": {
+                "$id": "/properties/records/items/properties/record/properties/$attributes",
+                "type": "object",
+                "properties": {
+                  "$xsiType": {
+                    "$id": "/properties/records/items/properties/record/properties/$attributes/properties/$xsiType",
+                    "type": "object",
+                    "properties": {
+                      "tranSales": {
+                        "$id": "/properties/records/items/properties/record/properties/$attributes/properties/$xsiType/properties/tranSales",
+                        "type": "string",
+                        "examples": [
+                          "urn:sales_2017_1.transactions.webservices.netsuite.com"
+                        ]
+                      },
+                      "type": {
+                        "$id": "/properties/records/items/properties/record/properties/$attributes/properties/$xsiType/properties/type",
+                        "type": "string",
+                        "examples": [
+                          "ItemFulfillment"
+                        ]
+                      }
+                    }
+                  },
+                  "internalId": {
+                    "$id": "/properties/records/items/properties/record/properties/$attributes/properties/internalId",
+                    "type": "string",
+                    "examples": [
+                      "8323"
+                    ]
+                  }
+                }
+              },
+              "createdDate": {
+                "$id": "/properties/records/items/properties/record/properties/createdDate",
+                "type": "string",
+                "examples": [
+                  "2018-05-21T09:53:00.000-07:00"
+                ]
+              },
+              "lastModifiedDate": {
+                "$id": "/properties/records/items/properties/record/properties/lastModifiedDate",
+                "type": "string",
+                "examples": [
+                  "2018-05-21T09:53:00.000-07:00"
+                ]
+              },
+              "customForm": {
+                "$id": "/properties/records/items/properties/record/properties/customForm",
+                "type": "object",
+                "properties": {
+                  "$attributes": {
+                    "$id": "/properties/records/items/properties/record/properties/customForm/properties/$attributes",
+                    "type": "object",
+                    "properties": {
+                      "$xsiType": {
+                        "$id": "/properties/records/items/properties/record/properties/customForm/properties/$attributes/properties/$xsiType",
+                        "type": "object",
+                        "properties": {
+                          "platformCore": {
+                            "$id": "/properties/records/items/properties/record/properties/customForm/properties/$attributes/properties/$xsiType/properties/platformCore",
+                            "type": "string",
+                            "examples": [
+                              "urn:core_2017_1.platform.webservices.netsuite.com"
+                            ]
+                          }
+                        }
+                      },
+                      "internalId": {
+                        "$id": "/properties/records/items/properties/record/properties/customForm/properties/$attributes/properties/internalId",
+                        "type": "string",
+                        "examples": [
+                          "148"
+                        ]
+                      }
+                    }
+                  },
+                  "name": {
+                    "$id": "/properties/records/items/properties/record/properties/customForm/properties/name",
+                    "type": "string",
+                    "examples": [
+                      "HM Item Fulfillment"
+                    ]
+                  }
+                }
+              },
+              "postingPeriod": {
+                "$id": "/properties/records/items/properties/record/properties/postingPeriod",
+                "type": "object",
+                "properties": {
+                  "$attributes": {
+                    "$id": "/properties/records/items/properties/record/properties/postingPeriod/properties/$attributes",
+                    "type": "object",
+                    "properties": {
+                      "$xsiType": {
+                        "$id": "/properties/records/items/properties/record/properties/postingPeriod/properties/$attributes/properties/$xsiType",
+                        "type": "object",
+                        "properties": {
+                          "platformCore": {
+                            "$id": "/properties/records/items/properties/record/properties/postingPeriod/properties/$attributes/properties/$xsiType/properties/platformCore",
+                            "type": "string",
+                            "examples": [
+                              "urn:core_2017_1.platform.webservices.netsuite.com"
+                            ]
+                          }
+                        }
+                      },
+                      "internalId": {
+                        "$id": "/properties/records/items/properties/record/properties/postingPeriod/properties/$attributes/properties/internalId",
+                        "type": "string",
+                        "examples": [
+                          "156"
+                        ]
+                      }
+                    }
+                  },
+                  "name": {
+                    "$id": "/properties/records/items/properties/record/properties/postingPeriod/properties/name",
+                    "type": "string",
+                    "examples": [
+                      "Jan 2010"
+                    ]
+                  }
+                }
+              },
+              "entity": {
+                "$id": "/properties/records/items/properties/record/properties/entity",
+                "type": "object",
+                "properties": {
+                  "$attributes": {
+                    "$id": "/properties/records/items/properties/record/properties/entity/properties/$attributes",
+                    "type": "object",
+                    "properties": {
+                      "$xsiType": {
+                        "$id": "/properties/records/items/properties/record/properties/entity/properties/$attributes/properties/$xsiType",
+                        "type": "object",
+                        "properties": {
+                          "platformCore": {
+                            "$id": "/properties/records/items/properties/record/properties/entity/properties/$attributes/properties/$xsiType/properties/platformCore",
+                            "type": "string",
+                            "examples": [
+                              "urn:core_2017_1.platform.webservices.netsuite.com"
+                            ]
+                          }
+                        }
+                      },
+                      "internalId": {
+                        "$id": "/properties/records/items/properties/record/properties/entity/properties/$attributes/properties/internalId",
+                        "type": "string",
+                        "examples": [
+                          "1646"
+                        ]
+                      }
+                    }
+                  },
+                  "name": {
+                    "$id": "/properties/records/items/properties/record/properties/entity/properties/name",
+                    "type": "string",
+                    "examples": [
+                      "Kyle A Rainier"
+                    ]
+                  }
+                }
+              },
+              "createdFrom": {
+                "$id": "/properties/records/items/properties/record/properties/createdFrom",
+                "type": "object",
+                "properties": {
+                  "$attributes": {
+                    "$id": "/properties/records/items/properties/record/properties/createdFrom/properties/$attributes",
+                    "type": "object",
+                    "properties": {
+                      "$xsiType": {
+                        "$id": "/properties/records/items/properties/record/properties/createdFrom/properties/$attributes/properties/$xsiType",
+                        "type": "object",
+                        "properties": {
+                          "platformCore": {
+                            "$id": "/properties/records/items/properties/record/properties/createdFrom/properties/$attributes/properties/$xsiType/properties/platformCore",
+                            "type": "string",
+                            "examples": [
+                              "urn:core_2017_1.platform.webservices.netsuite.com"
+                            ]
+                          }
+                        }
+                      },
+                      "internalId": {
+                        "$id": "/properties/records/items/properties/record/properties/createdFrom/properties/$attributes/properties/internalId",
+                        "type": "string",
+                        "examples": [
+                          "7820"
+                        ]
+                      }
+                    }
+                  },
+                  "name": {
+                    "$id": "/properties/records/items/properties/record/properties/createdFrom/properties/name",
+                    "type": "string",
+                    "examples": [
+                      "Sales Order #SLS00000600"
+                    ]
+                  }
+                }
+              },
+              "createdFromShipGroup": {
+                "$id": "/properties/records/items/properties/record/properties/createdFromShipGroup",
+                "type": "string",
+                "examples": [
+                  "1"
+                ]
+              },
+              "shippingAddress": {
+                "$id": "/properties/records/items/properties/record/properties/shippingAddress",
+                "type": "object",
+                "properties": {
+                  "$attributes": {
+                    "$id": "/properties/records/items/properties/record/properties/shippingAddress/properties/$attributes",
+                    "type": "object",
+                    "properties": {
+                      "$xsiType": {
+                        "$id": "/properties/records/items/properties/record/properties/shippingAddress/properties/$attributes/properties/$xsiType",
+                        "type": "object",
+                        "properties": {
+                          "platformCommon": {
+                            "$id": "/properties/records/items/properties/record/properties/shippingAddress/properties/$attributes/properties/$xsiType/properties/platformCommon",
+                            "type": "string",
+                            "examples": [
+                              "urn:common_2017_1.platform.webservices.netsuite.com"
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "country": {
+                    "$id": "/properties/records/items/properties/record/properties/shippingAddress/properties/country",
+                    "type": "string",
+                    "examples": [
+                      "_unitedStates"
+                    ]
+                  },
+                  "addressee": {
+                    "$id": "/properties/records/items/properties/record/properties/shippingAddress/properties/addressee",
+                    "type": "string",
+                    "examples": [
+                      "Mr. Kyle A Rainier"
+                    ]
+                  },
+                  "addr1": {
+                    "$id": "/properties/records/items/properties/record/properties/shippingAddress/properties/addr1",
+                    "type": "string",
+                    "examples": [
+                      "58 Mill St"
+                    ]
+                  },
+                  "city": {
+                    "$id": "/properties/records/items/properties/record/properties/shippingAddress/properties/city",
+                    "type": "string",
+                    "examples": [
+                      "Carroll"
+                    ]
+                  },
+                  "state": {
+                    "$id": "/properties/records/items/properties/record/properties/shippingAddress/properties/state",
+                    "type": "string",
+                    "examples": [
+                      "OH"
+                    ]
+                  },
+                  "zip": {
+                    "$id": "/properties/records/items/properties/record/properties/shippingAddress/properties/zip",
+                    "type": "string",
+                    "examples": [
+                      "43112"
+                    ]
+                  },
+                  "addrText": {
+                    "$id": "/properties/records/items/properties/record/properties/shippingAddress/properties/addrText",
+                    "type": "string",
+                    "examples": [
+                      "Mr. Kyle A Rainier, 58 Mill St, Carroll OH 43112, United States"
+                    ]
+                  },
+                  "override": {
+                    "$id": "/properties/records/items/properties/record/properties/shippingAddress/properties/override",
+                    "type": "string",
+                    "examples": [
+                      "false"
+                    ]
+                  }
+                }
+              },
+              "shipIsResidential": {
+                "$id": "/properties/records/items/properties/record/properties/shipIsResidential",
+                "type": "string",
+                "examples": [
+                  "false"
+                ]
+              },
+              "shipAddressList": {
+                "$id": "/properties/records/items/properties/record/properties/shipAddressList",
+                "type": "object",
+                "properties": {
+                  "$attributes": {
+                    "$id": "/properties/records/items/properties/record/properties/shipAddressList/properties/$attributes",
+                    "type": "object",
+                    "properties": {
+                      "$xsiType": {
+                        "$id": "/properties/records/items/properties/record/properties/shipAddressList/properties/$attributes/properties/$xsiType",
+                        "type": "object",
+                        "properties": {
+                          "platformCore": {
+                            "$id": "/properties/records/items/properties/record/properties/shipAddressList/properties/$attributes/properties/$xsiType/properties/platformCore",
+                            "type": "string",
+                            "examples": [
+                              "urn:core_2017_1.platform.webservices.netsuite.com"
+                            ]
+                          }
+                        }
+                      },
+                      "internalId": {
+                        "$id": "/properties/records/items/properties/record/properties/shipAddressList/properties/$attributes/properties/internalId",
+                        "type": "string",
+                        "examples": [
+                          "244973"
+                        ]
+                      }
+                    }
+                  },
+                  "name": {
+                    "$id": "/properties/records/items/properties/record/properties/shipAddressList/properties/name",
+                    "type": "string",
+                    "examples": [
+                      "home"
+                    ]
+                  }
+                }
+              },
+              "shipStatus": {
+                "$id": "/properties/records/items/properties/record/properties/shipStatus",
+                "type": "string",
+                "examples": [
+                  "_shipped"
+                ]
+              },
+              "saturdayDeliveryUps": {
+                "$id": "/properties/records/items/properties/record/properties/saturdayDeliveryUps",
+                "type": "string",
+                "examples": [
+                  "false"
+                ]
+              },
+              "sendShipNotifyEmailUps": {
+                "$id": "/properties/records/items/properties/record/properties/sendShipNotifyEmailUps",
+                "type": "string",
+                "examples": [
+                  "false"
+                ]
+              },
+              "sendBackupEmailUps": {
+                "$id": "/properties/records/items/properties/record/properties/sendBackupEmailUps",
+                "type": "string",
+                "examples": [
+                  "false"
+                ]
+              },
+              "shipNotifyEmailAddressUps": {
+                "$id": "/properties/records/items/properties/record/properties/shipNotifyEmailAddressUps",
+                "type": "string",
+                "examples": [
+                  "karainier@gmail.com"
+                ]
+              },
+              "backupEmailAddressUps": {
+                "$id": "/properties/records/items/properties/record/properties/backupEmailAddressUps",
+                "type": "string",
+                "examples": [
+                  "gjacobo@netsuite.com"
+                ]
+              },
+              "thirdPartyCountryUps": {
+                "$id": "/properties/records/items/properties/record/properties/thirdPartyCountryUps",
+                "type": "string",
+                "examples": [
+                  "_unitedStates"
+                ]
+              },
+              "thirdPartyTypeUps": {
+                "$id": "/properties/records/items/properties/record/properties/thirdPartyTypeUps",
+                "type": "string",
+                "examples": [
+                  "_noneSelected"
+                ]
+              },
+              "shipmentWeightUps": {
+                "$id": "/properties/records/items/properties/record/properties/shipmentWeightUps",
+                "type": "string",
+                "examples": [
+                  "8.0"
+                ]
+              },
+              "tranDate": {
+                "$id": "/properties/records/items/properties/record/properties/tranDate",
+                "type": "string",
+                "examples": [
+                  "2018-05-21T00:00:00.000-07:00"
+                ]
+              },
+              "tranId": {
+                "$id": "/properties/records/items/properties/record/properties/tranId",
+                "type": "string",
+                "examples": [
+                  "SHI00000390"
+                ]
+              },
+              "shipMethod": {
+                "$id": "/properties/records/items/properties/record/properties/shipMethod",
+                "type": "object",
+                "properties": {
+                  "$attributes": {
+                    "$id": "/properties/records/items/properties/record/properties/shipMethod/properties/$attributes",
+                    "type": "object",
+                    "properties": {
+                      "$xsiType": {
+                        "$id": "/properties/records/items/properties/record/properties/shipMethod/properties/$attributes/properties/$xsiType",
+                        "type": "object",
+                        "properties": {
+                          "platformCore": {
+                            "$id": "/properties/records/items/properties/record/properties/shipMethod/properties/$attributes/properties/$xsiType/properties/platformCore",
+                            "type": "string",
+                            "examples": [
+                              "urn:core_2017_1.platform.webservices.netsuite.com"
+                            ]
+                          }
+                        }
+                      },
+                      "internalId": {
+                        "$id": "/properties/records/items/properties/record/properties/shipMethod/properties/$attributes/properties/internalId",
+                        "type": "string",
+                        "examples": [
+                          "77"
+                        ]
+                      }
+                    }
+                  },
+                  "name": {
+                    "$id": "/properties/records/items/properties/record/properties/shipMethod/properties/name",
+                    "type": "string",
+                    "examples": [
+                      "UPS Next Day Air"
+                    ]
+                  }
+                }
+              },
+              "generateIntegratedShipperLabel": {
+                "$id": "/properties/records/items/properties/record/properties/generateIntegratedShipperLabel",
+                "type": "string",
+                "examples": [
+                  "true"
+                ]
+              },
+              "shippingCost": {
+                "$id": "/properties/records/items/properties/record/properties/shippingCost",
+                "type": "string",
+                "examples": [
+                  "197.5"
+                ]
+              },
+              "handlingCost": {
+                "$id": "/properties/records/items/properties/record/properties/handlingCost",
+                "type": "string",
+                "examples": [
+                  "0.0"
+                ]
+              },
+              "packageUpsList": {
+                "$id": "/properties/records/items/properties/record/properties/packageUpsList",
+                "type": "object",
+                "properties": {
+                  "packageUps": {
+                    "$id": "/properties/records/items/properties/record/properties/packageUpsList/properties/packageUps",
+                    "type": "object",
+                    "properties": {
+                      "packageWeightUps": {
+                        "$id": "/properties/records/items/properties/record/properties/packageUpsList/properties/packageUps/properties/packageWeightUps",
+                        "type": "string",
+                        "examples": [
+                          "8.0"
+                        ]
+                      },
+                      "packageTrackingNumberUps": {
+                        "$id": "/properties/records/items/properties/record/properties/packageUpsList/properties/packageUps/properties/packageTrackingNumberUps",
+                        "type": "string",
+                        "examples": [
+                          "1ZYA95390191317452"
+                        ]
+                      },
+                      "packagingUps": {
+                        "$id": "/properties/records/items/properties/record/properties/packageUpsList/properties/packageUps/properties/packagingUps",
+                        "type": "string",
+                        "examples": [
+                          "_yourPackaging"
+                        ]
+                      },
+                      "useInsuredValueUps": {
+                        "$id": "/properties/records/items/properties/record/properties/packageUpsList/properties/packageUps/properties/useInsuredValueUps",
+                        "type": "string",
+                        "examples": [
+                          "false"
+                        ]
+                      },
+                      "reference1Ups": {
+                        "$id": "/properties/records/items/properties/record/properties/packageUpsList/properties/packageUps/properties/reference1Ups",
+                        "type": "string",
+                        "examples": [
+                          "Kyle A Rainier"
+                        ]
+                      },
+                      "reference2Ups": {
+                        "$id": "/properties/records/items/properties/record/properties/packageUpsList/properties/packageUps/properties/reference2Ups",
+                        "type": "string",
+                        "examples": [
+                          "karainier@gmail.com"
+                        ]
+                      },
+                      "packageLengthUps": {
+                        "$id": "/properties/records/items/properties/record/properties/packageUpsList/properties/packageUps/properties/packageLengthUps",
+                        "type": "string",
+                        "examples": [
+                          "24"
+                        ]
+                      },
+                      "packageWidthUps": {
+                        "$id": "/properties/records/items/properties/record/properties/packageUpsList/properties/packageUps/properties/packageWidthUps",
+                        "type": "string",
+                        "examples": [
+                          "24"
+                        ]
+                      },
+                      "packageHeightUps": {
+                        "$id": "/properties/records/items/properties/record/properties/packageUpsList/properties/packageUps/properties/packageHeightUps",
+                        "type": "string",
+                        "examples": [
+                          "24"
+                        ]
+                      },
+                      "additionalHandlingUps": {
+                        "$id": "/properties/records/items/properties/record/properties/packageUpsList/properties/packageUps/properties/additionalHandlingUps",
+                        "type": "string",
+                        "examples": [
+                          "false"
+                        ]
+                      },
+                      "useCodUps": {
+                        "$id": "/properties/records/items/properties/record/properties/packageUpsList/properties/packageUps/properties/useCodUps",
+                        "type": "string",
+                        "examples": [
+                          "false"
+                        ]
+                      },
+                      "deliveryConfUps": {
+                        "$id": "/properties/records/items/properties/record/properties/packageUpsList/properties/packageUps/properties/deliveryConfUps",
+                        "type": "string",
+                        "examples": [
+                          "_noneSelected"
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "itemList": {
+                "$id": "/properties/records/items/properties/record/properties/itemList",
+                "type": "object",
+                "properties": {
+                  "item": {
+                    "$id": "/properties/records/items/properties/record/properties/itemList/properties/item",
+                    "type": "array",
+                    "items": {
+                      "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items",
+                      "type": "object",
+                      "properties": {
+                        "itemReceive": {
+                          "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/itemReceive",
+                          "type": "string",
+                          "examples": [
+                            "true"
+                          ]
+                        },
+                        "itemName": {
+                          "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/itemName",
+                          "type": "string",
+                          "examples": [
+                            "ACC00004"
+                          ]
+                        },
+                        "description": {
+                          "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/description",
+                          "type": "string",
+                          "examples": [
+                            "Merlin 4412D: The most powerful features avail in a 12 button display phone"
+                          ]
+                        },
+                        "location": {
+                          "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/location",
+                          "type": "object",
+                          "properties": {
+                            "$attributes": {
+                              "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/location/properties/$attributes",
+                              "type": "object",
+                              "properties": {
+                                "$xsiType": {
+                                  "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/location/properties/$attributes/properties/$xsiType",
+                                  "type": "object",
+                                  "properties": {
+                                    "platformCore": {
+                                      "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/location/properties/$attributes/properties/$xsiType/properties/platformCore",
+                                      "type": "string",
+                                      "examples": [
+                                        "urn:core_2017_1.platform.webservices.netsuite.com"
+                                      ]
+                                    }
+                                  }
+                                },
+                                "internalId": {
+                                  "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/location/properties/$attributes/properties/internalId",
+                                  "type": "string",
+                                  "examples": [
+                                    "1"
+                                  ]
+                                }
+                              }
+                            },
+                            "name": {
+                              "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/location/properties/name",
+                              "type": "string",
+                              "examples": [
+                                "02: Boston"
+                              ]
+                            }
+                          }
+                        },
+                        "onHand": {
+                          "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/onHand",
+                          "type": "string",
+                          "examples": [
+                            "17.0"
+                          ]
+                        },
+                        "quantity": {
+                          "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/quantity",
+                          "type": "string",
+                          "examples": [
+                            "1.0"
+                          ]
+                        },
+                        "unitsDisplay": {
+                          "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/unitsDisplay",
+                          "type": "string",
+                          "examples": [
+                            "Ea"
+                          ]
+                        },
+                        "item": {
+                          "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/item",
+                          "type": "object",
+                          "properties": {
+                            "$attributes": {
+                              "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/item/properties/$attributes",
+                              "type": "object",
+                              "properties": {
+                                "$xsiType": {
+                                  "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/item/properties/$attributes/properties/$xsiType",
+                                  "type": "object",
+                                  "properties": {
+                                    "platformCore": {
+                                      "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/item/properties/$attributes/properties/$xsiType/properties/platformCore",
+                                      "type": "string",
+                                      "examples": [
+                                        "urn:core_2017_1.platform.webservices.netsuite.com"
+                                      ]
+                                    }
+                                  }
+                                },
+                                "internalId": {
+                                  "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/item/properties/$attributes/properties/internalId",
+                                  "type": "string",
+                                  "examples": [
+                                    "504"
+                                  ]
+                                }
+                              }
+                            },
+                            "name": {
+                              "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/item/properties/name",
+                              "type": "string",
+                              "examples": [
+                                "ACC00004"
+                              ]
+                            }
+                          }
+                        },
+                        "orderLine": {
+                          "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/orderLine",
+                          "type": "string",
+                          "examples": [
+                            "1"
+                          ]
+                        },
+                        "quantityRemaining": {
+                          "$id": "/properties/records/items/properties/record/properties/itemList/properties/item/items/properties/quantityRemaining",
+                          "type": "string",
+                          "examples": [
+                            "1.0"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

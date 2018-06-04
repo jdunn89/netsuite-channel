@@ -153,6 +153,7 @@ let InsertSalesOrder = function (ncUtil, channelProfile, flowContext, payload, c
     }
 
     async function buildResponse(result) {
+      logInfo("Processing Response...");
       if (result.writeResponse) {
         if (result.writeResponse.status.$attributes.isSuccess === "true") {
           out.ncStatusCode = 201;
