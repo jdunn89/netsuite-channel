@@ -264,17 +264,47 @@
           "implFolderName": {
             "title": "Implementation Folder Name",
             "type": "string"
+          },
+          "wsdl_uri": {
+            "title": "WSDL URI",
+            "type": "string"
+          },
+          "namespaces": {
+            "title": "Namespaces",
+            "type": "object"
           }
         },
         "required": [
           "protocol",
-          "implFolderName"
+          "implFolderName",
+          "wsdl_uri",
+          "namespaces"
         ]
       },
       "configView": [],
       "configValues": {
         "protocol": "https",
-        "implFolderName": "netsuite"
+        "implFolderName": "netsuite",
+        "wsdl_uri": "https://webservices.netsuite.com/wsdl/v2017_2_0/netsuite.wsdl",
+        "namespaces": {
+          "platformMsgs": "urn:messages_2017_2.platform.webservices.netsuite.com",
+          "platformCore": "urn:core_2017_2.platform.webservices.netsuite.com",
+          "platformCommon": "urn:common_2017_2.platform.webservices.netsuite.com",
+          "listRel": "urn:relationships_2017_2.lists.webservices.netsuite.com",
+          "tranSales": "urn:sales_2017_2.transactions.webservices.netsuite.com",
+          "actSched": "urn:scheduling_2017_2.activities.webservices.netsuite.com",
+          "setupCustom": "urn:customization_2017_2.setup.webservices.netsuite.com",
+          "listAcct": "urn:accounting_2017_2.lists.webservices.netsuite.com",
+          "tranBank": "urn:bank_2017_2.transactions.webservices.netsuite.com",
+          "tranCust": "urn:customers_2017_2.transactions.webservices.netsuite.com",
+          "tranInvt": "urn:inventory_2017_2.transactions.webservices.netsuite.com",
+          "listSupport": "urn:support_2017_2.lists.webservices.netsuite.com",
+          "tranGeneral": "urn:general_2017_2.transactions.webservices.netsuite.com",
+          "listMkt": "urn:marketing_2017_2.lists.webservices.netsuite.com",
+          "listWebsite": "urn:website_2017_2.lists.webservices.netsuite.com",
+          "fileCabinet": "urn:filecabinet_2017_2.documents.webservices.netsuite.com",
+          "listEmp": "urn:employees_2017_2.lists.webservices.netsuite.com"
+        }
       }
     }
   },
