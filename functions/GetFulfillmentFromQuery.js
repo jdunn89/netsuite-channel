@@ -143,16 +143,16 @@ let GetFulfillmentFromQuery = function(ncUtil, channelProfile, flowContext, payl
 
         if (payload.doc.searchFields) {
 
-          payload.doc.searchFields.forEach(function (searchField) {
-            let fieldName = searchField.searchField;
-
-            searchPayload["searchRecord"]["basic"][fieldName] = {
-              "$attributes": {
-                "operator": "anyOf"
-              },
-              "searchValue": searchField.searchValues
-            }
-          });
+          // payload.doc.searchFields.forEach(function (searchField) {
+          //   let fieldName = searchField.searchField;
+          //
+          //   searchPayload["searchRecord"]["basic"][fieldName] = {
+          //     "$attributes": {
+          //       "operator": "anyOf"
+          //     },
+          //     "searchValue": searchField.searchValues
+          //   }
+          // });
 
         } else if (payload.doc.remoteIDs) {
 
@@ -200,10 +200,49 @@ let GetFulfillmentFromQuery = function(ncUtil, channelProfile, flowContext, payl
           searchPayload["searchRecord"]["basic"]["lastModifiedDate"] = obj;
         }
 
+        if (flowContext) {
+          if (flowContext.entity_id) {
+            let obj = {
+              "$attributes": {
+                "operator": "anyOf"
+              },
+              "searchValue": {
+                "$attributes": {
+                  "internalId": flowContext.entity_id
+                }
+              }
+            }
+
+            searchPayload["searchRecord"]["basic"]["entity"] = obj;
+          }
+
+          if (flowContext.created_at) {
+            let obj = {
+              "$attributes": {
+                "operator": "on"
+              },
+              "searchValue": flowContext.created_at
+            }
+
+            searchPayload["searchRecord"]["basic"]["lastModifiedDate"] = obj;
+          }
+
+          if (flowContext.updated_at) {
+            let obj = {
+              "$attributes": {
+                "operator": "on"
+              },
+              "searchValue": flowContext.updated_at
+            }
+
+            searchPayload["searchRecord"]["basic"]["dateCreated"] = obj;
+          }
+        }
+
         return searchPayload;
     }
 
-    async function createSoapClient(search) {
+    function createSoapClient(search) {
       return new Promise((resolve, reject) => {
         logInfo("Creating NetSuite Client...");
         soap.createClient(channelProfile.channelSettingsValues.wsdl_uri, {}, function(err, client) {
@@ -221,7 +260,7 @@ let GetFulfillmentFromQuery = function(ncUtil, channelProfile, flowContext, payl
       });
     }
 
-    async function callNetsuite(netsuitePayload) {
+    function callNetsuite(netsuitePayload) {
       return new Promise((resolve, reject) => {
         logInfo("Calling NetSuite...");
 
@@ -302,26 +341,39 @@ let GetFulfillmentFromQuery = function(ncUtil, channelProfile, flowContext, payl
               function processResult() {
                 return new Promise((pResolve, pReject) => {
                   if (nc.isObject(result.searchResult.recordList.record)) {
-                    if (!result.searchResult.recordList.record.createdFrom) {
-                      logInfo("Fulfillment does not have a 'createdFrom' field. Skipping.");
-                      pResolve();
-                    } else {
-                      buildOrderLookupRequest(result.searchResult.recordList)
-                        .then(callNetsuite)
-                        .then(processOrderLookupResult)
-                        .then((orderNumber) => {
-                          docs.push({
-                            doc: result.searchResult.recordList,
-                            fulfillmentRemoteID: result.searchResult.recordList.record.$attributes.internalId,
-                            salesOrderRemoteID: result.searchResult.recordList.record.createdFrom.$attributes.internalId,
-                            salesOrderBusinessReference: orderNumber
+                    let validShipStatus = true;
+
+                    if (flowContext && flowContext.shipStatus) {
+                      if (result.searchResult.recordList.record.shipStatus !== flowContext.shipStatus) {
+                        validShipStatus = false;
+                      }
+                    }
+
+                    if (validShipStatus) {
+                      if (!result.searchResult.recordList.record.createdFrom) {
+                        logInfo("Fulfillment does not have a 'createdFrom' field. Skipping.");
+                        pResolve();
+                      } else {
+                        buildOrderLookupRequest(result.searchResult.recordList)
+                          .then(callNetsuite)
+                          .then(processOrderLookupResult)
+                          .then((orderNumber) => {
+                            docs.push({
+                              doc: result.searchResult.recordList,
+                              fulfillmentRemoteID: result.searchResult.recordList.record.$attributes.internalId,
+                              salesOrderRemoteID: result.searchResult.recordList.record.createdFrom.$attributes.internalId,
+                              salesOrderBusinessReference: orderNumber
+                            });
+                            pResolve();
+                          })
+                          .catch((err) => {
+                            logError('Failed to retrieve Order Number: ' + err);
+                            pReject(err);
                           });
-                          pResolve();
-                        })
-                        .catch((err) => {
-                          logError('Failed to retrieve Order Number: ' + err);
-                          pReject(err);
-                        });
+                      }
+                    } else {
+                      logInfo(`Fulfillment does not have a 'shipStatus' of ${flowContext.shipStatus}`);
+                      pResolve();
                     }
                   } else {
                     let promises = [];
@@ -330,28 +382,41 @@ let GetFulfillmentFromQuery = function(ncUtil, channelProfile, flowContext, payl
                         record: result.searchResult.recordList.record[i]
                       };
                       p = p.then(_ => new Promise((oResolve, oReject) => {
-                        if (!fulfillment.record.createdFrom) {
-                          logInfo("Fulfillment does not have a 'createdFrom' field. Skipping.");
-                          oResolve();
-                        } else {
-                          buildOrderLookupRequest(fulfillment)
-                            .then(callNetsuite)
-                            .then(processOrderLookupResult)
-                            .then((orderNumber) => {
-                              docs.push({
-                                doc: fulfillment,
-                                fulfillmentRemoteID: fulfillment.record.$attributes.internalId,
-                                salesOrderRemoteID: fulfillment.record.createdFrom.$attributes.internalId,
-                                salesOrderBusinessReference: orderNumber
+                        let validShipStatus = true;
+
+                        if (flowContext && flowContext.shipStatus) {
+                          if (result.searchResult.recordList.record[i].shipStatus !== flowContext.shipStatus) {
+                            validShipStatus = false;
+                          }
+                        }
+
+                        if (validShipStatus) {
+                          if (!fulfillment.record.createdFrom) {
+                            logInfo("Fulfillment does not have a 'createdFrom' field. Skipping.");
+                            oResolve();
+                          } else {
+                            buildOrderLookupRequest(fulfillment)
+                              .then(callNetsuite)
+                              .then(processOrderLookupResult)
+                              .then((orderNumber) => {
+                                docs.push({
+                                  doc: fulfillment,
+                                  fulfillmentRemoteID: fulfillment.record.$attributes.internalId,
+                                  salesOrderRemoteID: fulfillment.record.createdFrom.$attributes.internalId,
+                                  salesOrderBusinessReference: orderNumber
+                                });
+                              })
+                              .then(() => {
+                                oResolve();
+                              })
+                              .catch((err, test) => {
+                                logError('Failed to retrieve Order Number: ' + err);
+                                oReject(err);
                               });
-                            })
-                            .then(() => {
-                              oResolve();
-                            })
-                            .catch((err, test) => {
-                              logError('Failed to retrieve Order Number: ' + err);
-                              oReject(err);
-                            });
+                          }
+                        } else {
+                          logInfo(`Fulfillment does not have a 'shipStatus' of ${flowContext.shipStatus}`);
+                          oResolve();
                         }
                       }));
                       promises.push(p);

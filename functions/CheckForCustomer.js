@@ -88,7 +88,7 @@ let CheckForCustomer = function (ncUtil, channelProfile, flowContext, payload, c
         logInfo("Function is valid.");
     }
 
-    async function createSoapClient() {
+    function createSoapClient() {
       return new Promise((resolve, reject) => {
         logInfo("Creating NetSuite Client...");
         soap.createClient(channelProfile.channelSettingsValues.wsdl_uri, {}, function(err, client) {
@@ -109,7 +109,7 @@ let CheckForCustomer = function (ncUtil, channelProfile, flowContext, payload, c
       });
     }
 
-    async function searchForCustomer() {
+    function searchForCustomer() {
       return new Promise((resolve, reject) => {
         logInfo("Searching NetSuite for existing customer...");
 

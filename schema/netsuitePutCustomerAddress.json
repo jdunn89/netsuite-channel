@@ -1,186 +1,195 @@
 {
-  "$id": "http://example.com/example.json",
-  "type": "object",
-  "definitions": {},
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "properties": {
-    "addressbookList": {
-      "$id": "/properties/addressbookList",
-      "type": "object",
-      "properties": {
-        "addressbook": {
-          "$id": "/properties/addressbookList/properties/addressbook",
-          "type": "array",
-          "items": {
-            "$id": "/properties/addressbookList/properties/addressbook/items",
-            "type": "object",
-            "properties": {
-              "defaultShipping": {
-                "$id": "/properties/addressbookList/properties/addressbook/items/properties/defaultShipping",
-                "type": "string",
-                "title": "The Defaultshipping Schema ",
-                "default": "",
-                "examples": [
-                  "true"
-                ]
-              },
-              "defaultBilling": {
-                "$id": "/properties/addressbookList/properties/addressbook/items/properties/defaultBilling",
-                "type": "string",
-                "title": "The Defaultbilling Schema ",
-                "default": "",
-                "examples": [
-                  "true"
-                ]
-              },
-              "isResidential": {
-                "$id": "/properties/addressbookList/properties/addressbook/items/properties/isResidential",
-                "type": "string",
-                "title": "The Isresidential Schema ",
-                "default": "",
-                "examples": [
-                  "false"
-                ]
-              },
-              "label": {
-                "$id": "/properties/addressbookList/properties/addressbook/items/properties/label",
-                "type": "string",
-                "title": "The Label Schema ",
-                "default": "",
-                "examples": [
-                  "nChannel Corp"
-                ]
-              },
-              "addressbookAddress": {
-                "$id": "/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress",
-                "type": "object",
-                "properties": {
-                  "$attributes": {
-                    "$id": "/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/$attributes",
-                    "type": "object",
-                    "properties": {
-                      "$xsiType": {
-                        "$id": "/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/$attributes/properties/$xsiType",
-                        "type": "object",
-                        "properties": {
-                          "platformCommon": {
-                            "$id": "/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/$attributes/properties/$xsiType/properties/platformCommon",
-                            "type": "string",
-                            "title": "The Platformcommon Schema ",
-                            "default": "",
-                            "examples": [
-                              "urn:common_2017_1.platform.webservices.netsuite.com"
-                            ]
+	"name": "NetSuite Put Customer Address",
+  "schemaDef": {
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "properties": {
+      "addressbookList": {
+        "$id": "/properties/addressbookList",
+        "type": "object",
+        "properties": {
+          "addressbook": {
+            "$id": "/properties/addressbookList/properties/addressbook",
+            "type": "array",
+            "items": {
+              "$id": "/properties/addressbookList/properties/addressbook/items",
+              "type": "object",
+              "properties": {
+                "defaultShipping": {
+                  "$id": "/properties/addressbookList/properties/addressbook/items/properties/defaultShipping",
+                  "type": "string",
+                  "title": "The Defaultshipping Schema ",
+                  "default": "",
+                  "examples": [
+                    "true"
+                  ]
+                },
+                "defaultBilling": {
+                  "$id": "/properties/addressbookList/properties/addressbook/items/properties/defaultBilling",
+                  "type": "string",
+                  "title": "The Defaultbilling Schema ",
+                  "default": "",
+                  "examples": [
+                    "true"
+                  ]
+                },
+                "isResidential": {
+                  "$id": "/properties/addressbookList/properties/addressbook/items/properties/isResidential",
+                  "type": "string",
+                  "title": "The Isresidential Schema ",
+                  "default": "",
+                  "examples": [
+                    "false"
+                  ]
+                },
+                "label": {
+                  "$id": "/properties/addressbookList/properties/addressbook/items/properties/label",
+                  "type": "string",
+                  "title": "The Label Schema ",
+                  "default": "",
+                  "examples": [
+                    "nChannel Corp"
+                  ]
+                },
+                "addressbookAddress": {
+                  "$id": "/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress",
+                  "type": "object",
+                  "properties": {
+                    "$attributes": {
+                      "$id": "/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/$attributes",
+                      "type": "object",
+                      "properties": {
+                        "$xsiType": {
+                          "$id": "/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/$attributes/properties/$xsiType",
+                          "type": "object",
+                          "properties": {
+                            "platformCommon": {
+                              "$id": "/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/$attributes/properties/$xsiType/properties/platformCommon",
+                              "type": "string",
+                              "title": "The Platformcommon Schema ",
+                              "default": "",
+                              "examples": [
+                                "urn:common_2017_1.platform.webservices.netsuite.com"
+                              ]
+                            }
                           }
                         }
                       }
+                    },
+                    "country": {
+                      "$id": "/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/country",
+                      "type": "string",
+                      "title": "The Country Schema ",
+                      "default": "",
+                      "examples": [
+                        "_unitedStates"
+                      ]
+                    },
+                    "addressee": {
+                      "$id": "/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/addressee",
+                      "type": "string",
+                      "title": "The Addressee Schema ",
+                      "default": "",
+                      "examples": [
+                        "Mr. Kyle A Rainier"
+                      ]
+                    },
+                    "addrPhone": {
+                      "$id": "/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/addrPhone",
+                      "type": "string",
+                      "title": "The Addrphone Schema ",
+                      "default": "",
+                      "examples": [
+                        "(614) 561-6596"
+                      ]
+                    },
+                    "addr1": {
+                      "$id": "/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/addr1",
+                      "type": "string",
+                      "title": "The Addr1 Schema ",
+                      "default": "",
+                      "examples": [
+                        "8874 Orion PKWY"
+                      ]
+                    },
+                    "addr2": {
+                      "$id": "/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/addr2",
+                      "type": "string",
+                      "title": "The Addr2 Schema ",
+                      "default": "",
+                      "examples": [
+                        "Suite 201"
+                      ]
+                    },
+                    "city": {
+                      "$id": "/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/city",
+                      "type": "string",
+                      "title": "The City Schema ",
+                      "default": "",
+                      "examples": [
+                        "Columbus"
+                      ]
+                    },
+                    "state": {
+                      "$id": "/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/state",
+                      "type": "string",
+                      "title": "The State Schema ",
+                      "default": "",
+                      "examples": [
+                        "OH"
+                      ]
+                    },
+                    "zip": {
+                      "$id": "/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/zip",
+                      "type": "string",
+                      "title": "The Zip Schema ",
+                      "default": "",
+                      "examples": [
+                        "43"
+                      ]
+                    },
+                    "addrText": {
+                      "$id": "/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/addrText",
+                      "type": "string",
+                      "title": "The Addrtext Schema ",
+                      "default": "",
+                      "examples": [
+                        "Mr. Kyle A Rainier 8874 Orion PKWY Suite 201 Columbus OH 43112 United States"
+                      ]
+                    },
+                    "override": {
+                      "$id": "/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/override",
+                      "type": "string",
+                      "title": "The Override Schema ",
+                      "default": "",
+                      "examples": [
+                        "false"
+                      ]
                     }
-                  },
-                  "country": {
-                    "$id": "/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/country",
-                    "type": "string",
-                    "title": "The Country Schema ",
-                    "default": "",
-                    "examples": [
-                      "_unitedStates"
-                    ]
-                  },
-                  "addressee": {
-                    "$id": "/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/addressee",
-                    "type": "string",
-                    "title": "The Addressee Schema ",
-                    "default": "",
-                    "examples": [
-                      "Mr. Kyle A Rainier"
-                    ]
-                  },
-                  "addrPhone": {
-                    "$id": "/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/addrPhone",
-                    "type": "string",
-                    "title": "The Addrphone Schema ",
-                    "default": "",
-                    "examples": [
-                      "(614) 561-6596"
-                    ]
-                  },
-                  "addr1": {
-                    "$id": "/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/addr1",
-                    "type": "string",
-                    "title": "The Addr1 Schema ",
-                    "default": "",
-                    "examples": [
-                      "8874 Orion PKWY"
-                    ]
-                  },
-                  "addr2": {
-                    "$id": "/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/addr2",
-                    "type": "string",
-                    "title": "The Addr2 Schema ",
-                    "default": "",
-                    "examples": [
-                      "Suite 201"
-                    ]
-                  },
-                  "city": {
-                    "$id": "/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/city",
-                    "type": "string",
-                    "title": "The City Schema ",
-                    "default": "",
-                    "examples": [
-                      "Columbus"
-                    ]
-                  },
-                  "state": {
-                    "$id": "/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/state",
-                    "type": "string",
-                    "title": "The State Schema ",
-                    "default": "",
-                    "examples": [
-                      "OH"
-                    ]
-                  },
-                  "zip": {
-                    "$id": "/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/zip",
-                    "type": "string",
-                    "title": "The Zip Schema ",
-                    "default": "",
-                    "examples": [
-                      "43"
-                    ]
-                  },
-                  "addrText": {
-                    "$id": "/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/addrText",
-                    "type": "string",
-                    "title": "The Addrtext Schema ",
-                    "default": "",
-                    "examples": [
-                      "Mr. Kyle A Rainier 8874 Orion PKWY Suite 201 Columbus OH 43112 United States"
-                    ]
-                  },
-                  "override": {
-                    "$id": "/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/override",
-                    "type": "string",
-                    "title": "The Override Schema ",
-                    "default": "",
-                    "examples": [
-                      "false"
-                    ]
                   }
+                },
+                "internalId": {
+                  "$id": "/properties/addressbookList/properties/addressbook/items/properties/internalId",
+                  "type": "string",
+                  "title": "The Internalid Schema ",
+                  "default": "",
+                  "examples": [
+                    "244972"
+                  ]
                 }
-              },
-              "internalId": {
-                "$id": "/properties/addressbookList/properties/addressbook/items/properties/internalId",
-                "type": "string",
-                "title": "The Internalid Schema ",
-                "default": "",
-                "examples": [
-                  "244972"
-                ]
               }
             }
           }
         }
       }
     }
-  }
+  },
+  "tags": [
+    "Put",
+    "Customer",
+    "Address"
+  ],
+  "audit": {}
 }

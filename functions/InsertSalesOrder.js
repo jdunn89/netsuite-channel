@@ -115,7 +115,7 @@ let InsertSalesOrder = function (ncUtil, channelProfile, flowContext, payload, c
       });
     }
 
-    async function createSoapClient(record) {
+    function createSoapClient(record) {
       return new Promise((resolve, reject) => {
         logInfo("Creating NetSuite Client...");
         soap.createClient(channelProfile.channelSettingsValues.wsdl_uri, {}, function(err, client) {
@@ -136,9 +136,17 @@ let InsertSalesOrder = function (ncUtil, channelProfile, flowContext, payload, c
       });
     }
 
-    async function insertSalesOrder(record) {
+    function insertSalesOrder(record) {
       return new Promise((resolve, reject) => {
         logInfo("Inserting Sales Order into NetSuite...");
+
+        if (flowContext && flowContext.customForm) {
+          record.record.customForm = {
+            "$attributes": {
+               "internalId": flowContext.customForm
+            }
+          }
+        }
 
         let recordPayload = record;
 

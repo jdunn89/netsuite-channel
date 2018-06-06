@@ -88,7 +88,7 @@ let UpdateCustomerAddress = function (ncUtil, channelProfile, flowContext, paylo
         logInfo("Function is valid.");
     }
 
-    async function createSoapClient() {
+    function createSoapClient() {
       return new Promise((resolve, reject) => {
         logInfo("Creating NetSuite Client...");
         soap.createClient(channelProfile.channelSettingsValues.wsdl_uri, {}, function(err, client) {
@@ -109,7 +109,7 @@ let UpdateCustomerAddress = function (ncUtil, channelProfile, flowContext, paylo
       });
     }
 
-    async function updateCustomerAddress() {
+    function updateCustomerAddress() {
       return new Promise((resolve, reject) => {
         logInfo("Searching NetSuite for existing customer...");
 
