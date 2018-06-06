@@ -143,16 +143,16 @@ let GetFulfillmentFromQuery = function(ncUtil, channelProfile, flowContext, payl
 
         if (payload.doc.searchFields) {
 
-          // payload.doc.searchFields.forEach(function (searchField) {
-          //   let fieldName = searchField.searchField;
-          //
-          //   searchPayload["searchRecord"]["basic"][fieldName] = {
-          //     "$attributes": {
-          //       "operator": "anyOf"
-          //     },
-          //     "searchValue": searchField.searchValues
-          //   }
-          // });
+          payload.doc.searchFields.forEach(function (searchField) {
+            let fieldName = searchField.searchField;
+
+            searchPayload["searchRecord"]["basic"][fieldName] = {
+              "$attributes": {
+                "operator": "anyOf"
+              },
+              "searchValue": searchField.searchValues
+            }
+          });
 
         } else if (payload.doc.remoteIDs) {
 
