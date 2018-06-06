@@ -46,45 +46,45 @@ let CheckForCustomerAddress = function (ncUtil, channelProfile, flowContext, pay
     }
 
     async function validateFunction() {
-        let messages = [];
+        let invalidMsg;
 
         if (!ncUtil)
-            messages.push("ncUtil was not provided");
+            invalidMsg = "ncUtil was not provided";
         else if (!channelProfile)
-            messages.push("channelProfile was not provided");
+            invalidMsg = "channelProfile was not provided";
         else if (!channelProfile.channelSettingsValues)
-            messages.push("channelProfile.channelSettingsValues was not provided");
+            invalidMsg = "channelProfile.channelSettingsValues was not provided";
         else if (!channelProfile.channelSettingsValues.namespaces)
-            messages.push("channelProfile.channelSettingsValues.protocol was not provided");
+            invalidMsg = "channelProfile.channelSettingsValues.protocol was not provided";
         else if (!channelProfile.channelSettingsValues.wsdl_uri)
-            messages.push("channelProfile.channelSettingsValues.api_uri was not provided");
+            invalidMsg = "channelProfile.channelSettingsValues.api_uri was not provided";
         else if (!channelProfile.channelAuthValues)
-            messages.push("channelProfile.channelAuthValues was not provided");
+            invalidMsg = "channelProfile.channelAuthValues was not provided";
         else if (!channelProfile.channelAuthValues.account)
-            messages.push("channelProfile.channelAuthValues.account was not provided");
+            invalidMsg = "channelProfile.channelAuthValues.account was not provided";
         else if (!channelProfile.channelAuthValues.consumerKey)
-            messages.push("channelProfile.channelAuthValues.consumerKey was not provided");
+            invalidMsg = "channelProfile.channelAuthValues.consumerKey was not provided";
         else if (!channelProfile.channelAuthValues.consumerSecret)
-            messages.push("channelProfile.channelAuthValues.consumerSecret was not provided");
+            invalidMsg = "channelProfile.channelAuthValues.consumerSecret was not provided";
         else if (!channelProfile.channelAuthValues.tokenID)
-            messages.push("channelProfile.channelAuthValues.tokenID was not provided");
+            invalidMsg = "channelProfile.channelAuthValues.tokenID was not provided";
         else if (!channelProfile.channelAuthValues.tokenSecret)
-            messages.push("channelProfile.channelAuthValues.tokenSecret was not provided");
+            invalidMsg = "channelProfile.channelAuthValues.tokenSecret was not provided";
         else if (!channelProfile.customerBusinessReferences)
-            messages.push("channelProfile.customerBusinessReferences was not provided");
+            invalidMsg = "channelProfile.customerBusinessReferences was not provided";
         else if (!nc.isArray(channelProfile.customerBusinessReferences))
-            messages.push("channelProfile.customerBusinessReferences is not an array");
+            invalidMsg = "channelProfile.customerBusinessReferences is not an array";
         else if (!nc.isNonEmptyArray(channelProfile.customerBusinessReferences))
-            messages.push("channelProfile.customerBusinessReferences is empty");
+            invalidMsg = "channelProfile.customerBusinessReferences is empty";
         else if (!payload)
-            messages.push("payload was not provided");
+            invalidMsg = "payload was not provided";
         else if (!payload.doc)
-            messages.push("payload.doc was not provided");
+            invalidMsg = "payload.doc was not provided";
 
-        if (messages.length > 0) {
-            messages.forEach(msg => logError(msg));
+        if (invalidMsg) {
+            logError(invalidMsg);
             out.ncStatusCode = 400;
-            throw new Error(`Invalid request [${messages.join(", ")}]`);
+            throw new Error(`Invalid request [${invalidMsg}]`);
         }
         logInfo("Function is valid.");
     }
@@ -181,7 +181,7 @@ let CheckForCustomerAddress = function (ncUtil, channelProfile, flowContext, pay
             }
           }
         } else {
-          out.ncStatusCode = 400;
+          out.ncStatusCode = 500;
           reject(result);
         }
       });

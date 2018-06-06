@@ -650,7 +650,15 @@
           "links": [
             {
               "function": "search",
-              "responsePayload": "soapenv:Fault"
+              "responsePayload": {
+                "searchResult": {
+                  "status": {
+                    "$attributes": {
+                      "isSuccess": false
+                    }
+                  }
+                }
+              }
             }
           ],
           "channelProfile": {
@@ -1507,7 +1515,15 @@
           "links": [
             {
               "function": "search",
-              "responsePayload": "soapenv:Fault"
+              "responsePayload": {
+                "searchResult": {
+                  "status": {
+                    "$attributes": {
+                      "isSuccess": false
+                    }
+                  }
+                }
+              }
             }
           ],
           "channelProfile": {
@@ -2649,7 +2665,15 @@
           "links": [
             {
               "function": "add",
-              "responsePayload": "soapenv:Fault"
+              "responsePayload": {
+                "writeResponse": {
+                  "status": {
+                    "$attributes": {
+                      "isSuccess": false
+                    }
+                  }
+                }
+              }
             }
           ],
           "channelProfile": {
@@ -2871,7 +2895,15 @@
           "links": [
             {
               "function": "add",
-              "responsePayload": "soapenv:Fault"
+              "responsePayload": {
+                "writeResponse": {
+                  "status": {
+                    "$attributes": {
+                      "isSuccess": false
+                    }
+                  }
+                }
+              }
             }
           ],
           "channelProfile": {
@@ -3069,7 +3101,15 @@
           "links": [
             {
               "function": "update",
-              "responsePayload": "soapenv:Fault"
+              "responsePayload": {
+                "writeResponse": {
+                  "status": {
+                    "$attributes": {
+                      "isSuccess": false
+                    }
+                  }
+                }
+              }
             }
           ],
           "channelProfile": {
@@ -3285,7 +3325,15 @@
           "links": [
             {
               "function": "update",
-              "responsePayload": "soapenv:Fault"
+              "responsePayload": {
+                "writeResponse": {
+                  "status": {
+                    "$attributes": {
+                      "isSuccess": false
+                    }
+                  }
+                }
+              }
             }
           ],
           "channelProfile": {
@@ -3717,7 +3765,15 @@
           "links": [
             {
               "function": "add",
-              "responsePayload": "soapenv:Fault"
+              "responsePayload": {
+                "writeResponse": {
+                  "status": {
+                    "$attributes": {
+                      "isSuccess": false
+                    }
+                  }
+                }
+              }
             }
           ],
           "channelProfile": {

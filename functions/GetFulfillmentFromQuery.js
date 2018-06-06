@@ -45,66 +45,66 @@ let GetFulfillmentFromQuery = function(ncUtil, channelProfile, flowContext, payl
     }
 
     async function validateFunction() {
-        let messages = [];
+        let invalidMsg;
 
         if (!ncUtil)
-            messages.push("ncUtil was not provided");
+            invalidMsg = "ncUtil was not provided";
         else if (!channelProfile)
-            messages.push("channelProfile was not provided");
+            invalidMsg = "channelProfile was not provided";
         else if (!channelProfile.channelSettingsValues)
-            messages.push("channelProfile.channelSettingsValues was not provided");
+            invalidMsg = "channelProfile.channelSettingsValues was not provided";
         else if (!channelProfile.channelSettingsValues.namespaces)
-            messages.push("channelProfile.channelSettingsValues.protocol was not provided");
+            invalidMsg = "channelProfile.channelSettingsValues.protocol was not provided";
         else if (!channelProfile.channelSettingsValues.wsdl_uri)
-            messages.push("channelProfile.channelSettingsValues.api_uri was not provided");
+            invalidMsg = "channelProfile.channelSettingsValues.api_uri was not provided";
         else if (!channelProfile.channelAuthValues)
-            messages.push("channelProfile.channelAuthValues was not provided");
+            invalidMsg = "channelProfile.channelAuthValues was not provided";
         else if (!channelProfile.channelAuthValues.account)
-            messages.push("channelProfile.channelAuthValues.account was not provided");
+            invalidMsg = "channelProfile.channelAuthValues.account was not provided";
         else if (!channelProfile.channelAuthValues.consumerKey)
-            messages.push("channelProfile.channelAuthValues.consumerKey was not provided");
+            invalidMsg = "channelProfile.channelAuthValues.consumerKey was not provided";
         else if (!channelProfile.channelAuthValues.consumerSecret)
-            messages.push("channelProfile.channelAuthValues.consumerSecret was not provided");
+            invalidMsg = "channelProfile.channelAuthValues.consumerSecret was not provided";
         else if (!channelProfile.channelAuthValues.tokenID)
-            messages.push("channelProfile.channelAuthValues.tokenID was not provided");
+            invalidMsg = "channelProfile.channelAuthValues.tokenID was not provided";
         else if (!channelProfile.channelAuthValues.tokenSecret)
-            messages.push("channelProfile.channelAuthValues.tokenSecret was not provided");
+            invalidMsg = "channelProfile.channelAuthValues.tokenSecret was not provided";
         else if (!channelProfile.fulfillmentBusinessReferences)
-            messages.push("channelProfile.fulfillmentBusinessReferences was not provided");
+            invalidMsg = "channelProfile.fulfillmentBusinessReferences was not provided";
         else if (!nc.isArray(channelProfile.fulfillmentBusinessReferences))
-            messages.push("channelProfile.fulfillmentBusinessReferences is not an array");
+            invalidMsg = "channelProfile.fulfillmentBusinessReferences is not an array";
         else if (!nc.isNonEmptyArray(channelProfile.fulfillmentBusinessReferences))
-            messages.push("channelProfile.fulfillmentBusinessReferences is empty");
+            invalidMsg = "channelProfile.fulfillmentBusinessReferences is empty";
         else if (!payload)
-            messages.push("payload was not provided");
+            invalidMsg = "payload was not provided";
         else if (!payload.doc)
-            messages.push("payload.doc was not provided");
+            invalidMsg = "payload.doc was not provided";
         else if (!payload.salesOrderRemoteID)
-            messages.push("payload.salesOrderRemoteID was not provided");
+            invalidMsg = "payload.salesOrderRemoteID was not provided";
         else if (!payload.doc.remoteIDs && !payload.doc.searchFields && !payload.doc.modifiedDateRange)
-            messages.push("either payload.doc.remoteIDs or payload.doc.searchFields or payload.doc.modifiedDateRange must be provided");
+            invalidMsg = "either payload.doc.remoteIDs or payload.doc.searchFields or payload.doc.modifiedDateRange must be provided";
         else if (payload.doc.remoteIDs && (payload.doc.searchFields || payload.doc.modifiedDateRange))
-            messages.push("only one of payload.doc.remoteIDs or payload.doc.searchFields or payload.doc.modifiedDateRange may be provided");
+            invalidMsg = "only one of payload.doc.remoteIDs or payload.doc.searchFields or payload.doc.modifiedDateRange may be provided";
         else if (payload.doc.remoteIDs && (!Array.isArray(payload.doc.remoteIDs) || payload.doc.remoteIDs.length === 0))
-            messages.push("payload.doc.remoteIDs must be an Array with at least 1 remoteID");
+            invalidMsg = "payload.doc.remoteIDs must be an Array with at least 1 remoteID";
         else if (payload.doc.searchFields && (!Array.isArray(payload.doc.searchFields) || payload.doc.searchFields.length === 0))
-            messages.push("payload.doc.searchFields must be an Array with at least 1 key value pair: {searchField: 'key', searchValues: ['value_1']}");
+            invalidMsg = "payload.doc.searchFields must be an Array with at least 1 key value pair: {searchField: 'key', searchValues: ['value_1']}";
         else if (payload.doc.searchFields) {
           for (let i = 0; i < payload.doc.searchFields.length; i++) {
             if (!payload.doc.searchFields[i].searchField || !Array.isArray(payload.doc.searchFields[i].searchValues) || payload.doc.searchFields[i].searchValues.length === 0)
-              messages.push("payload.doc.searchFields[" + i + "] must be a key value pair: {searchField: 'key', searchValues: ['value_1']}");
+              invalidMsg = "payload.doc.searchFields[" + i + "] must be a key value pair: {searchField: 'key', searchValues: ['value_1']}";
               break;
             }
           }
         else if (payload.doc.modifiedDateRange && !(payload.doc.modifiedDateRange.startDateGMT || payload.doc.modifiedDateRange.endDateGMT))
-            messages.push("at least one of payload.doc.modifiedDateRange.startDateGMT or payload.doc.modifiedDateRange.endDateGMT must be provided");
+            invalidMsg = "at least one of payload.doc.modifiedDateRange.startDateGMT or payload.doc.modifiedDateRange.endDateGMT must be provided";
         else if (payload.doc.modifiedDateRange && payload.doc.modifiedDateRange.startDateGMT && payload.doc.modifiedDateRange.endDateGMT && (payload.doc.modifiedDateRange.startDateGMT > payload.doc.modifiedDateRange.endDateGMT))
-            messages.push("startDateGMT must have a date before endDateGMT");
+            invalidMsg = "startDateGMT must have a date before endDateGMT";
 
-        if (messages.length > 0) {
-            messages.forEach(msg => logError(msg));
+        if (invalidMsg) {
+            logError(invalidMsg);
             out.ncStatusCode = 400;
-            throw new Error(`Invalid request [${messages.join(", ")}]`);
+            throw new Error(`Invalid request [${invalidMsg}]`);
         }
         logInfo("Function is valid.");
     }
@@ -198,45 +198,6 @@ let GetFulfillmentFromQuery = function(ncUtil, channelProfile, flowContext, payl
           }
 
           searchPayload["searchRecord"]["basic"]["lastModifiedDate"] = obj;
-        }
-
-        if (flowContext) {
-          if (flowContext.entity_id) {
-            let obj = {
-              "$attributes": {
-                "operator": "anyOf"
-              },
-              "searchValue": {
-                "$attributes": {
-                  "internalId": flowContext.entity_id
-                }
-              }
-            }
-
-            searchPayload["searchRecord"]["basic"]["entity"] = obj;
-          }
-
-          if (flowContext.created_at) {
-            let obj = {
-              "$attributes": {
-                "operator": "on"
-              },
-              "searchValue": flowContext.created_at
-            }
-
-            searchPayload["searchRecord"]["basic"]["lastModifiedDate"] = obj;
-          }
-
-          if (flowContext.updated_at) {
-            let obj = {
-              "$attributes": {
-                "operator": "on"
-              },
-              "searchValue": flowContext.updated_at
-            }
-
-            searchPayload["searchRecord"]["basic"]["dateCreated"] = obj;
-          }
         }
 
         return searchPayload;

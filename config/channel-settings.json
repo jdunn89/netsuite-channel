@@ -24,8 +24,8 @@
           "customForm": ""
         },
         "configView" : [
-          "canUpdateOrderFlag",
-          "customForm"
+          "customForm",
+          "doPutCustomer"
         ],
         "configModel" : {
           "required" : [
@@ -73,8 +73,8 @@
           {
             "name": "SalesOrderItem",
             "location": "record.itemList.item",
-            "remoteID": "record.itemList.item.$attributes.internalId",
-            "businessReferences": ["name"]
+            "remoteID": "item.$attributes.internalId",
+            "businessReferences": ["item.name"]
           }
         ]
       }
@@ -90,17 +90,9 @@
       },
       "configDef" : {
         "configValues" : {
-          "shipStatus" : "_picked",
-          "entity_id" : "",
-          "created_at" : "",
-          "updated_at" : ""
+          "shipStatus" : "_shipped"
         },
-        "configView" : [
-          "shipStatus",
-          "entity_id",
-          "created_at",
-          "updated_at"
-        ],
+        "configView" : [],
         "configModel" : {
           "required" : [
             "shipStatus"
@@ -108,24 +100,7 @@
           "properties" : {
             "shipStatus": {
               "type": "string",
-              "title": "Status",
-              "enum": [
-                "_picked",
-                "_packed",
-                "_shipped"
-              ]
-            },
-            "entity_id": {
-              "type": "number",
-              "title": "Remote ID"
-            },
-            "created_at": {
-              "type": "date",
-              "title": "Created Date"
-            },
-            "updated_at": {
-              "type": "date",
-              "title": "Last Modified Date"
+              "title": "Status"
             }
           }
         }
@@ -137,13 +112,13 @@
           "salesOrderBusinessReferences": ["record.otherRefNum"]
         },
         "remoteID": "record.$attributes.internalId",
-        "businessReferences": [""],
+        "businessReferences": ["record.$attributes.internalId"],
         "children": [
           {
             "name": "Item ID",
             "location": "record.itemList.item",
-            "remoteID": "record.itemList.item.attributes.internalId",
-            "businessReferences": ["record.itemList.item.itemName"]
+            "remoteID": "item.$attributes.internalId",
+            "businessReferences": ["item.name"]
           }
         ]
       }
@@ -186,8 +161,8 @@
           ]
         },
         "configView" : [
-          "canUpdateCustomerFlag",
-          "customForm"
+          "customForm",
+          "doCustomerAddress"
         ],
         "configValues" : {
           "canUpdateCustomerFlag": true,
@@ -205,8 +180,8 @@
           {
             "name": "Address",
             "location": "customer.addressbookList.addressbook",
-            "remoteID": "customer.addressbookList.addressbook.internalId",
-            "businessReferences": ["customer.addressbookList.addressbook.addr1", "customer.addressbookList.addressbook.zip"]
+            "remoteID": "internalId",
+            "businessReferences": ["addressbookAddress.addr1", "addressbookAddress.zip"]
           }
         ]
       }
@@ -233,9 +208,7 @@
             "canUpdateCustomerAddressFlag"
           ]
         },
-        "configView": [
-          "canUpdateCustomerAddressFlag"
-        ],
+        "configView": [],
         "configValues": {
           "canUpdateCustomerAddressFlag": true
         }
@@ -369,18 +342,22 @@
         },
         {
           "key": "consumerKey",
+          "type": "password",
           "title": "Consumer Key"
         },
         {
           "key": "consumerSecret",
+          "type": "password",
           "title": "Consumer Secret"
         },
         {
           "key": "tokenID",
+          "type": "password",
           "title": "Token ID"
         },
         {
           "key": "tokenSecret",
+          "type": "password",
           "title": "Token Secret"
         }
       ],
