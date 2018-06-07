@@ -1,302 +1,15 @@
 {
-  "name": "Template Name",
-  "description": "Template Registry",
-  "channelIcon": "<base64 image>",
+  "name": "NetSuite",
+  "description": "NetSuite Integration",
+  "channelIcon": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAlgCVAAD/2wBDAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4+JS5ESUM8SDc9Pjv/2wBDAQoLCw4NDhwQEBw7KCIoOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozv/wAARCAMEA/sDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD2aiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKK8w+IviHVtL8QpBY30kEZhDFV6ZrlP8AhNPEX/QVm/OumOHlJJ3OaWJjGTVj3qivBf8AhNPEX/QVm/Oj/hNPEX/QVm/Oq+qy7k/W49j3qivBf+E08Rf9BWb86P8AhNPEX/QVm/Oj6rLuH1uPY96orwX/AITTxF/0FZvzo/4TTxF/0FZvzo+qy7h9bj2PeqK8F/4TTxF/0FZvzo/4TTxF/wBBWb86Pqsu4fW49j3qivBf+E08Rf8AQVm/Oj/hNPEX/QVm/Oj6rLuH1uPY96orwX/hNPEX/QVm/Oj/AITTxF/0FZvzo+qy7h9bj2PeqK8F/wCE08Rf9BWb86P+E08Rf9BWb86Pqsu4fW49j3qivBf+E08Rf9BWb86sad4w8QS6lbRvqczK0qggnqM0vqsu4LFR7HuVFNQ5RSfSnVynWFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAePfFT/kaI/+vcfzriq7X4qf8jRH/wBe4/nXFV6tL+GjyK38RhRRRWpkFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFW9K/wCQtaf9dl/nVSrelf8AIWtP+uy/zpPYa3PohTthB9FrKOuMDjyh+dan/Lv/AMA/pXKv9415MUmexJtGr/brf88l/Oj+3W/55L+dZFFXyojmZr/263/PJfzo/t1v+eS/nWRRRyoOZmv/AG63/PJfzo/t1v8Ankv51kUUcqDmZr/263/PJfzrQsro3cHmFdvOMVzNb+jf8eR/3jUySSKi22aFFFFZmgUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAePfFT/kaI/wDr3H864qu1+Kn/ACNEf/XuP51xVerS/ho8it/EYUUUVqZBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABVvSv+Qtaf9dl/nVSrelf8ha0/wCuy/zpPYa3Pof/AJd/+Af0rlX+8a6r/l3/AOAf0rlX+8a8qB68xtFFFaGYUUUUAFFFFAC1v6N/x5H/AHjWBW/o3/Hkf941E9i4bmhRRRWRqFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFAHj3xU/5GiP/r3H864qvY/FfgJ/Euqrei/EAEYTbszWJ/wqGT/oLD/v3XoU60FBJs82pRqSm2keb0V6R/wqGT/oLD/v3R/wqGT/AKCw/wC/dae3p9yPq9Tseb0V6R/wqGT/AKCw/wC/dH/CoZP+gsP+/dHt6fcPq9Tseb0V6R/wqGT/AKCw/wC/dH/CoZP+gsP+/dHt6fcPq9Tseb0V6R/wqGT/AKCw/wC/dH/CoZP+gsP+/dHt6fcPq9Tseb0V6R/wqGT/AKCw/wC/dcd4j8O3fhvUTa3HzoeY5QOHFVGrCTsmRKlOCu0ZFFFFaGYUUUUAFW9K/wCQtaf9dl/nVSrelf8AIWtP+uy/zpPYa3Pof/l3/wCAf0rlX+8a6sDdCB6rWOdEmJzvWvJi0j2JJsyqK1P7Dm/vrUc+kyQQmQupA9K05kZ8rM+iiimIKKKKAFrf0b/jyP8AvGsCt/Rv+PI/7xqJ7Fw3NCiiisjUKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACobm5W1jDuCQTjipqztZ/49B/vU0rsT0Qn9tQf3G/MUf21B/cb8xWDRWvIjLnZvf21B/cb8xR/bUH9xvzFYNFHIg52b39tQf3G/MVegmW4hWVQQG9a5Qda6TTP+QfF9KiUUkXGTbLdFFFQWFY3ifw7b+I9Ke1lAWVeYpO6t/hWzRTTad0JpSVmfON/Y3Gm3stndIUlibDA1Xr2Xx94RXXLI31pGPt0C9h/rF9PrXjbKyMVYEMDgg9q9SlUU43PJq03TlYSiiitTIKt6V/yFrT/rsv8AOqlW9K/5C1p/12X+dJ7DW59Ex/6tfoKdTY/9Wv0FOrxj2wqrqX/Hi/1H86tVV1L/AI8X+o/nTW4nsc1SUtJW5gFFFFAC1v6N/wAeR/3jWBW/o3/Hkf8AeNRPYuG5oUUUVkahRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAVnaz/x6D/erRrO1n/j0H+9VR3JlsYFFFFbGIUUUUAKOtdJpn/IPi+lc2OtdJpn/ACD4vpUT2LhuW6KKKyNQooooAK8v+I/g/wApm1vT4/kY/wCkRqOh/vCvUKZLGk0TRSKHRxhlI4IrSnNwldGdSmpxsz5sorqPHHhN/Duo+bApNjOcxt/cP901y9epGSkro8mUXF2YVb0r/kLWn/XZf51Uq3pX/IWtP+uy/wA6b2Etz6Jj/wBWv0FOpsf+rX6CnV4x7YVV1L/jxf6j+dWqq6l/x4v9R/OmtxPY5qkpaStzAKKKKAFrf0b/AI8j/vGsCt/Rv+PI/wC8aiexcNzQooorI1CiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigArO1n/j0H+9WjWdrP/HoP96qjuTLYwKKKK2MQooooAUda6TTP+QfF9K5sda6TTP8AkHxfSonsXDct0UUVkahRTJf9S/8AumuL8D+Lvt882j38mbmJ28l2/jUHp9RVqDabXQhzSaT6nb0UUVBZS1bS7bWNOlsrpA0cgxnup7EV4Tr+h3Xh/VJLK5U4BzG/Z17GvoOsDxf4Zh8SaU0eAtzEN0L+h9Poa6KNXkdnsc9elzq63PCKt6V/yFrT/rsv86huraayupLa4QpLE21lPY1NpX/IWtP+uy/zr0XseYtz6Jj/ANWv0FOpsf8Aq1+gp1eMe2FVdS/48X+o/nVqqupf8eL/AFH86a3E9jmqSlpK3MAooooAWt/Rv+PI/wC8awK39G/48j/vGonsXDc0KKKKyNQooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKztZ/wCPQf71aNZ2s/8AHoP96qjuTLYwKKKK2MQooooAUda6TTP+QfF9K5sda6TTP+QfF9KiexcNy3RRRWRqMl/1L/7pr53luJbTV5LiBykkcxZWHUHNfREv+pf/AHTXznff8f8Acf8AXRv512YXqcWL6Ht3g/xRD4k0wMxC3cIAmT+o9jXQ189aFrV1oOpx3tq3KnDp2de4Ne76Pq1tremxX1q2UkHI7qe4NZ16XI7rY0oVedWe5eooornOk4X4h+EBqds2q2MX+lwr+8VR/rFH9RXl2lcavaA/89l/nX0V1rzHxh4Q/s7XrXV7CL/RpZ185FH3Gz1+hrsoVdORnFXo688T02P/AFa/QU6mx/6tfoKdXGdoVV1L/jxf6j+dWqq6l/x4v9R/OmtxPY5qkpaStzAKKKKAFrf0b/jyP+8awK39G/48j/vGonsXDc0KKKKyNQooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKztZ/49B/vVo1naz/AMeg/wB6qjuTLYwKKKK2MQooooAUda6TTP8AkHxfSubHWuk0z/kHxfSonsXDct0UUVkajJf9S/8AumvnO+/4/wC4/wCujfzr6Ml/1L/7pr5zvv8Aj/uP+ujfzrtwvU4cX0IK6bwV4rfw5qISUlrKcgSr/d/2hXM0V1yipKzOOMnF3R9JwzR3EKTQuHjcblYHgin15Z8OfGH2WRdFv5P3Ln9w7H7p/u/SvU68upBwlZnrU6iqRugprIrrtdQwPYinUVmaCdBiloooAKq6l/x4v9R/OrVVdS/48X+o/nTW4nsc1SUtJW5gFFFFAC1v6N/x5H/eNYFb+jf8eR/3jUT2LhuaFFFFZGoUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFZ2s/wDHoP8AerRrO1n/AI9B/vVUdyZbGBRRRWxiFFFFACjrXSaZ/wAg+L6VzY610mmf8g+L6VE9i4bluiiisjUZL/qX/wB018533/H/AHH/AF0b+dfRkv8AqX/3TXznff8AH/cf9dG/nXbhepw4voQUUUV2nCKCVIZSQRyCO1ew/D/xcNZsxp95IPtsC8E/8tF9frXjtT2V5Pp95Fd20hjlibcrCsqlNTjY1pVHTlc+j6KxPCviODxHpS3CELOnyzR/3W/wrbry2nF2Z60WpK6CiiikMKq6l/x4v9R/OrVVdS/48X+o/nTW4nsc1SUtJW5gFFFFAC1v6N/x5H/eNYFb+jf8eR/3jUT2LhuaFFFFZGoUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFZ2s/wDHoP8AerRrO1n/AI9B/vVUdyZbGBRRRWxiFFFFACjrXSaZ/wAg+L6Vzda1nqsUFqkbISVHrUyV0XF2Zs0Vm/21D/cb8xSjWYSQNjfmKz5WXzIvS/6l/wDdNfOd9/x/3H/XRv519FyHMDn1U/yr50vv+P8AuP8Aro38668L1OPF9CCiiiu04QooooA1vDev3Ph3VUu4SSh4lj7Ote7adqFvqthFe2rh4pVyD6e1fOddV4K8ZN4buHhuQ8tlJyUXqp9RXNXpc6utzpoVuR2ex7ZRXE/8LV0L/njd/wDfA/xo/wCFq6F/zxu/++B/jXH7Gp2O721PudtUN1CZ7dowcE4rj/8Ahauhf88bv/vgf40f8LV0L/njd/8AfA/xo9lU7C9tT7m3/Ycv/PRaP7Dl/wCei1if8LV0L/njd/8AfA/xo/4WroX/ADxu/wDvgf41XJV7E+0pdzb/ALDl/wCei0f2HL/z0WsT/hauhf8APG7/AO+B/jR/wtXQv+eN3/3wP8aOSr2D2lLubf8AYcv/AD0WtKxtmtIDGxB5zxXJf8LV0L/njd/98D/Gj/hauhf88bv/AL4H+NJ06j6DVWkup21Fc7oHjXTfEd69pZxzq6JvJkUAY/OuirOUXF2ZrGSkroKKKKkoKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKztZ/wCPQf71aNZ2s/8AHoP96qjuTLYwKKKK2MQooooAKKKKACnx/wCsX6imU+P/AFi/UUAdS/8Ax7N/uf0r50vv+P8AuP8Aro386+i3/wCPZv8Ac/pXzpff8f8Acf8AXRv51rhepji+hBRRRXacIUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAdz8KP+RjuP+vc/zr12vIvhR/yMdx/17n+deu15uJ/iHp4b+GFFFFc50hRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABWdrP8Ax6D/AHq0aztZ/wCPQf71VHcmWxgUUUVsYhRRRQAUUUUAFPj/ANYv1FMp8f8ArF+ooA6l/wDj2b/c/pXzpff8f9x/10b+dfRb/wDHs3+5/SvnS+/4/wC4/wCujfzrXC9THF9CCiiiu04QooooAKKKKACiiigAooooAKKKKACiiigAooooA7n4Uf8AIx3H/Xuf5167XkXwo/5GO4/69z/OvXa83E/xD08N/DCiiiuc6QooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAqnqdvJcW4SMZO71q5RTTsJq5zv9kXf/PMf99Uf2Rd/88x/31XRUVXOyeRHO/2Rd/8APMf99Uf2Rd/88x/31XRUUc7DkRzv9kXf/PMf99Uf2Rd/88x/31XRUUc7DkRzv9kXf/PMf99U5NKu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KKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKyNW8K6Hrs6T6np0NzIi7VZxyBWvRQBzX/AArrwj/0A7b/AL5pY/h94TikWRNEtgykEHb0NdJRQAgAAAHAFLRRQAUUUUAZWr+GdF16SOTVNOhunjGEZxyBWf8A8K68I/8AQDtv++a6WigDmf8AhXXhH/oB23/fNb9lZW2n2kdpaRLDBEMIi9AKnooAKx9V8J6FrdyLnUtNhuZQu0O45xWxRQBzX/CuvCP/AEA7b/vmj/hXXhH/AKAdt/3zXS0UAc1/wrrwj/0A7b/vmj/hXXhH/oB23/fNdLRQBzX/AArrwj/0A7b/AL5o/wCFdeEf+gHbf9810tFAHM/8K68I/wDQDtv++a37S0t7C1jtbWJYoYhhEXoBU9FABRRRQAUUUUAc5N8P/Cs8zzS6LbNJIxZmK9SetN/4V14R/wCgHbf9810tFAHO2/gLwta3EdxBo1uksTBkYDkEd66KiigAooooAKKKKAE61k6p4V0HWQf7Q0u3mbH3ygDD8a16KAPP7v4K+EbgkxRXEDH+5KcflWe/wI0Agbb67U565Br1CigDzWD4G+GI5N0s13Kv93fiuo0bwF4Z0Jley0uLzF6SSDew/E10VFACAYGB0paKKACiiigAooooARlDKVYAg9Qa5XWfhp4V1t2kuNMWKRuS8B2En8K6uigDy24+A+hSPmHULqJfTg0kHwG0NHzNqN1IvpwK9TooA5HR/hf4T0ZxJDponkHIa4O/B/GusVFRQqKFUdABgCnUUAFFFFABRRRQAVlav4a0bXnjfVLCK6aIYQuOgrVooA52DwD4Vtp0nh0W2SSNgysF6Guh6UtFABRRRQAUUUUAFYF74H8NajeSXd3pFvNPKcu7Dkmt+igDH0nwpoWh3LXOmabDbTMuwug5I9K2KKKACiiigAooooAztX0DStejjj1SyjuliO5A4+6ay/8AhXXhH/oB23/fNdLRQBzX/CuvCP8A0A7b/vmj/hXXhH/oB23/AHzXS0UAc1/wrrwj/wBAO2/75o/4V14R/wCgHbf9810tFAHNf8K68I/9AO2/75q9pPhXQ9DuGuNM06G2lddrMg5IrXooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//Z",
   "definitionFolderName": " ",
   "retailClasses": [
-    "eCommerce"
+    "ERP"
   ],
   "orderProcessingRoles": [
-    "Sales","Fulfillment"
+    "Fulfillment"
   ],
   "channelActionRegistries": [
-    {
-      "name": "GET PRODUCTGROUP",
-      "description": "GET PRODUCTGROUP",
-      "channelVerb": "GET",
-      "channelNoun": "PRODUCTGROUP",
-      "ruleDef": {
-        "ruleSchema": {},
-        "defaultRuleValues": {}
-      },
-      "configDef": {
-        "configModel": {},
-        "configView": [],
-        "configValues": {}
-      },
-      "documentDef": {
-        "schema": {},
-        "referenceLocation": {"productGroupBusinessReferences": [""]}
-      }
-    },
-    {
-      "name": "PUT PRODUCTGROUP",
-      "description": "PUT PRODUCTGROUP",
-      "channelVerb": "PUT",
-      "channelNoun": "PRODUCTGROUP",
-      "ruleDef": {
-        "ruleSchema": {},
-        "defaultRuleValues": {}
-      },
-      "configDef": {
-        "configValues" : {
-          "doPutProductPricingFlag": false,
-          "doPutProductQuantityFlag": false,
-          "doPutProductFlag": false,
-          "canUpdateProductPricingFlag": false,
-          "canUpdateProductQuantityFlag": false,
-          "canUpdateProductFlag": false,
-          "canUpdateProductGroupFlag" : true
-        },
-        "configView" : [
-          "canUpdateProductGroupFlag"
-        ],
-        "configModel" : {
-          "required" : [
-            "doPutProductPricingFlag",
-            "doPutProductQuantityFlag",
-            "doPutProductFlag",
-            "canUpdateProductPricingFlag",
-            "canUpdateProductQuantityFlag",
-            "canUpdateProductFlag",
-            "canUpdateProductGroupFlag"
-          ],
-          "properties" : {
-            "doPutProductPricingFlag" : {
-              "type" : "boolean",
-              "title" : "PUT Product, doPutProductPricingFlag"
-            },
-            "doPutProductQuantityFlag" : {
-              "type" : "boolean",
-              "title" : "PUT Product, doPutProductQuantityFlag"
-            },
-            "doPutProductFlag" : {
-              "type" : "boolean",
-              "title" : "PUT ProductGroup, doPutProductFlag"
-            },
-            "canUpdateProductPricingFlag" : {
-              "type" : "boolean",
-              "title" : "PUT Product, canUpdateProductPricingFlag"
-            },
-            "canUpdateProductQuantityFlag" : {
-              "type" : "boolean",
-              "title" : "PUT Product, canUpdateProductQuantityFlag"
-            },
-            "canUpdateProductFlag" : {
-              "type" : "boolean",
-              "title" : "PUT ProductGroup, canUpdateProductFlag"
-            },
-            "canUpdateProductGroupFlag" : {
-              "type" : "boolean",
-              "title" : "PUT ProductGroup, canUpdateProductGroupFlag"
-            }
-          },
-          "type" : "object"
-        }
-      },
-      "documentDef": {
-        "schema": {},
-        "referenceLocation": {"productGroupBusinessReferences": [""]}
-      }
-    },
-    {
-      "name": "GET PRODUCT",
-      "description": "GET PRODUCT",
-      "channelVerb": "GET",
-      "channelNoun": "PRODUCT",
-      "ruleDef": {
-        "ruleSchema": {},
-        "defaultRuleValues": {}
-      },
-      "configDef": {
-        "configModel": {},
-        "configView": [],
-        "configValues": {}
-      },
-      "documentDef": {
-        "schema": {},
-        "referenceLocation": {"productBusinessReferences": [""]}
-      }
-    },
-    {
-      "name": "PUT PRODUCT",
-      "description": "PUT PRODUCT",
-      "channelVerb": "PUT",
-      "channelNoun": "PRODUCT",
-      "ruleDef": {
-        "ruleSchema": {},
-        "defaultRuleValues": {}
-      },
-      "configDef": {
-        "configValues" : {
-          "doPutProductPricingFlag": false,
-          "doPutProductQuantityFlag": false,
-          "canUpdateProductPricingFlag": false,
-          "canUpdateProductQuantityFlag": false,
-          "canUpdateProductFlag": true
-        },
-        "configView" : [
-          "canUpdateProductFlag"
-        ],
-        "configModel" : {
-          "required" : [
-            "doPutProductPricingFlag",
-            "doPutProductQuantityFlag",
-            "canUpdateProductPricingFlag",
-            "canUpdateProductQuantityFlag",
-            "canUpdateProductFlag"
-          ],
-          "properties" : {
-            "doPutProductPricingFlag" : {
-              "type" : "boolean",
-              "title" : "PUT Product, doPutProductPricingFlag"
-            },
-            "doPutProductQuantityFlag" : {
-              "type" : "boolean",
-              "title" : "PUT Product, doPutProductQuantityFlag"
-            },
-            "canUpdateProductPricingFlag" : {
-              "type" : "boolean",
-              "title" : "PUT Product, canUpdateProductPricingFlag"
-            },
-            "canUpdateProductQuantityFlag" : {
-              "type" : "boolean",
-              "title" : "PUT Product, canUpdateProductQuantityFlag"
-            },
-            "canUpdateProductFlag" : {
-              "type" : "boolean",
-              "title" : "PUT Product, canUpdateProductFlag"
-            }
-          },
-          "type" : "object"
-        }
-      },
-      "documentDef": {
-        "schema": {},
-        "referenceLocation": {"productBusinessReferences": [""]}
-      }
-    },
-    {
-      "name": "GET PRODUCTPRICING",
-      "description": "GET PRODUCTPRICING",
-      "channelVerb": "GET",
-      "channelNoun": "PRODUCTPRICING",
-      "ruleDef": {
-        "ruleSchema": {},
-        "defaultRuleValues": {}
-      },
-      "configDef": {
-        "configModel": {},
-        "configView": [],
-        "configValues": {}
-      },
-      "documentDef": {
-        "schema": {},
-        "referenceLocation": {"productPricingBusinessReferences": [""]}
-      }
-    },
-    {
-      "name": "PUT PRODUCTPRICING",
-      "description": "PUT PRODUCTPRICING",
-      "channelVerb": "PUT",
-      "channelNoun": "PRODUCTPRICING",
-      "ruleDef": {
-        "ruleSchema": {},
-        "defaultRuleValues": {}
-      },
-      "configDef": {
-        "configValues" : {
-          "canUpdateProductPricingFlag": true
-        },
-        "configView" : [],
-        "configModel" : {
-          "required" : [
-            "canUpdateProductPricingFlag"
-          ],
-          "properties" : {
-            "canUpdateProductPricingFlag" : {
-              "type" : "boolean",
-              "title" : "PUT ProductPricing, canUpdateProductPricingFlag"
-            }
-          },
-          "type" : "object"
-        }
-      },
-      "documentDef": {
-        "schema": {},
-        "referenceLocation": {"productPricingBusinessReferences": [""]}
-      }
-    },
-    {
-      "name": "GET PRODUCTQUANTITY",
-      "description": "GET PRODUCTQUANTITY",
-      "channelVerb": "GET",
-      "channelNoun": "PRODUCTQUANTITY",
-      "ruleDef": {
-        "ruleSchema": {},
-        "defaultRuleValues": {}
-      },
-      "configDef": {
-        "configModel": {},
-        "configView": [],
-        "configValues": {}
-      },
-      "documentDef": {
-        "schema": {},
-        "referenceLocation": {"productQuantityBusinessReferences": [""]}
-      }
-    },
-    {
-      "name": "PUT PRODUCTQUANTITY",
-      "description": "PUT PRODUCTQUANTITY",
-      "channelVerb": "PUT",
-      "channelNoun": "PRODUCTQUANTITY",
-      "ruleDef": {
-        "ruleSchema": {},
-        "defaultRuleValues": {}
-      },
-      "configDef": {
-        "configValues" : {
-          "canUpdateProductQuantityFlag": true
-        },
-        "configView" : [],
-        "configModel" : {
-          "required" : [
-            "canUpdateProductQuantityFlag"
-          ],
-          "properties" : {
-            "canUpdateProductQuantityFlag" : {
-              "type" : "boolean",
-              "title" : "PUT ProductQuantity, canUpdateProductQuantityFlag"
-            }
-          },
-          "type" : "object"
-        }
-      },
-      "documentDef": {
-        "schema": {},
-        "referenceLocation": {"productQuantityBusinessReferences": [""]}
-      }
-    },
-    {
-      "name": "GET SALESORDER",
-      "description": "GET SALESORDER",
-      "channelVerb": "GET",
-      "channelNoun": "SALESORDER",
-      "ruleDef": {
-        "ruleSchema": {},
-        "defaultRuleValues": {}
-      },
-      "configDef": {
-        "configModel": {},
-        "configView": [],
-        "configValues": {}
-      },
-      "documentDef": {
-        "schema": {},
-        "referenceLocation": {"salesOrderBusinessReferences": [""]}
-      }
-    },
     {
       "channelNoun" : "SALESORDER",
       "channelVerb" : "PUT",
@@ -304,19 +17,44 @@
       "name" : "PUT SALESORDER",
       "configDef" : {
         "configValues" : {
-          "canUpdateOrderFlag" : false
+          "canUpdateOrderFlag" : false,
+          "doPutCustomer" : true,
+          "doExtractShippingAddress" : false,
+          "doExtractBillingAddress": false,
+          "customForm": ""
         },
         "configView" : [
-          "canUpdateOrderFlag"
+          "customForm",
+          "doPutCustomer"
         ],
         "configModel" : {
           "required" : [
-            "canUpdateOrderFlag"
+            "canUpdateOrderFlag",
+            "doPutCustomer",
+            "doExtractShippingAddress",
+            "doExtractBillingAddress",
+            "customForm"
           ],
           "properties" : {
+            "customForm" : {
+              "type" : "string",
+              "title" : "Sales Order Form"
+            },
             "canUpdateOrderFlag" : {
               "type" : "boolean",
               "title" : "PUT Order, canUpdateOrderFlag"
+            },
+            "doPutCustomer" : {
+              "type" : "boolean",
+              "title" : "PUT Order, doPutCustomer"
+            },
+            "doExtractShippingAddress" : {
+              "type" : "boolean",
+              "title" : "PUT Order, doExtractShippingAddress"
+            },
+            "doExtractBillingAddress" : {
+              "type" : "boolean",
+              "title" : "PUT Order, doExtractBillingAddress"
             }
           },
           "type" : "object"
@@ -328,63 +66,61 @@
       },
       "documentDef" : {
         "schema": {},
-        "referenceLocation": {"salesOrderBusinessReferences": [""]}
+        "referenceLocation": {"salesOrderBusinessReferences": ["record.otherRefNum"]},
+        "remoteID": "record.$attributes.internalId",
+        "businessReferences": ["record.otherRefNum"],
+        "children": [
+          {
+            "name": "PRODUCT",
+            "location": "record.itemList.item",
+            "remoteID": "item.$attributes.internalId",
+            "businessReferences": ["item.name"]
+          }
+        ]
       }
     },
     {
-      "name": "PUT FULFILLMENT",
-      "description": "PUT FULFILLMENT",
-      "channelVerb": "PUT",
+      "name": "GET FULFILLMENT",
+      "description": "GET FULFILLMENT",
+      "channelVerb": "GET",
       "channelNoun": "FULFILLMENT",
       "ruleDef": {
         "ruleSchema": {},
         "defaultRuleValues": {}
       },
-      "configDef": {
+      "configDef" : {
         "configValues" : {
-          "canUpdateFulfillmentFlag" : true
+          "shipStatus" : "_shipped"
         },
-        "configView" : [
-          "canUpdateFulfillmentFlag"
-        ],
+        "configView" : [],
         "configModel" : {
-          "required": [
-            "canUpdateFulfillmentFlag"
+          "required" : [
+            "shipStatus"
           ],
-          "properties": {
-            "canUpdateFulfillmentFlag": {
-              "type": "boolean",
-              "title": "PUT Fulfillment, canUpdateFulfillmentFlag"
+          "properties" : {
+            "shipStatus": {
+              "type": "string",
+              "title": "Status"
             }
-          },
-          "type": "object"
+          }
         }
       },
       "documentDef": {
         "schema": {},
         "referenceLocation": {
-          "fulfillmentBusinessReferences": [""],
-          "salesOrderBusinessReferences": [""]
-        }
-      }
-    },
-    {
-      "name": "GET CUSTOMER",
-      "description": "GET CUSTOMER",
-      "channelVerb": "GET",
-      "channelNoun": "CUSTOMER",
-      "ruleDef": {
-        "ruleSchema": {},
-        "defaultRuleValues": {}
-      },
-      "configDef": {
-        "configModel": {},
-        "configView": [],
-        "configValues": {}
-      },
-      "documentDef": {
-        "schema": {},
-        "referenceLocation": {"customerBusinessReferences": ["", ""]}
+          "fulfillmentBusinessReferences": ["record.$attributes.internalId"],
+          "salesOrderBusinessReferences": ["record.otherRefNum"]
+        },
+        "remoteID": "record.$attributes.internalId",
+        "businessReferences": ["record.$attributes.internalId"],
+        "children": [
+          {
+            "name": "PRODUCT",
+            "location": "record.itemList.item",
+            "remoteID": "item.$attributes.internalId",
+            "businessReferences": ["item.name"]
+          }
+        ]
       }
     },
     {
@@ -400,25 +136,54 @@
         "configModel" : {
           "type" : "object",
           "properties" : {
+            "customForm" : {
+              "title" : "Customer Form",
+              "type" : "string"
+            },
             "canUpdateCustomerFlag" : {
               "title" : "PUT Customer, canUpdateCustomerFlag",
+              "type" : "boolean"
+            },
+            "doCustomerAddress" : {
+              "title" : "PUT Customer, doCustomerAddress",
+              "type" : "boolean"
+            },
+            "doCustomerContacts" : {
+              "title" : "PUT Customer, doCustomerContacts",
               "type" : "boolean"
             }
           },
           "required" : [
-            "canUpdateCustomerFlag"
+            "canUpdateCustomerFlag",
+            "doCustomerAddress",
+            "doCustomerContacts",
+            "customForm"
           ]
         },
         "configView" : [
-          "canUpdateCustomerFlag"
+          "customForm",
+          "doCustomerAddress"
         ],
         "configValues" : {
-          "canUpdateCustomerFlag": true
+          "canUpdateCustomerFlag": true,
+          "doCustomerAddress":true,
+          "doCustomerContacts":false,
+          "customForm": ""
         }
       },
       "documentDef": {
         "schema": {},
-        "referenceLocation": {"customerBusinessReferences": ["", ""]}
+        "referenceLocation": {"customerBusinessReferences": ["customer.email"]},
+        "remoteID": "customer.$attributes.internalId",
+        "businessReferences": ["customer.email"],
+        "children": [
+          {
+            "name": "CUSTOMERADDRESS",
+            "location": "customer.addressbookList.addressbook",
+            "remoteID": "internalId",
+            "businessReferences": ["addressbookAddress.addr1", "addressbookAddress.zip"]
+          }
+        ]
       }
     },
     {
@@ -434,73 +199,27 @@
         "configModel": {
           "type": "object",
           "properties": {
-            "doPutCustomerAddressesFlag": {
-              "title": "PUT Customer Address, doPutCustomerAddressesFlag",
-              "type": "boolean"
-            },
             "canUpdateCustomerAddressFlag": {
               "title": "Update Customer Address, canUpdateCustomerAddressFlag",
               "type": "boolean"
             }
           },
           "required": [
-            "doPutCustomerAddressesFlag",
             "canUpdateCustomerAddressFlag"
           ]
         },
-        "configView": [
-          "doPutCustomerAddressesFlag",
-          "canUpdateCustomerAddressFlag"
-        ],
+        "configView": [],
         "configValues": {
-          "doPutCustomerAddressesFlag": true,
           "canUpdateCustomerAddressFlag": true
         }
       },
       "documentDef": {
         "schema": {},
-        "referenceLocation": {}
-      }
-    },
-    {
-      "name": "PUT CUSTOMERCONTACT",
-      "description": "PUT CUSTOMERCONTACT",
-      "channelVerb": "PUT",
-      "channelNoun": "CUSTOMERCONTACT",
-      "ruleDef": {
-        "ruleSchema": {},
-        "defaultRuleValues": {}
-      },
-      "configDef": {
-        "configModel": {
-          "type": "object",
-          "properties": {
-            "doPutCustomerContactsFlag": {
-              "title": "PUT Customer Contacts, doPutCustomerContactsFlag",
-              "type": "boolean"
-            },
-            "canUpdateCustomerContactFlag": {
-              "title": "Update Customer Contacts, canUpdateCustomerContactFlag",
-              "type": "boolean"
-            }
-          },
-          "required": [
-            "doPutCustomerContactsFlag",
-            "canUpdateCustomerContactFlag"
-          ]
-        },
-        "configView": [
-          "doPutCustomerContactsFlag",
-          "canUpdateCustomerContactFlag"
-        ],
-        "configValues": {
-          "doPutCustomerContactsFlag": false,
-          "canUpdateCustomerContactFlag": false
-        }
-      },
-      "documentDef": {
-        "schema": {},
-        "referenceLocation": {}
+        "referenceLocation": {
+          "customerAddressBusinessReferences": [
+            "customer.addressbookList.addressbook.addressbookAddress.addr1",
+            "customer.addressbookList.addressbook.addressbookAddress.zip"
+          ]}
       }
     }
   ],
@@ -508,7 +227,7 @@
     "configDef": {
       "configModel": {
         "type": "object",
-        "title": "Template Channel Settings",
+        "title": "NetSuite Channel Settings",
         "properties": {
           "protocol": {
             "title": "Protocol",
@@ -517,17 +236,47 @@
           "implFolderName": {
             "title": "Implementation Folder Name",
             "type": "string"
+          },
+          "wsdl_uri": {
+            "title": "WSDL URI",
+            "type": "string"
+          },
+          "namespaces": {
+            "title": "Namespaces",
+            "type": "object"
           }
         },
         "required": [
           "protocol",
-          "implFolderName"
+          "implFolderName",
+          "wsdl_uri",
+          "namespaces"
         ]
       },
       "configView": [],
       "configValues": {
         "protocol": "https",
-        "implFolderName": "nav"
+        "implFolderName": "netsuite",
+        "wsdl_uri": "https://webservices.netsuite.com/wsdl/v2017_2_0/netsuite.wsdl",
+        "namespaces": {
+          "platformMsgs": "urn:messages_2017_2.platform.webservices.netsuite.com",
+          "platformCore": "urn:core_2017_2.platform.webservices.netsuite.com",
+          "platformCommon": "urn:common_2017_2.platform.webservices.netsuite.com",
+          "listRel": "urn:relationships_2017_2.lists.webservices.netsuite.com",
+          "tranSales": "urn:sales_2017_2.transactions.webservices.netsuite.com",
+          "actSched": "urn:scheduling_2017_2.activities.webservices.netsuite.com",
+          "setupCustom": "urn:customization_2017_2.setup.webservices.netsuite.com",
+          "listAcct": "urn:accounting_2017_2.lists.webservices.netsuite.com",
+          "tranBank": "urn:bank_2017_2.transactions.webservices.netsuite.com",
+          "tranCust": "urn:customers_2017_2.transactions.webservices.netsuite.com",
+          "tranInvt": "urn:inventory_2017_2.transactions.webservices.netsuite.com",
+          "listSupport": "urn:support_2017_2.lists.webservices.netsuite.com",
+          "tranGeneral": "urn:general_2017_2.transactions.webservices.netsuite.com",
+          "listMkt": "urn:marketing_2017_2.lists.webservices.netsuite.com",
+          "listWebsite": "urn:website_2017_2.lists.webservices.netsuite.com",
+          "fileCabinet": "urn:filecabinet_2017_2.documents.webservices.netsuite.com",
+          "listEmp": "urn:employees_2017_2.lists.webservices.netsuite.com"
+        }
       }
     }
   },
@@ -541,17 +290,75 @@
           "account": {
             "title": "Account Number",
             "type": "string"
+          },
+          "applicationID": {
+            "title": "Application ID",
+            "type": "string"
+          },
+          "applicationName": {
+            "title": "Application Name",
+            "type": "string"
+          },
+          "consumerKey": {
+            "title": "Consumer Key",
+            "type": "string"
+          },
+          "consumerSecret": {
+            "title": "Consumer Secret",
+            "type": "string"
+          },
+          "tokenID": {
+            "title": "Token ID",
+            "type": "string"
+          },
+          "tokenSecret": {
+            "title": "Token Secret",
+            "type": "string"
           }
         },
         "required": [
-          "account"
+          "account",
+          "applicationID",
+          "applicationName",
+          "consumerKey",
+          "consumerSecret",
+          "tokenID",
+          "tokenSecret"
         ]
       },
       "configView": [
 				{
 					"key": "account",
 					"title": "Account Number"
-				}
+				},
+        {
+          "key": "applicationID",
+          "title": "Application ID"
+        },
+        {
+          "key": "applicationName",
+          "title": "Application Name"
+        },
+        {
+          "key": "consumerKey",
+          "type": "password",
+          "title": "Consumer Key"
+        },
+        {
+          "key": "consumerSecret",
+          "type": "password",
+          "title": "Consumer Secret"
+        },
+        {
+          "key": "tokenID",
+          "type": "password",
+          "title": "Token ID"
+        },
+        {
+          "key": "tokenSecret",
+          "type": "password",
+          "title": "Token Secret"
+        }
       ],
       "configValues": {}
     }

@@ -1,6 +1,6 @@
 'use strict'
 
-let InsertSalesOrder = function (ncUtil, channelProfile, flowContext, payload, callback) {
+let InsertCustomerAddress = function (ncUtil, channelProfile, flowContext, payload, callback) {
     const _ = require('lodash');
     const soap = require('strong-soap/src/soap');
     const nc = require('../util/common');
@@ -12,8 +12,6 @@ let InsertSalesOrder = function (ncUtil, channelProfile, flowContext, payload, c
         payload: {}
     };
 
-    let salesOrder = null;
-
     if (!callback) {
         throw new Error("A callback function was not provided");
     } else if (typeof callback !== 'function') {
@@ -21,9 +19,10 @@ let InsertSalesOrder = function (ncUtil, channelProfile, flowContext, payload, c
     }
 
     validateFunction()
-        .then(getOrderRecord)
         .then(createSoapClient)
-        .then(insertSalesOrder)
+        .then(insertCustomerAddress)
+        .then(checkResponse)
+        .then(getUpdatedAddresses)
         .then(buildResponse)
         .catch(handleError)
         .then(() => callback(out))
@@ -71,22 +70,16 @@ let InsertSalesOrder = function (ncUtil, channelProfile, flowContext, payload, c
             invalidMsg = "channelProfile.channelAuthValues.tokenID was not provided";
         else if (!channelProfile.channelAuthValues.tokenSecret)
             invalidMsg = "channelProfile.channelAuthValues.tokenSecret was not provided";
-        else if (!channelProfile.salesOrderBusinessReferences)
-            invalidMsg = "channelProfile.salesOrderBusinessReferences was not provided";
-        else if (!nc.isArray(channelProfile.salesOrderBusinessReferences))
-            invalidMsg = "channelProfile.salesOrderBusinessReferences is not an array";
-        else if (!nc.isNonEmptyArray(channelProfile.salesOrderBusinessReferences))
-            invalidMsg = "channelProfile.salesOrderBusinessReferences is empty";
+        else if (!channelProfile.customerBusinessReferences)
+            invalidMsg = "channelProfile.customerBusinessReferences was not provided";
+        else if (!nc.isArray(channelProfile.customerBusinessReferences))
+            invalidMsg = "channelProfile.customerBusinessReferences is not an array";
+        else if (!nc.isNonEmptyArray(channelProfile.customerBusinessReferences))
+            invalidMsg = "channelProfile.customerBusinessReferences is empty";
         else if (!payload)
             invalidMsg = "payload was not provided";
         else if (!payload.doc)
             invalidMsg = "payload.doc was not provided";
-        else if (!payload.doc.records)
-            invalidMsg = "payload.doc.records was not provided";
-        else if (!nc.isArray(payload.doc.records))
-            invalidMsg = "payload.doc.records is not an array";
-        else if (!nc.isNonEmptyArray(payload.doc.records))
-            invalidMsg = "payload.doc.records is empty";
 
         if (invalidMsg) {
             logError(invalidMsg);
@@ -96,26 +89,7 @@ let InsertSalesOrder = function (ncUtil, channelProfile, flowContext, payload, c
         logInfo("Function is valid.");
     }
 
-    async function getOrderRecord() {
-      return new Promise((resolve, reject) => {
-        logInfo("Getting Sales Order Record...");
-          payload.doc.records.forEach(function (record) {
-            if (record.record.$attributes.$xsiType.type === "SalesOrder") {
-              salesOrder = record;
-            }
-          });
-
-          if (!salesOrder) {
-            out.ncStatusCode = 400;
-            reject("Sales Order Not Founds");
-          } else {
-            logInfo("Found Sales Orders");
-            resolve(salesOrder);
-          }
-      });
-    }
-
-    function createSoapClient(record) {
+    function createSoapClient() {
       return new Promise((resolve, reject) => {
         logInfo("Creating NetSuite Client...");
         soap.createClient(channelProfile.channelSettingsValues.wsdl_uri, {}, function(err, client) {
@@ -128,7 +102,7 @@ let InsertSalesOrder = function (ncUtil, channelProfile, flowContext, payload, c
             client.addSoapHeader(headers);
 
             soapClient = client;
-            resolve(record);
+            resolve(client);
           } else {
             reject(err);
           }
@@ -136,21 +110,77 @@ let InsertSalesOrder = function (ncUtil, channelProfile, flowContext, payload, c
       });
     }
 
-    function insertSalesOrder(record) {
+    function insertCustomerAddress() {
       return new Promise((resolve, reject) => {
-        logInfo("Inserting Sales Order into NetSuite...");
+        logInfo("Inserting Customer Address into NetSuite...");
 
-        if (flowContext && flowContext.customForm) {
-          record.record.customForm = {
+        let recordPayload = {
+          "record": {
             "$attributes": {
-               "internalId": flowContext.customForm
-            }
+              "internalId": payload.customerRemoteID,
+              "$xsiType": {
+                "xmlns": channelProfile.channelSettingsValues.namespaces.listRel,
+                "type": "Customer"
+              }
+            },
+            "$value": payload.doc
           }
         }
 
-        let recordPayload = record;
+        soapClient.update(recordPayload, function(err, result) {
+          if (!err) {
+            resolve(result);
+          } else {
+            reject(err);
+          }
+        });
+      });
+    }
 
-        soapClient.add(recordPayload, function(err, result) {
+    async function checkResponse(result) {
+      return new Promise((resolve, reject) => {
+        logInfo("Checking for Successful Insert...");
+        if (result.writeResponse) {
+          if (result.writeResponse.status.$attributes.isSuccess === "true") {
+              resolve(result);
+          } else {
+            if (result.writeResponse.status.statusDetail) {
+              out.ncStatusCode = 400;
+              reject(result.writeResponse.status.statusDetail);
+            } else {
+              out.ncStatusCode = 400;
+              reject(result);
+            }
+          }
+        } else {
+          out.ncStatusCode = 400;
+          reject(result);
+        }
+      });
+    }
+
+    async function getUpdatedAddresses(customerResult) {
+      return new Promise((resolve, reject) => {
+        logInfo("Retrieving Updated Addresses...");
+
+        let getPayload = {
+          "baseRef": {
+            "$attributes": {
+              "$xsiType": {
+                "xmlns": channelProfile.channelSettingsValues.namespaces.platformCore,
+                "type": "RecordRef"
+              },
+              "internalId": customerResult.writeResponse.baseRef.$attributes.internalId,
+              "type": "customer"
+            }
+          }
+        };
+
+        soapClient.clearSoapHeaders();
+        let headers = nc.generateHeaders(channelProfile);
+        soapClient.addSoapHeader(headers);
+
+        soapClient.get(getPayload, function(err, result) {
           if (!err) {
             resolve(result);
           } else {
@@ -162,15 +192,17 @@ let InsertSalesOrder = function (ncUtil, channelProfile, flowContext, payload, c
 
     async function buildResponse(result) {
       logInfo("Processing Response...");
-      if (result.writeResponse) {
-        if (result.writeResponse.status.$attributes.isSuccess === "true") {
+      if (result.readResponse) {
+        if (result.readResponse.status.$attributes.isSuccess === "true") {
+          result.readResponse.record.addressbookList.addressbook = result.readResponse.record.addressbookList.addressbook[0];
+
           out.ncStatusCode = 201;
-          out.payload.salesOrderRemoteID = result.writeResponse.baseRef.$attributes.internalId;
-          out.payload.salesOrderBusinessReference = nc.extractBusinessReference(channelProfile.salesOrderBusinessReferences, salesOrder);
+          out.payload.customerAddressRemoteID = result.readResponse.record.addressbookList.addressbook.internalId;
+          out.payload.customerAddressBusinessReference = nc.extractBusinessReference(channelProfile.customerAddressBusinessReferences, result.readResponse);
         } else {
-          if (result.writeResponse.status.statusDetail) {
+          if (result.readResponse.status.statusDetail) {
             out.ncStatusCode = 400;
-            out.payload.error = result.writeResponse.status.statusDetail; //Array
+            out.payload.error = result.readResponse.status.statusDetail;
           } else {
             out.ncStatusCode = 400;
             out.payload.error = result;
@@ -211,4 +243,4 @@ let InsertSalesOrder = function (ncUtil, channelProfile, flowContext, payload, c
     }
 }
 
-module.exports.InsertSalesOrder = InsertSalesOrder;
+module.exports.InsertCustomerAddress = InsertCustomerAddress;

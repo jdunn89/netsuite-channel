@@ -1,0 +1,446 @@
+{
+	"name": "NetSuite Put Customer",
+  "schemaDef": {
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "properties": {
+      "record": {
+        "$id": "/properties/record",
+        "type": "object",
+        "properties": {
+          "$attributes": {
+            "$id": "/properties/record/properties/$attributes",
+            "type": "object",
+            "properties": {
+              "$xsiType": {
+                "$id": "/properties/record/properties/$attributes/properties/$xsiType",
+                "type": "object",
+                "properties": {
+                  "listRel": {
+                    "$id": "/properties/record/properties/$attributes/properties/$xsiType/properties/listRel",
+                    "type": "string",
+                    "title": "The Listrel Schema ",
+                    "default": "",
+                    "examples": [
+                      "urn:relationships_2017_1.lists.webservices.netsuite.com"
+                    ]
+                  },
+                  "type": {
+                    "$id": "/properties/record/properties/$attributes/properties/$xsiType/properties/type",
+                    "type": "string",
+                    "title": "The Type Schema ",
+                    "default": "",
+                    "examples": [
+                      "Customer"
+                    ]
+                  }
+                }
+              },
+              "internalId": {
+                "$id": "/properties/record/properties/$attributes/properties/internalId",
+                "type": "string",
+                "title": "The Internalid Schema ",
+                "default": "",
+                "examples": [
+                  "1646"
+                ]
+              }
+            }
+          },
+          "customForm": {
+            "$id": "/properties/record/properties/customForm",
+            "type": "object",
+            "properties": {
+              "$attributes": {
+                "$id": "/properties/record/properties/customForm/properties/$attributes",
+                "type": "object",
+                "properties": {
+                  "$xsiType": {
+                    "$id": "/properties/record/properties/customForm/properties/$attributes/properties/$xsiType",
+                    "type": "object",
+                    "properties": {
+                      "platformCore": {
+                        "$id": "/properties/record/properties/customForm/properties/$attributes/properties/$xsiType/properties/platformCore",
+                        "type": "string",
+                        "title": "The Platformcore Schema ",
+                        "default": "",
+                        "examples": [
+                          "urn:core_2017_1.platform.webservices.netsuite.com"
+                        ]
+                      }
+                    }
+                  },
+                  "internalId": {
+                    "$id": "/properties/record/properties/customForm/properties/$attributes/properties/internalId",
+                    "type": "string",
+                    "title": "The Internalid Schema ",
+                    "default": "",
+                    "examples": [
+                      "16"
+                    ]
+                  }
+                }
+              },
+              "name": {
+                "$id": "/properties/record/properties/customForm/properties/name",
+                "type": "string",
+                "title": "The Name Schema ",
+                "default": "",
+                "examples": [
+                  "Ramsey Default Customer Form"
+                ]
+              }
+            }
+          },
+          "entityId": {
+            "$id": "/properties/record/properties/entityId",
+            "type": "string",
+            "title": "The Entityid Schema ",
+            "default": "",
+            "examples": [
+              "Kyle A Rainier"
+            ]
+          },
+          "isPerson": {
+            "$id": "/properties/record/properties/isPerson",
+            "type": "string",
+            "title": "The Isperson Schema ",
+            "default": "",
+            "examples": [
+              "true"
+            ]
+          },
+          "salutation": {
+            "$id": "/properties/record/properties/salutation",
+            "type": "string",
+            "title": "The Salutation Schema ",
+            "default": "",
+            "examples": [
+              "Mr."
+            ]
+          },
+          "firstName": {
+            "$id": "/properties/record/properties/firstName",
+            "type": "string",
+            "title": "The Firstname Schema ",
+            "default": "",
+            "examples": [
+              "Kyle"
+            ]
+          },
+          "middleName": {
+            "$id": "/properties/record/properties/middleName",
+            "type": "string",
+            "title": "The Middlename Schema ",
+            "default": "",
+            "examples": [
+              "A"
+            ]
+          },
+          "lastName": {
+            "$id": "/properties/record/properties/lastName",
+            "type": "string",
+            "title": "The Lastname Schema ",
+            "default": "",
+            "examples": [
+              "Rainier"
+            ]
+          },
+          "parent": {
+            "$id": "/properties/record/properties/parent",
+            "type": "object",
+            "properties": {
+              "$attributes": {
+                "$id": "/properties/record/properties/parent/properties/$attributes",
+                "type": "object",
+                "properties": {
+                  "$xsiType": {
+                    "$id": "/properties/record/properties/parent/properties/$attributes/properties/$xsiType",
+                    "type": "object",
+                    "properties": {
+                      "platformCore": {
+                        "$id": "/properties/record/properties/parent/properties/$attributes/properties/$xsiType/properties/platformCore",
+                        "type": "string",
+                        "title": "The Platformcore Schema ",
+                        "default": "",
+                        "examples": [
+                          "urn:core_2017_1.platform.webservices.netsuite.com"
+                        ]
+                      }
+                    }
+                  },
+                  "internalId": {
+                    "$id": "/properties/record/properties/parent/properties/$attributes/properties/internalId",
+                    "type": "string",
+                    "title": "The Internalid Schema ",
+                    "default": "",
+                    "examples": [
+                      "317"
+                    ]
+                  }
+                }
+              },
+              "name": {
+                "$id": "/properties/record/properties/parent/properties/name",
+                "type": "string",
+                "title": "The Name Schema ",
+                "default": "",
+                "examples": [
+                  "Acme Systems Incorporated"
+                ]
+              }
+            }
+          },
+          "phone": {
+            "$id": "/properties/record/properties/phone",
+            "type": "string",
+            "title": "The Phone Schema ",
+            "default": "",
+            "examples": [
+              "(614) 310-8874"
+            ]
+          },
+          "email": {
+            "$id": "/properties/record/properties/email",
+            "type": "string",
+            "title": "The Email Schema ",
+            "default": "",
+            "examples": [
+              "karainier@gmail.com"
+            ]
+          },
+          "defaultAddress": {
+            "$id": "/properties/record/properties/defaultAddress",
+            "type": "string",
+            "title": "The Defaultaddress Schema ",
+            "default": "",
+            "examples": [
+              "Mr. Kyle A Rainier 8874 Orion PKWY Suite 201 Columbus OH 43 United States"
+            ]
+          },
+          "isInactive": {
+            "$id": "/properties/record/properties/isInactive",
+            "type": "string",
+            "title": "The Isinactive Schema ",
+            "default": "",
+            "examples": [
+              "false"
+            ]
+          },
+          "homePhone": {
+            "$id": "/properties/record/properties/homePhone",
+            "type": "string",
+            "title": "The Homephone Schema ",
+            "default": "",
+            "examples": [
+              "(555) 555-5556"
+            ]
+          },
+          "mobilePhone": {
+            "$id": "/properties/record/properties/mobilePhone",
+            "type": "string",
+            "title": "The Mobilephone Schema ",
+            "default": "",
+            "examples": [
+              "(555) 555-5555"
+            ]
+          },
+          "altEmail": {
+            "$id": "/properties/record/properties/altEmail",
+            "type": "string",
+            "title": "The Altemail Schema ",
+            "default": "",
+            "examples": [
+              "karainier@nchannel.com"
+            ]
+          },
+          "addressbookList": {
+            "$id": "/properties/record/properties/addressbookList",
+            "type": "object",
+            "properties": {
+              "addressbook": {
+                "$id": "/properties/record/properties/addressbookList/properties/addressbook",
+                "type": "array",
+                "items": {
+                  "$id": "/properties/record/properties/addressbookList/properties/addressbook/items",
+                  "type": "object",
+                  "properties": {
+                    "defaultShipping": {
+                      "$id": "/properties/record/properties/addressbookList/properties/addressbook/items/properties/defaultShipping",
+                      "type": "string",
+                      "title": "The Defaultshipping Schema ",
+                      "default": "",
+                      "examples": [
+                        "true"
+                      ]
+                    },
+                    "defaultBilling": {
+                      "$id": "/properties/record/properties/addressbookList/properties/addressbook/items/properties/defaultBilling",
+                      "type": "string",
+                      "title": "The Defaultbilling Schema ",
+                      "default": "",
+                      "examples": [
+                        "true"
+                      ]
+                    },
+                    "isResidential": {
+                      "$id": "/properties/record/properties/addressbookList/properties/addressbook/items/properties/isResidential",
+                      "type": "string",
+                      "title": "The Isresidential Schema ",
+                      "default": "",
+                      "examples": [
+                        "false"
+                      ]
+                    },
+                    "label": {
+                      "$id": "/properties/record/properties/addressbookList/properties/addressbook/items/properties/label",
+                      "type": "string",
+                      "title": "The Label Schema ",
+                      "default": "",
+                      "examples": [
+                        "nChannel Corp"
+                      ]
+                    },
+                    "addressbookAddress": {
+                      "$id": "/properties/record/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress",
+                      "type": "object",
+                      "properties": {
+                        "$attributes": {
+                          "$id": "/properties/record/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/$attributes",
+                          "type": "object",
+                          "properties": {
+                            "$xsiType": {
+                              "$id": "/properties/record/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/$attributes/properties/$xsiType",
+                              "type": "object",
+                              "properties": {
+                                "platformCommon": {
+                                  "$id": "/properties/record/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/$attributes/properties/$xsiType/properties/platformCommon",
+                                  "type": "string",
+                                  "title": "The Platformcommon Schema ",
+                                  "default": "",
+                                  "examples": [
+                                    "urn:common_2017_1.platform.webservices.netsuite.com"
+                                  ]
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "country": {
+                          "$id": "/properties/record/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/country",
+                          "type": "string",
+                          "title": "The Country Schema ",
+                          "default": "",
+                          "examples": [
+                            "_unitedStates"
+                          ]
+                        },
+                        "addressee": {
+                          "$id": "/properties/record/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/addressee",
+                          "type": "string",
+                          "title": "The Addressee Schema ",
+                          "default": "",
+                          "examples": [
+                            "Mr. Kyle A Rainier"
+                          ]
+                        },
+                        "addrPhone": {
+                          "$id": "/properties/record/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/addrPhone",
+                          "type": "string",
+                          "title": "The Addrphone Schema ",
+                          "default": "",
+                          "examples": [
+                            "(614) 561-6596"
+                          ]
+                        },
+                        "addr1": {
+                          "$id": "/properties/record/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/addr1",
+                          "type": "string",
+                          "title": "The Addr1 Schema ",
+                          "default": "",
+                          "examples": [
+                            "8874 Orion PKWY"
+                          ]
+                        },
+                        "addr2": {
+                          "$id": "/properties/record/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/addr2",
+                          "type": "string",
+                          "title": "The Addr2 Schema ",
+                          "default": "",
+                          "examples": [
+                            "Suite 201"
+                          ]
+                        },
+                        "city": {
+                          "$id": "/properties/record/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/city",
+                          "type": "string",
+                          "title": "The City Schema ",
+                          "default": "",
+                          "examples": [
+                            "Columbus"
+                          ]
+                        },
+                        "state": {
+                          "$id": "/properties/record/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/state",
+                          "type": "string",
+                          "title": "The State Schema ",
+                          "default": "",
+                          "examples": [
+                            "OH"
+                          ]
+                        },
+                        "zip": {
+                          "$id": "/properties/record/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/zip",
+                          "type": "string",
+                          "title": "The Zip Schema ",
+                          "default": "",
+                          "examples": [
+                            "43"
+                          ]
+                        },
+                        "addrText": {
+                          "$id": "/properties/record/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/addrText",
+                          "type": "string",
+                          "title": "The Addrtext Schema ",
+                          "default": "",
+                          "examples": [
+                            "Mr. Kyle A Rainier 8874 Orion PKWY Suite 201 Columbus OH 43112 United States"
+                          ]
+                        },
+                        "override": {
+                          "$id": "/properties/record/properties/addressbookList/properties/addressbook/items/properties/addressbookAddress/properties/override",
+                          "type": "string",
+                          "title": "The Override Schema ",
+                          "default": "",
+                          "examples": [
+                            "false"
+                          ]
+                        }
+                      }
+                    },
+                    "internalId": {
+                      "$id": "/properties/record/properties/addressbookList/properties/addressbook/items/properties/internalId",
+                      "type": "string",
+                      "title": "The Internalid Schema ",
+                      "default": "",
+                      "examples": [
+                        "244972"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    "Put",
+    "Customer"
+  ],
+  "audit": {}
+}
