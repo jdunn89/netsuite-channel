@@ -1,6 +1,6 @@
 'use strict'
 
-let ExtractCustomerFromSalesOrder = function(ncUtil, channelProfile, flowContext, payload, callback) {
+let ExtractCustomerAddressFromCustomer = function(ncUtil, channelProfile, flowContext, payload, callback) {
     const nc = require('../util/common');
 
     let out = {
@@ -15,7 +15,7 @@ let ExtractCustomerFromSalesOrder = function(ncUtil, channelProfile, flowContext
     }
 
     validateFunction()
-        .then(extractCustomer)
+        .then(extractCustomerAddress)
         .catch(handleError)
         .then(() => callback(out))
         .catch(error => {
@@ -48,22 +48,18 @@ let ExtractCustomerFromSalesOrder = function(ncUtil, channelProfile, flowContext
             messages.push("channelProfile.channelSettingsValues was not provided");
         else if (!channelProfile.channelAuthValues)
             messages.push("channelProfile.channelAuthValues was not provided");
-        else if (!channelProfile.salesOrderBusinessReferences)
-            messages.push("channelProfile.salesOrderBusinessReferences was not provided");
-        else if (!nc.isArray(channelProfile.salesOrderBusinessReferences))
-            messages.push("channelProfile.salesOrderBusinessReferences is not an array");
-        else if (!nc.isNonEmptyArray(channelProfile.salesOrderBusinessReferences))
-            messages.push("channelProfile.salesOrderBusinessReferences is empty");
+        else if (!channelProfile.customerBusinessReferences)
+            messages.push("channelProfile.customerBusinessReferences was not provided");
+        else if (!nc.isArray(channelProfile.customerBusinessReferences))
+            messages.push("channelProfile.customerBusinessReferences is not an array");
+        else if (!nc.isNonEmptyArray(channelProfile.customerBusinessReferences))
+            messages.push("channelProfile.customerBusinessReferences is empty");
         else if (!payload)
             messages.push("payload was not provided");
         else if (!payload.doc)
             messages.push("payload.doc was not provided");
-        else if (!payload.doc.records)
-            messages.push("payload.doc.records was not provided");
-        else if (!nc.isArray(payload.doc.records))
-            messages.push("payload.doc.records is not an array");
-        else if (!nc.isNonEmptyArray(payload.doc.records))
-            messages.push("payload.doc.records is empty");
+        else if (!payload.doc.record)
+            messages.push("payload.doc.record was not provided");
 
         if (messages.length > 0) {
             messages.forEach(msg => logError(msg));
@@ -73,22 +69,15 @@ let ExtractCustomerFromSalesOrder = function(ncUtil, channelProfile, flowContext
         logInfo("Function is valid.");
     }
 
-    async function extractCustomer() {
-        logInfo("Extracting customer...");
-        let data = null;
+    async function extractCustomerAddress() {
+        logInfo("Extracting addresses...");
 
-        payload.doc.records.forEach(function (record) {
-          if (record.record.$attributes.$xsiType.type === "Customer") {
-            data = record;
-          }
-        });
-
-        if (!data) {
-          logWarn("No customer found.");
-          out.ncStatusCode = 204;
+        if (payload.doc.record.addressbookList) {
+            out.payload.doc = payload.doc.record.addressbookList;
+            out.ncStatusCode = 200;
         } else {
-          out.payload.doc = data;
-          out.ncStatusCode = 200;
+            logWarn("No customer addresses found.");
+            out.ncStatusCode = 204;
         }
     }
 
@@ -98,4 +87,4 @@ let ExtractCustomerFromSalesOrder = function(ncUtil, channelProfile, flowContext
         out.ncStatusCode = out.ncStatusCode || 500;
     }
 }
-module.exports.ExtractCustomerFromSalesOrder = ExtractCustomerFromSalesOrder;
+module.exports.ExtractCustomerAddressFromCustomer = ExtractCustomerAddressFromCustomer;
