@@ -71,7 +71,7 @@
         "businessReferences": ["record.otherRefNum"],
         "children": [
           {
-            "name": "SalesOrderItem",
+            "name": "PRODUCT",
             "location": "record.itemList.item",
             "remoteID": "item.$attributes.internalId",
             "businessReferences": ["item.name"]
@@ -115,7 +115,7 @@
         "businessReferences": ["record.$attributes.internalId"],
         "children": [
           {
-            "name": "Item ID",
+            "name": "PRODUCT",
             "location": "record.itemList.item",
             "remoteID": "item.$attributes.internalId",
             "businessReferences": ["item.name"]
@@ -178,7 +178,7 @@
         "businessReferences": ["customer.email"],
         "children": [
           {
-            "name": "Address",
+            "name": "CUSTOMERADDRESS",
             "location": "customer.addressbookList.addressbook",
             "remoteID": "internalId",
             "businessReferences": ["addressbookAddress.addr1", "addressbookAddress.zip"]
@@ -218,7 +218,6 @@
         "referenceLocation": {
           "customerAddressBusinessReferences": [
             "customer.addressbookList.addressbook.addressbookAddress.addr1",
-            "customer.addressbookList.addressbook.addressbookAddress.addr2",
             "customer.addressbookList.addressbook.addressbookAddress.zip"
           ]}
       }
