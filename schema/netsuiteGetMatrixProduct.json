@@ -1,0 +1,868 @@
+{
+	"name": "NetSuite Get Matrix Product",
+  "schemaDef": {
+		"$id": "http://example.com/example.json",
+		"type": "object",
+		"definitions": {},
+		"$schema": "http://json-schema.org/draft-07/schema#",
+		"properties": {
+			"records": {
+				"$id": "/properties/records",
+				"type": "array",
+				"items": {
+					"$id": "/properties/records/items",
+					"type": "object",
+					"properties": {
+						"record": {
+							"$id": "/properties/records/items/properties/record",
+							"type": "object",
+							"properties": {
+								"$attributes": {
+									"$id": "/properties/records/items/properties/record/properties/$attributes",
+									"type": "object",
+									"properties": {
+										"$xsiType": {
+											"$id": "/properties/records/items/properties/record/properties/$attributes/properties/$xsiType",
+											"type": "object",
+											"properties": {
+												"listAcct": {
+													"$id": "/properties/records/items/properties/record/properties/$attributes/properties/$xsiType/properties/listAcct",
+													"type": "string",
+													"examples": ["urn:accounting_2017_1.lists.webservices.netsuite.com"]
+												},
+												"type": {
+													"$id": "/properties/records/items/properties/record/properties/$attributes/properties/$xsiType/properties/type",
+													"type": "string",
+													"examples": ["InventoryItem"]
+												}
+											}
+										},
+										"internalId": {
+											"$id": "/properties/records/items/properties/record/properties/$attributes/properties/internalId",
+											"type": "string",
+											"examples": ["1024"]
+										}
+									}
+								},
+								"createdDate": {
+									"$id": "/properties/records/items/properties/record/properties/createdDate",
+									"type": "string",
+									"examples": ["2018-06-05T07:16:17.000-07:00"]
+								},
+								"lastModifiedDate": {
+									"$id": "/properties/records/items/properties/record/properties/lastModifiedDate",
+									"type": "string",
+									"examples": ["2018-06-05T07:18:04.000-07:00"]
+								},
+								"copyDescription": {
+									"$id": "/properties/records/items/properties/record/properties/copyDescription",
+									"type": "string",
+									"examples": ["false"]
+								},
+								"cogsAccount": {
+									"$id": "/properties/records/items/properties/record/properties/cogsAccount",
+									"type": "object",
+									"properties": {
+										"$attributes": {
+											"$id": "/properties/records/items/properties/record/properties/cogsAccount/properties/$attributes",
+											"type": "object",
+											"properties": {
+												"$xsiType": {
+													"$id": "/properties/records/items/properties/record/properties/cogsAccount/properties/$attributes/properties/$xsiType",
+													"type": "object",
+													"properties": {
+														"platformCore": {
+															"$id": "/properties/records/items/properties/record/properties/cogsAccount/properties/$attributes/properties/$xsiType/properties/platformCore",
+															"type": "string",
+															"examples": ["urn:core_2017_1.platform.webservices.netsuite.com"]
+														}
+													}
+												},
+												"internalId": {
+													"$id": "/properties/records/items/properties/record/properties/cogsAccount/properties/$attributes/properties/internalId",
+													"type": "string",
+													"examples": ["121"]
+												}
+											}
+										},
+										"name": {
+											"$id": "/properties/records/items/properties/record/properties/cogsAccount/properties/name",
+											"type": "string",
+											"examples": ["Cost of Goods Sold"]
+										}
+									}
+								},
+								"salesDescription": {
+									"$id": "/properties/records/items/properties/record/properties/salesDescription",
+									"type": "string",
+									"examples": ["Test1"]
+								},
+								"includeChildren": {
+									"$id": "/properties/records/items/properties/record/properties/includeChildren",
+									"type": "string",
+									"examples": ["false"]
+								},
+								"incomeAccount": {
+									"$id": "/properties/records/items/properties/record/properties/incomeAccount",
+									"type": "object",
+									"properties": {
+										"$attributes": {
+											"$id": "/properties/records/items/properties/record/properties/incomeAccount/properties/$attributes",
+											"type": "object",
+											"properties": {
+												"$xsiType": {
+													"$id": "/properties/records/items/properties/record/properties/incomeAccount/properties/$attributes/properties/$xsiType",
+													"type": "object",
+													"properties": {
+														"platformCore": {
+															"$id": "/properties/records/items/properties/record/properties/incomeAccount/properties/$attributes/properties/$xsiType/properties/platformCore",
+															"type": "string",
+															"examples": ["urn:core_2017_1.platform.webservices.netsuite.com"]
+														}
+													}
+												},
+												"internalId": {
+													"$id": "/properties/records/items/properties/record/properties/incomeAccount/properties/$attributes/properties/internalId",
+													"type": "string",
+													"examples": ["55"]
+												}
+											}
+										},
+										"name": {
+											"$id": "/properties/records/items/properties/record/properties/incomeAccount/properties/name",
+											"type": "string",
+											"examples": ["4000 Sales"]
+										}
+									}
+								},
+								"taxSchedule": {
+									"$id": "/properties/records/items/properties/record/properties/taxSchedule",
+									"type": "object",
+									"properties": {
+										"$attributes": {
+											"$id": "/properties/records/items/properties/record/properties/taxSchedule/properties/$attributes",
+											"type": "object",
+											"properties": {
+												"$xsiType": {
+													"$id": "/properties/records/items/properties/record/properties/taxSchedule/properties/$attributes/properties/$xsiType",
+													"type": "object",
+													"properties": {
+														"platformCore": {
+															"$id": "/properties/records/items/properties/record/properties/taxSchedule/properties/$attributes/properties/$xsiType/properties/platformCore",
+															"type": "string",
+															"examples": ["urn:core_2017_1.platform.webservices.netsuite.com"]
+														}
+													}
+												},
+												"internalId": {
+													"$id": "/properties/records/items/properties/record/properties/taxSchedule/properties/$attributes/properties/internalId",
+													"type": "string",
+													"examples": ["1"]
+												}
+											}
+										},
+										"name": {
+											"$id": "/properties/records/items/properties/record/properties/taxSchedule/properties/name",
+											"type": "string",
+											"examples": ["S1"]
+										}
+									}
+								},
+								"matrixType": {
+									"$id": "/properties/records/items/properties/record/properties/matrixType",
+									"type": "string",
+									"examples": ["_parent"]
+								},
+								"assetAccount": {
+									"$id": "/properties/records/items/properties/record/properties/assetAccount",
+									"type": "object",
+									"properties": {
+										"$attributes": {
+											"$id": "/properties/records/items/properties/record/properties/assetAccount/properties/$attributes",
+											"type": "object",
+											"properties": {
+												"$xsiType": {
+													"$id": "/properties/records/items/properties/record/properties/assetAccount/properties/$attributes/properties/$xsiType",
+													"type": "object",
+													"properties": {
+														"platformCore": {
+															"$id": "/properties/records/items/properties/record/properties/assetAccount/properties/$attributes/properties/$xsiType/properties/platformCore",
+															"type": "string",
+															"examples": ["urn:core_2017_1.platform.webservices.netsuite.com"]
+														}
+													}
+												},
+												"internalId": {
+													"$id": "/properties/records/items/properties/record/properties/assetAccount/properties/$attributes/properties/internalId",
+													"type": "string",
+													"examples": ["120"]
+												}
+											}
+										},
+										"name": {
+											"$id": "/properties/records/items/properties/record/properties/assetAccount/properties/name",
+											"type": "string",
+											"examples": ["Inventory Asset"]
+										}
+									}
+								},
+								"matchBillToReceipt": {
+									"$id": "/properties/records/items/properties/record/properties/matchBillToReceipt",
+									"type": "string",
+									"examples": ["false"]
+								},
+								"billQtyVarianceAcct": {
+									"$id": "/properties/records/items/properties/record/properties/billQtyVarianceAcct",
+									"type": "object",
+									"properties": {
+										"$attributes": {
+											"$id": "/properties/records/items/properties/record/properties/billQtyVarianceAcct/properties/$attributes",
+											"type": "object",
+											"properties": {
+												"$xsiType": {
+													"$id": "/properties/records/items/properties/record/properties/billQtyVarianceAcct/properties/$attributes/properties/$xsiType",
+													"type": "object",
+													"properties": {
+														"platformCore": {
+															"$id": "/properties/records/items/properties/record/properties/billQtyVarianceAcct/properties/$attributes/properties/$xsiType/properties/platformCore",
+															"type": "string",
+															"examples": ["urn:core_2017_1.platform.webservices.netsuite.com"]
+														}
+													}
+												},
+												"internalId": {
+													"$id": "/properties/records/items/properties/record/properties/billQtyVarianceAcct/properties/$attributes/properties/internalId",
+													"type": "string",
+													"examples": ["150"]
+												}
+											}
+										},
+										"name": {
+											"$id": "/properties/records/items/properties/record/properties/billQtyVarianceAcct/properties/name",
+											"type": "string",
+											"examples": ["5095 Bill Quantity Variance"]
+										}
+									}
+								},
+								"billPriceVarianceAcct": {
+									"$id": "/properties/records/items/properties/record/properties/billPriceVarianceAcct",
+									"type": "object",
+									"properties": {
+										"$attributes": {
+											"$id": "/properties/records/items/properties/record/properties/billPriceVarianceAcct/properties/$attributes",
+											"type": "object",
+											"properties": {
+												"$xsiType": {
+													"$id": "/properties/records/items/properties/record/properties/billPriceVarianceAcct/properties/$attributes/properties/$xsiType",
+													"type": "object",
+													"properties": {
+														"platformCore": {
+															"$id": "/properties/records/items/properties/record/properties/billPriceVarianceAcct/properties/$attributes/properties/$xsiType/properties/platformCore",
+															"type": "string",
+															"examples": ["urn:core_2017_1.platform.webservices.netsuite.com"]
+														}
+													}
+												},
+												"internalId": {
+													"$id": "/properties/records/items/properties/record/properties/billPriceVarianceAcct/properties/$attributes/properties/internalId",
+													"type": "string",
+													"examples": ["151"]
+												}
+											}
+										},
+										"name": {
+											"$id": "/properties/records/items/properties/record/properties/billPriceVarianceAcct/properties/name",
+											"type": "string",
+											"examples": ["5096 Bill Price Variance"]
+										}
+									}
+								},
+								"billExchRateVarianceAcct": {
+									"$id": "/properties/records/items/properties/record/properties/billExchRateVarianceAcct",
+									"type": "object",
+									"properties": {
+										"$attributes": {
+											"$id": "/properties/records/items/properties/record/properties/billExchRateVarianceAcct/properties/$attributes",
+											"type": "object",
+											"properties": {
+												"$xsiType": {
+													"$id": "/properties/records/items/properties/record/properties/billExchRateVarianceAcct/properties/$attributes/properties/$xsiType",
+													"type": "object",
+													"properties": {
+														"platformCore": {
+															"$id": "/properties/records/items/properties/record/properties/billExchRateVarianceAcct/properties/$attributes/properties/$xsiType/properties/platformCore",
+															"type": "string",
+															"examples": ["urn:core_2017_1.platform.webservices.netsuite.com"]
+														}
+													}
+												},
+												"internalId": {
+													"$id": "/properties/records/items/properties/record/properties/billExchRateVarianceAcct/properties/$attributes/properties/internalId",
+													"type": "string",
+													"examples": ["152"]
+												}
+											}
+										},
+										"name": {
+											"$id": "/properties/records/items/properties/record/properties/billExchRateVarianceAcct/properties/name",
+											"type": "string",
+											"examples": ["5097 Bill Exchange Rate Variance"]
+										}
+									}
+								},
+								"gainLossAccount": {
+									"$id": "/properties/records/items/properties/record/properties/gainLossAccount",
+									"type": "object",
+									"properties": {
+										"$attributes": {
+											"$id": "/properties/records/items/properties/record/properties/gainLossAccount/properties/$attributes",
+											"type": "object",
+											"properties": {
+												"$xsiType": {
+													"$id": "/properties/records/items/properties/record/properties/gainLossAccount/properties/$attributes/properties/$xsiType",
+													"type": "object",
+													"properties": {
+														"platformCore": {
+															"$id": "/properties/records/items/properties/record/properties/gainLossAccount/properties/$attributes/properties/$xsiType/properties/platformCore",
+															"type": "string",
+															"examples": ["urn:core_2017_1.platform.webservices.netsuite.com"]
+														}
+													}
+												},
+												"internalId": {
+													"$id": "/properties/records/items/properties/record/properties/gainLossAccount/properties/$attributes/properties/internalId",
+													"type": "string",
+													"examples": ["153"]
+												}
+											}
+										},
+										"name": {
+											"$id": "/properties/records/items/properties/record/properties/gainLossAccount/properties/name",
+											"type": "string",
+											"examples": ["5091 Inventory Transfer Price Gain / Loss"]
+										}
+									}
+								},
+								"costingMethodDisplay": {
+									"$id": "/properties/records/items/properties/record/properties/costingMethodDisplay",
+									"type": "string",
+									"examples": ["Standard"]
+								},
+								"trackLandedCost": {
+									"$id": "/properties/records/items/properties/record/properties/trackLandedCost",
+									"type": "string",
+									"examples": ["false"]
+								},
+								"matrixItemNameTemplate": {
+									"$id": "/properties/records/items/properties/record/properties/matrixItemNameTemplate",
+									"type": "string",
+									"examples": ["{itemid}{custitem19}{custitem20}"]
+								},
+								"isDropShipItem": {
+									"$id": "/properties/records/items/properties/record/properties/isDropShipItem",
+									"type": "string",
+									"examples": ["false"]
+								},
+								"isSpecialOrderItem": {
+									"$id": "/properties/records/items/properties/record/properties/isSpecialOrderItem",
+									"type": "string",
+									"examples": ["false"]
+								},
+								"roundUpAsComponent": {
+									"$id": "/properties/records/items/properties/record/properties/roundUpAsComponent",
+									"type": "string",
+									"examples": ["false"]
+								},
+								"enforceMinQtyInternally": {
+									"$id": "/properties/records/items/properties/record/properties/enforceMinQtyInternally",
+									"type": "string",
+									"examples": ["true"]
+								},
+								"shipIndividually": {
+									"$id": "/properties/records/items/properties/record/properties/shipIndividually",
+									"type": "string",
+									"examples": ["false"]
+								},
+								"costCategory": {
+									"$id": "/properties/records/items/properties/record/properties/costCategory",
+									"type": "object",
+									"properties": {
+										"$attributes": {
+											"$id": "/properties/records/items/properties/record/properties/costCategory/properties/$attributes",
+											"type": "object",
+											"properties": {
+												"$xsiType": {
+													"$id": "/properties/records/items/properties/record/properties/costCategory/properties/$attributes/properties/$xsiType",
+													"type": "object",
+													"properties": {
+														"platformCore": {
+															"$id": "/properties/records/items/properties/record/properties/costCategory/properties/$attributes/properties/$xsiType/properties/platformCore",
+															"type": "string",
+															"examples": ["urn:core_2017_1.platform.webservices.netsuite.com"]
+														}
+													}
+												},
+												"internalId": {
+													"$id": "/properties/records/items/properties/record/properties/costCategory/properties/$attributes/properties/internalId",
+													"type": "string",
+													"examples": ["3"]
+												}
+											}
+										},
+										"name": {
+											"$id": "/properties/records/items/properties/record/properties/costCategory/properties/name",
+											"type": "string",
+											"examples": ["Default"]
+										}
+									}
+								},
+								"purchasePriceVarianceAcct": {
+									"$id": "/properties/records/items/properties/record/properties/purchasePriceVarianceAcct",
+									"type": "object",
+									"properties": {
+										"$attributes": {
+											"$id": "/properties/records/items/properties/record/properties/purchasePriceVarianceAcct/properties/$attributes",
+											"type": "object",
+											"properties": {
+												"$xsiType": {
+													"$id": "/properties/records/items/properties/record/properties/purchasePriceVarianceAcct/properties/$attributes/properties/$xsiType",
+													"type": "object",
+													"properties": {
+														"platformCore": {
+															"$id": "/properties/records/items/properties/record/properties/purchasePriceVarianceAcct/properties/$attributes/properties/$xsiType/properties/platformCore",
+															"type": "string",
+															"examples": ["urn:core_2017_1.platform.webservices.netsuite.com"]
+														}
+													}
+												},
+												"internalId": {
+													"$id": "/properties/records/items/properties/record/properties/purchasePriceVarianceAcct/properties/$attributes/properties/internalId",
+													"type": "string",
+													"examples": ["164"]
+												}
+											}
+										},
+										"name": {
+											"$id": "/properties/records/items/properties/record/properties/purchasePriceVarianceAcct/properties/name",
+											"type": "string",
+											"examples": ["5092 Purchase Price Variance"]
+										}
+									}
+								},
+								"useMarginalRates": {
+									"$id": "/properties/records/items/properties/record/properties/useMarginalRates",
+									"type": "string",
+									"examples": ["false"]
+								},
+								"costEstimateType": {
+									"$id": "/properties/records/items/properties/record/properties/costEstimateType",
+									"type": "string",
+									"examples": ["_averageCost"]
+								},
+								"overallQuantityPricingType": {
+									"$id": "/properties/records/items/properties/record/properties/overallQuantityPricingType",
+									"type": "string",
+									"examples": ["_byLineQuantity"]
+								},
+								"cost": {
+									"$id": "/properties/records/items/properties/record/properties/cost",
+									"type": "string",
+									"examples": ["10.0"]
+								},
+								"useBins": {
+									"$id": "/properties/records/items/properties/record/properties/useBins",
+									"type": "string",
+									"examples": ["false"]
+								},
+								"autoLeadTime": {
+									"$id": "/properties/records/items/properties/record/properties/autoLeadTime",
+									"type": "string",
+									"examples": ["false"]
+								},
+								"autoPreferredStockLevel": {
+									"$id": "/properties/records/items/properties/record/properties/autoPreferredStockLevel",
+									"type": "string",
+									"examples": ["false"]
+								},
+								"seasonalDemand": {
+									"$id": "/properties/records/items/properties/record/properties/seasonalDemand",
+									"type": "string",
+									"examples": ["false"]
+								},
+								"autoReorderPoint": {
+									"$id": "/properties/records/items/properties/record/properties/autoReorderPoint",
+									"type": "string",
+									"examples": ["false"]
+								},
+								"storeDisplayName": {
+									"$id": "/properties/records/items/properties/record/properties/storeDisplayName",
+									"type": "string",
+									"examples": ["Test1"]
+								},
+								"excludeFromSitemap": {
+									"$id": "/properties/records/items/properties/record/properties/excludeFromSitemap",
+									"type": "string",
+									"examples": ["false"]
+								},
+								"sitemapPriority": {
+									"$id": "/properties/records/items/properties/record/properties/sitemapPriority",
+									"type": "string",
+									"examples": ["_auto"]
+								},
+								"isDonationItem": {
+									"$id": "/properties/records/items/properties/record/properties/isDonationItem",
+									"type": "string",
+									"examples": ["false"]
+								},
+								"showDefaultDonationAmount": {
+									"$id": "/properties/records/items/properties/record/properties/showDefaultDonationAmount",
+									"type": "string",
+									"examples": ["false"]
+								},
+								"dontShowPrice": {
+									"$id": "/properties/records/items/properties/record/properties/dontShowPrice",
+									"type": "string",
+									"examples": ["false"]
+								},
+								"onSpecial": {
+									"$id": "/properties/records/items/properties/record/properties/onSpecial",
+									"type": "string",
+									"examples": ["false"]
+								},
+								"outOfStockBehavior": {
+									"$id": "/properties/records/items/properties/record/properties/outOfStockBehavior",
+									"type": "string",
+									"examples": ["_default"]
+								},
+								"urlComponent": {
+									"$id": "/properties/records/items/properties/record/properties/urlComponent",
+									"type": "string",
+									"examples": ["Test1"]
+								},
+								"customForm": {
+									"$id": "/properties/records/items/properties/record/properties/customForm",
+									"type": "object",
+									"properties": {
+										"$attributes": {
+											"$id": "/properties/records/items/properties/record/properties/customForm/properties/$attributes",
+											"type": "object",
+											"properties": {
+												"$xsiType": {
+													"$id": "/properties/records/items/properties/record/properties/customForm/properties/$attributes/properties/$xsiType",
+													"type": "object",
+													"properties": {
+														"platformCore": {
+															"$id": "/properties/records/items/properties/record/properties/customForm/properties/$attributes/properties/$xsiType/properties/platformCore",
+															"type": "string",
+															"examples": ["urn:core_2017_1.platform.webservices.netsuite.com"]
+														}
+													}
+												},
+												"internalId": {
+													"$id": "/properties/records/items/properties/record/properties/customForm/properties/$attributes/properties/internalId",
+													"type": "string",
+													"examples": ["144"]
+												}
+											}
+										},
+										"name": {
+											"$id": "/properties/records/items/properties/record/properties/customForm/properties/name",
+											"type": "string",
+											"examples": ["Custom Inventory Part Form"]
+										}
+									}
+								},
+								"itemId": {
+									"$id": "/properties/records/items/properties/record/properties/itemId",
+									"type": "string",
+									"examples": ["Test1"]
+								},
+								"displayName": {
+									"$id": "/properties/records/items/properties/record/properties/displayName",
+									"type": "string",
+									"examples": ["Test1"]
+								},
+								"vendorName": {
+									"$id": "/properties/records/items/properties/record/properties/vendorName",
+									"type": "string",
+									"examples": ["Test1"]
+								},
+								"isOnline": {
+									"$id": "/properties/records/items/properties/record/properties/isOnline",
+									"type": "string",
+									"examples": ["false"]
+								},
+								"offerSupport": {
+									"$id": "/properties/records/items/properties/record/properties/offerSupport",
+									"type": "string",
+									"examples": ["false"]
+								},
+								"isInactive": {
+									"$id": "/properties/records/items/properties/record/properties/isInactive",
+									"type": "string",
+									"examples": ["false"]
+								},
+								"availableToPartners": {
+									"$id": "/properties/records/items/properties/record/properties/availableToPartners",
+									"type": "string",
+									"examples": ["false"]
+								},
+								"currency": {
+									"$id": "/properties/records/items/properties/record/properties/currency",
+									"type": "string",
+									"examples": ["USA"]
+								},
+								"supplyReplenishmentMethod": {
+									"$id": "/properties/records/items/properties/record/properties/supplyReplenishmentMethod",
+									"type": "object",
+									"properties": {
+										"$attributes": {
+											"$id": "/properties/records/items/properties/record/properties/supplyReplenishmentMethod/properties/$attributes",
+											"type": "object",
+											"properties": {
+												"$xsiType": {
+													"$id": "/properties/records/items/properties/record/properties/supplyReplenishmentMethod/properties/$attributes/properties/$xsiType",
+													"type": "object",
+													"properties": {
+														"platformCore": {
+															"$id": "/properties/records/items/properties/record/properties/supplyReplenishmentMethod/properties/$attributes/properties/$xsiType/properties/platformCore",
+															"type": "string",
+															"examples": ["urn:core_2017_1.platform.webservices.netsuite.com"]
+														}
+													}
+												},
+												"internalId": {
+													"$id": "/properties/records/items/properties/record/properties/supplyReplenishmentMethod/properties/$attributes/properties/internalId",
+													"type": "string",
+													"examples": ["REORDER_POINT"]
+												}
+											}
+										},
+										"name": {
+											"$id": "/properties/records/items/properties/record/properties/supplyReplenishmentMethod/properties/name",
+											"type": "string",
+											"examples": ["Reorder Point"]
+										}
+									}
+								},
+								"subsidiaryList": {
+									"$id": "/properties/records/items/properties/record/properties/subsidiaryList",
+									"type": "object",
+									"properties": {
+										"$attributes": {
+											"$id": "/properties/records/items/properties/record/properties/subsidiaryList/properties/$attributes",
+											"type": "object",
+											"properties": {
+												"$xsiType": {
+													"$id": "/properties/records/items/properties/record/properties/subsidiaryList/properties/$attributes/properties/$xsiType",
+													"type": "object",
+													"properties": {
+														"platformCore": {
+															"$id": "/properties/records/items/properties/record/properties/subsidiaryList/properties/$attributes/properties/$xsiType/properties/platformCore",
+															"type": "string",
+															"examples": ["urn:core_2017_1.platform.webservices.netsuite.com"]
+														}
+													}
+												}
+											}
+										},
+										"recordRef": {
+											"$id": "/properties/records/items/properties/record/properties/subsidiaryList/properties/recordRef",
+											"type": "object",
+											"properties": {
+												"$attributes": {
+													"$id": "/properties/records/items/properties/record/properties/subsidiaryList/properties/recordRef/properties/$attributes",
+													"type": "object",
+													"properties": {
+														"$xsiType": {
+															"$id": "/properties/records/items/properties/record/properties/subsidiaryList/properties/recordRef/properties/$attributes/properties/$xsiType",
+															"type": "object",
+															"properties": {
+																"internalId": {
+																	"$id": "/properties/records/items/properties/record/properties/subsidiaryList/properties/recordRef/properties/$attributes/properties/$xsiType/properties/internalId",
+																	"type": "string",
+																	"examples": ["3"]
+																}
+															}
+														}
+													}
+												},
+												"name": {
+													"$id": "/properties/records/items/properties/record/properties/subsidiaryList/properties/recordRef/properties/name",
+													"type": "string",
+													"examples": ["Honeycomb Holdings Inc."]
+												}
+											}
+										}
+									}
+								},
+								"itemOptionsList": {
+									"$id": "/properties/records/items/properties/record/properties/itemOptionsList",
+									"type": "object",
+									"properties": {
+										"itemOptions": {
+											"$id": "/properties/records/items/properties/record/properties/itemOptionsList/properties/itemOptions",
+											"type": "array",
+											"items": {
+												"$id": "/properties/records/items/properties/record/properties/itemOptionsList/properties/itemOptions/items",
+												"type": "object",
+												"properties": {
+													"$attributes": {
+														"$id": "/properties/records/items/properties/record/properties/itemOptionsList/properties/itemOptions/items/properties/$attributes",
+														"type": "object",
+														"properties": {
+															"$xsiType": {
+																"$id": "/properties/records/items/properties/record/properties/itemOptionsList/properties/itemOptions/items/properties/$attributes/properties/$xsiType",
+																"type": "object",
+																"properties": {
+																	"platformCore": {
+																		"$id": "/properties/records/items/properties/record/properties/itemOptionsList/properties/itemOptions/items/properties/$attributes/properties/$xsiType/properties/platformCore",
+																		"type": "string",
+																		"examples": ["urn:core_2017_1.platform.webservices.netsuite.com"]
+																	}
+																}
+															},
+															"internalId": {
+																"$id": "/properties/records/items/properties/record/properties/itemOptionsList/properties/itemOptions/items/properties/$attributes/properties/internalId",
+																"type": "string",
+																"examples": ["CUSTCOL9"]
+															}
+														}
+													},
+													"name": {
+														"$id": "/properties/records/items/properties/record/properties/itemOptionsList/properties/itemOptions/items/properties/name",
+														"type": "string",
+														"examples": ["ColorDisplay"]
+													}
+												}
+											}
+										}
+									}
+								},
+								"translationsList": {
+									"$id": "/properties/records/items/properties/record/properties/translationsList",
+									"type": "object",
+									"properties": {
+										"translation": {
+											"$id": "/properties/records/items/properties/record/properties/translationsList/properties/translation",
+											"type": "object",
+											"properties": {
+												"locale": {
+													"$id": "/properties/records/items/properties/record/properties/translationsList/properties/translation/properties/locale",
+													"type": "string",
+													"examples": ["_frenchFrance"]
+												},
+												"language": {
+													"$id": "/properties/records/items/properties/record/properties/translationsList/properties/translation/properties/language",
+													"type": "string",
+													"examples": ["French (France)"]
+												}
+											}
+										}
+									}
+								},
+								"customFieldList": {
+									"$id": "/properties/records/items/properties/record/properties/customFieldList",
+									"type": "object",
+									"properties": {
+										"$attributes": {
+											"$id": "/properties/records/items/properties/record/properties/customFieldList/properties/$attributes",
+											"type": "object",
+											"properties": {
+												"$xsiType": {
+													"$id": "/properties/records/items/properties/record/properties/customFieldList/properties/$attributes/properties/$xsiType",
+													"type": "object",
+													"properties": {
+														"platformCore": {
+															"$id": "/properties/records/items/properties/record/properties/customFieldList/properties/$attributes/properties/$xsiType/properties/platformCore",
+															"type": "string",
+															"examples": ["urn:core_2017_1.platform.webservices.netsuite.com"]
+														}
+													}
+												}
+											}
+										},
+										"customField": {
+											"$id": "/properties/records/items/properties/record/properties/customFieldList/properties/customField",
+											"type": "array",
+											"items": {
+												"$id": "/properties/records/items/properties/record/properties/customFieldList/properties/customField/items",
+												"type": "object",
+												"properties": {
+													"$attributes": {
+														"$id": "/properties/records/items/properties/record/properties/customFieldList/properties/customField/items/properties/$attributes",
+														"type": "object",
+														"properties": {
+															"$xsiType": {
+																"$id": "/properties/records/items/properties/record/properties/customFieldList/properties/customField/items/properties/$attributes/properties/$xsiType",
+																"type": "object",
+																"properties": {
+																	"type": {
+																		"$id": "/properties/records/items/properties/record/properties/customFieldList/properties/customField/items/properties/$attributes/properties/$xsiType/properties/type",
+																		"type": "string",
+																		"examples": ["MultiSelectCustomFieldRef"]
+																	}
+																}
+															},
+															"internalId": {
+																"$id": "/properties/records/items/properties/record/properties/customFieldList/properties/customField/items/properties/$attributes/properties/internalId",
+																"type": "string",
+																"examples": ["4571"]
+															},
+															"scriptId": {
+																"$id": "/properties/records/items/properties/record/properties/customFieldList/properties/customField/items/properties/$attributes/properties/scriptId",
+																"type": "string",
+																"examples": ["custitem20"]
+															}
+														}
+													},
+													"value": {
+														"$id": "/properties/records/items/properties/record/properties/customFieldList/properties/customField/items/properties/value",
+														"type": "array",
+														"items": {
+															"$id": "/properties/records/items/properties/record/properties/customFieldList/properties/customField/items/properties/value/items",
+															"type": "object",
+															"properties": {
+																"$attributes": {
+																	"$id": "/properties/records/items/properties/record/properties/customFieldList/properties/customField/items/properties/value/items/properties/$attributes",
+																	"type": "object",
+																	"properties": {
+																		"internalId": {
+																			"$id": "/properties/records/items/properties/record/properties/customFieldList/properties/customField/items/properties/value/items/properties/$attributes/properties/internalId",
+																			"type": "string",
+																			"examples": ["1"]
+																		},
+																		"typeId": {
+																			"$id": "/properties/records/items/properties/record/properties/customFieldList/properties/customField/items/properties/value/items/properties/$attributes/properties/typeId",
+																			"type": "string",
+																			"examples": ["477"]
+																		}
+																	}
+																},
+																"name": {
+																	"$id": "/properties/records/items/properties/record/properties/customFieldList/properties/customField/items/properties/value/items/properties/name",
+																	"type": "string",
+																	"examples": ["Lg"]
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+  "tags": [
+    "Get",
+    "Matrix",
+    "Product"
+  ],
+  "audit": {}
+}
