@@ -583,10 +583,6 @@
             "title": "Protocol",
             "type": "string"
           },
-          "implFolderName": {
-            "title": "Implementation Folder Name",
-            "type": "string"
-          },
           "wsdl_uri": {
             "title": "WSDL URI",
             "type": "string"
@@ -598,7 +594,6 @@
         },
         "required": [
           "protocol",
-          "implFolderName",
           "wsdl_uri",
           "namespaces"
         ]
@@ -606,7 +601,6 @@
       "configView": [],
       "configValues": {
         "protocol": "https",
-        "implFolderName": "netsuite",
         "wsdl_uri": "https://webservices.netsuite.com/wsdl/v2017_2_0/netsuite.wsdl",
         "namespaces": {
           "platformMsgs": "urn:messages_2017_2.platform.webservices.netsuite.com",
