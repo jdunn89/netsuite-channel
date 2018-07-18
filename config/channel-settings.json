@@ -11,6 +11,356 @@
   ],
   "channelActionRegistries": [
     {
+      "name": "GET PRODUCT",
+      "description": "GET PRODUCT",
+      "channelVerb": "GET",
+      "channelNoun": "PRODUCT",
+      "ruleDef": {
+        "ruleSchema": {},
+        "defaultRuleValues": {}
+      },
+      "configDef" : {
+        "configModel": {
+          "required": [],
+          "properties": {
+            "filterField": {
+              "type": "string",
+              "title": "Filter Field"
+            },
+            "filterCriteria": {
+              "type": "string",
+              "title": "Filter Criteria"
+            },
+            "filterCompare": {
+              "type": "string",
+              "title": "Filter Compare",
+              "enum": [
+                "after",
+                "anyOf",
+                "before",
+                "between",
+                "contains",
+                "doesNotContain",
+                "doesNotStartWith",
+                "empty",
+                "equalTo",
+                "greaterThan",
+                "greaterThanOrEqualTo",
+                "hasKeywords",
+                "is",
+                "isNot",
+                "lessThan",
+                "lessThanOrEqualTo",
+                "noneOf",
+                "notAfter",
+                "notBefore",
+                "notBetween",
+                "notEmpty",
+                "notEqualTo",
+                "notGreaterThan",
+                "notGreaterThanOrEqualTo",
+                "notLessThan",
+                "notLessThanOrEqualTo",
+                "notOn",
+                "notOnOrAfter",
+                "notOnOrBefore",
+                "notWithin",
+                "on",
+                "onOrAfter",
+                "onOrBefore",
+                "startsWith",
+                "within"
+              ]
+            },
+            "parentIdField": {
+              "type": "string",
+              "title": "Parent ID Field"
+            },
+            "virtualMatrixParentFlag": {
+              "type": "string",
+              "title": "Virtual Matrix Parent Flag"
+            },
+            "virtualMatrixParentFlagCriteria": {
+              "type": "string",
+              "title": "Virtual Matrix Parent Flag Criteria"
+            },
+            "virtualMatrixParentFlagCompare": {
+              "type": "string",
+              "title": "Virtual Matrix Parent Flag Compare",
+              "enum": [
+                "after",
+                "anyOf",
+                "before",
+                "between",
+                "contains",
+                "doesNotContain",
+                "doesNotStartWith",
+                "empty",
+                "equalTo",
+                "greaterThan",
+                "greaterThanOrEqualTo",
+                "hasKeywords",
+                "is",
+                "isNot",
+                "lessThan",
+                "lessThanOrEqualTo",
+                "noneOf",
+                "notAfter",
+                "notBefore",
+                "notBetween",
+                "notEmpty",
+                "notEqualTo",
+                "notGreaterThan",
+                "notGreaterThanOrEqualTo",
+                "notLessThan",
+                "notLessThanOrEqualTo",
+                "notOn",
+                "notOnOrAfter",
+                "notOnOrBefore",
+                "notWithin",
+                "on",
+                "onOrAfter",
+                "onOrBefore",
+                "startsWith",
+                "within"
+              ]
+            },
+            "doGetMatrixProducts": {
+              "type": "boolean",
+              "title": "GET Product, doGetMatrixProducts"
+            },
+            "doGetVirtualMatrixProducts": {
+              "type": "boolean",
+              "title": "GET Product, doGetVirtualMatrixProducts"
+            },
+            "doGetSimpleProducts": {
+              "type": "boolean",
+              "title": "GET Product, doGetSimpleProducts"
+            },
+            "canGetMatrixProducts": {
+              "type": "boolean",
+              "title": "GET Product, canGetMatrixProducts"
+            },
+            "canGetVirtualMatrixProducts": {
+              "type": "boolean",
+              "title": "GET Product, canGetVirtualMatrixProducts"
+            },
+            "canGetSimpleProducts": {
+              "type": "boolean",
+              "title": "GET Product, canGetSimpleProducts"
+            }
+          }
+        },
+        "configView": [
+          "filterField",
+          "filterCriteria",
+          "filterCriteriaCompare",
+          "parentIdField",
+          "virtualMatrixParentFlag",
+          "virtualMatrixParentFlagCriteria",
+          "virtualMatrixParentFlagCompare",
+          "doGetMatrixProducts",
+          "doGetVirtualMatrixProducts",
+          "doGetSimpleProducts"
+        ],
+        "configValues": {
+          "doGetMatrixProducts": true,
+          "doGetVirtualMatrixProducts": true,
+          "doGetSimpleProducts": true,
+          "canGetMatrixProducts": true,
+          "canGetVirtualMatrixProducts": true,
+          "canGetSimpleProducts": true,
+          "filterField": "",
+          "filterCriteria": "",
+          "filterCriteriaCompare": "",
+          "parentIdField": "",
+          "virtualMatrixParentFlag": "",
+          "virtualMatrixParentFlagCriteria": "",
+          "virtualMatrixParentFlagCompare": ""
+        }
+      },
+      "documentDef": {
+        "schema": {},
+        "referenceLocation": {
+          "productBusinessReferences": ["record.itemId"]
+        },
+        "remoteID": "record.$attributes.internalId",
+        "businessReferences": ["record.itemId"],
+        "children": [
+          {
+            "name": "PRODUCTQUANTITY",
+            "location": "record.configurable_product_links",
+            "remoteID": "id",
+            "businessReferences": ["sku"]
+          }
+        ]
+      }
+    },
+    {
+      "name": "GET PRODUCTQUANTITY",
+      "description": "GET PRODUCTQUANTITY",
+      "channelVerb": "GET",
+      "channelNoun": "PRODUCTQUANTITY",
+      "ruleDef": {
+        "ruleSchema": {},
+        "defaultRuleValues": {}
+      },
+      "configDef" : {
+        "configModel": {
+          "required": [],
+          "properties": {
+            "filterField": {
+              "type": "string",
+              "title": "Filter Field"
+            },
+            "filterCriteria": {
+              "type": "string",
+              "title": "Filter Criteria"
+            },
+            "filterCompare": {
+              "type": "string",
+              "title": "Filter Compare",
+              "enum": [
+                "after",
+                "anyOf",
+                "before",
+                "between",
+                "contains",
+                "doesNotContain",
+                "doesNotStartWith",
+                "empty",
+                "equalTo",
+                "greaterThan",
+                "greaterThanOrEqualTo",
+                "hasKeywords",
+                "is",
+                "isNot",
+                "lessThan",
+                "lessThanOrEqualTo",
+                "noneOf",
+                "notAfter",
+                "notBefore",
+                "notBetween",
+                "notEmpty",
+                "notEqualTo",
+                "notGreaterThan",
+                "notGreaterThanOrEqualTo",
+                "notLessThan",
+                "notLessThanOrEqualTo",
+                "notOn",
+                "notOnOrAfter",
+                "notOnOrBefore",
+                "notWithin",
+                "on",
+                "onOrAfter",
+                "onOrBefore",
+                "startsWith",
+                "within"
+              ]
+            }
+          }
+        },
+        "configView": [
+          "filterField",
+          "filterCriteria",
+          "filterCriteriaCompare"
+        ],
+        "configValues": {
+          "filterField": "",
+          "filterCriteria": "",
+          "filterCriteriaCompare": ""
+        }
+      },
+      "documentDef": {
+        "schema": {},
+        "referenceLocation": {"productQuantityBusinessReferences": ["sku"]},
+        "remoteID": "id",
+        "businessReferences": ["sku"]
+      }
+    },
+    {
+      "name": "GET PRODUCTPRICING",
+      "description": "GET PRODUCTPRICING",
+      "channelVerb": "GET",
+      "channelNoun": "PRODUCTPRICING",
+      "ruleDef": {
+        "ruleSchema": {},
+        "defaultRuleValues": {}
+      },
+      "configDef" : {
+        "configModel": {
+          "required": [],
+          "properties": {
+            "filterField": {
+              "type": "string",
+              "title": "Filter Field"
+            },
+            "filterCriteria": {
+              "type": "string",
+              "title": "Filter Criteria"
+            },
+            "filterCompare": {
+              "type": "string",
+              "title": "Filter Compare",
+              "enum": [
+                "after",
+                "anyOf",
+                "before",
+                "between",
+                "contains",
+                "doesNotContain",
+                "doesNotStartWith",
+                "empty",
+                "equalTo",
+                "greaterThan",
+                "greaterThanOrEqualTo",
+                "hasKeywords",
+                "is",
+                "isNot",
+                "lessThan",
+                "lessThanOrEqualTo",
+                "noneOf",
+                "notAfter",
+                "notBefore",
+                "notBetween",
+                "notEmpty",
+                "notEqualTo",
+                "notGreaterThan",
+                "notGreaterThanOrEqualTo",
+                "notLessThan",
+                "notLessThanOrEqualTo",
+                "notOn",
+                "notOnOrAfter",
+                "notOnOrBefore",
+                "notWithin",
+                "on",
+                "onOrAfter",
+                "onOrBefore",
+                "startsWith",
+                "within"
+              ]
+            }
+          }
+        },
+        "configView": [
+          "filterField",
+          "filterCriteria",
+          "filterCriteriaCompare"
+        ],
+        "configValues": {
+          "filterField": "",
+          "filterCriteria": "",
+          "filterCriteriaCompare": ""
+        }
+      },
+      "documentDef": {
+        "schema": {},
+        "referenceLocation": {"productPricingBusinessReferences": ["sku"]},
+        "remoteID": "id",
+        "businessReferences": ["sku"]
+      }
+    },
+    {
       "channelNoun" : "SALESORDER",
       "channelVerb" : "PUT",
       "description" : "PUT SALESORDER",
@@ -233,10 +583,6 @@
             "title": "Protocol",
             "type": "string"
           },
-          "implFolderName": {
-            "title": "Implementation Folder Name",
-            "type": "string"
-          },
           "wsdl_uri": {
             "title": "WSDL URI",
             "type": "string"
@@ -248,7 +594,6 @@
         },
         "required": [
           "protocol",
-          "implFolderName",
           "wsdl_uri",
           "namespaces"
         ]
@@ -256,7 +601,6 @@
       "configView": [],
       "configValues": {
         "protocol": "https",
-        "implFolderName": "netsuite",
         "wsdl_uri": "https://webservices.netsuite.com/wsdl/v2017_2_0/netsuite.wsdl",
         "namespaces": {
           "platformMsgs": "urn:messages_2017_2.platform.webservices.netsuite.com",
