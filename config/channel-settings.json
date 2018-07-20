@@ -579,10 +579,6 @@
         "type": "object",
         "title": "NetSuite Channel Settings",
         "properties": {
-          "protocol": {
-            "title": "Protocol",
-            "type": "string"
-          },
           "wsdl_uri": {
             "title": "WSDL URI",
             "type": "string"
@@ -593,7 +589,6 @@
           }
         },
         "required": [
-          "protocol",
           "wsdl_uri",
           "namespaces"
         ]
