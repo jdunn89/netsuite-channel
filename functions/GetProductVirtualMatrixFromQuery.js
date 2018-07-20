@@ -138,7 +138,7 @@ let GetProductVirtualMatrixFromQuery = function(ncUtil, channelProfile, flowCont
         else if (!channelProfile.channelSettingsValues)
             invalidMsg = "channelProfile.channelSettingsValues was not provided";
         else if (!channelProfile.channelSettingsValues.namespaces)
-            invalidMsg = "channelProfile.channelSettingsValues.protocol was not provided";
+            invalidMsg = "channelProfile.channelSettingsValues.namespaces was not provided";
         else if (!channelProfile.channelSettingsValues.wsdl_uri)
             invalidMsg = "channelProfile.channelSettingsValues.api_uri was not provided";
         else if (!channelProfile.channelAuthValues)
@@ -491,7 +491,6 @@ let GetProductVirtualMatrixFromQuery = function(ncUtil, channelProfile, flowCont
         }
       } else {
         out.ncStatusCode = 204;
-        out.payload = result;
       }
     }
 

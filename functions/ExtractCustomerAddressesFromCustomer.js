@@ -1,6 +1,6 @@
 'use strict'
 
-let ExtractCustomerAddressFromCustomer = function(ncUtil, channelProfile, flowContext, payload, callback) {
+let ExtractCustomerAddressesFromCustomer = function(ncUtil, channelProfile, flowContext, payload, callback) {
     const nc = require('../util/common');
 
     let out = {
@@ -72,8 +72,14 @@ let ExtractCustomerAddressFromCustomer = function(ncUtil, channelProfile, flowCo
     async function extractCustomerAddress() {
         logInfo("Extracting addresses...");
 
-        if (payload.doc.record.addressbookList) {
-            out.payload.doc = payload.doc.record.addressbookList;
+        if (payload.doc.record.addressbookList.addressbook) {
+            let docs = []
+            docs.push({
+              doc: payload.doc.record,
+              customerRemoteID: payload.doc.record.$attributes.internalId
+            });
+
+            out.payload = docs;
             out.ncStatusCode = 200;
         } else {
             logWarn("No customer addresses found.");
@@ -87,4 +93,4 @@ let ExtractCustomerAddressFromCustomer = function(ncUtil, channelProfile, flowCo
         out.ncStatusCode = out.ncStatusCode || 500;
     }
 }
-module.exports.ExtractCustomerAddressFromCustomer = ExtractCustomerAddressFromCustomer;
+module.exports.ExtractCustomerAddressesFromCustomer = ExtractCustomerAddressesFromCustomer;
