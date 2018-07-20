@@ -88,7 +88,6 @@
               "type": "string",
               "title": "Virtual Matrix Parent Flag Compare",
               "enum": [
-                "",
                 "after",
                 "anyOf",
                 "before",
@@ -222,7 +221,6 @@
               "type": "string",
               "title": "Filter Compare",
               "enum": [
-                "",
                 "after",
                 "anyOf",
                 "before",
