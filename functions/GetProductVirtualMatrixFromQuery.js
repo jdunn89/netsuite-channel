@@ -491,7 +491,6 @@ let GetProductVirtualMatrixFromQuery = function(ncUtil, channelProfile, flowCont
         }
       } else {
         out.ncStatusCode = 204;
-        out.payload = result;
       }
     }
 

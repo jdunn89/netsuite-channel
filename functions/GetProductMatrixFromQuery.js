@@ -458,7 +458,6 @@ let GetProductMatrixFromQuery = function(ncUtil, channelProfile, flowContext, pa
         }
       } else {
         out.ncStatusCode = 204;
-        out.payload = result;
       }
     }
 

@@ -154,7 +154,7 @@
         "configView": [
           "filterField",
           "filterCriteria",
-          "filterCriteriaCompare",
+          "filterCompare",
           "parentIdField",
           "virtualMatrixParentFlag",
           "virtualMatrixParentFlagCriteria",
@@ -172,7 +172,7 @@
           "canGetSimpleProducts": true,
           "filterField": "",
           "filterCriteria": "",
-          "filterCriteriaCompare": "",
+          "filterCompare": "",
           "parentIdField": "",
           "virtualMatrixParentFlag": "",
           "virtualMatrixParentFlagCriteria": "",
@@ -263,12 +263,12 @@
         "configView": [
           "filterField",
           "filterCriteria",
-          "filterCriteriaCompare"
+          "filterCompare"
         ],
         "configValues": {
           "filterField": "",
           "filterCriteria": "",
-          "filterCriteriaCompare": ""
+          "filterCompare": ""
         }
       },
       "documentDef": {
@@ -345,12 +345,12 @@
         "configView": [
           "filterField",
           "filterCriteria",
-          "filterCriteriaCompare"
+          "filterCompare"
         ],
         "configValues": {
           "filterField": "",
           "filterCriteria": "",
-          "filterCriteriaCompare": ""
+          "filterCompare": ""
         }
       },
       "documentDef": {
@@ -523,13 +523,13 @@
       },
       "documentDef": {
         "schema": {},
-        "referenceLocation": {"customerBusinessReferences": ["customer.email"]},
-        "remoteID": "customer.$attributes.internalId",
-        "businessReferences": ["customer.email"],
+        "referenceLocation": {"customerBusinessReferences": ["record.email"]},
+        "remoteID": "record.$attributes.internalId",
+        "businessReferences": ["record.email"],
         "children": [
           {
             "name": "CUSTOMERADDRESS",
-            "location": "customer.addressbookList.addressbook",
+            "location": "record.addressbookList.addressbook",
             "remoteID": "internalId",
             "businessReferences": ["addressbookAddress.addr1", "addressbookAddress.zip"]
           }
@@ -567,8 +567,8 @@
         "schema": {},
         "referenceLocation": {
           "customerAddressBusinessReferences": [
-            "customer.addressbookList.addressbook.addressbookAddress.addr1",
-            "customer.addressbookList.addressbook.addressbookAddress.zip"
+            "addressbookList.addressbook.addressbookAddress.addr1",
+            "addressbookList.addressbook.addressbookAddress.zip"
           ]}
       }
     }
