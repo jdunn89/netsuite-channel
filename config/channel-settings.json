@@ -602,6 +602,7 @@
       },
       "configView": [],
       "configValues": {
+        "protocol": "https",
         "wsdl_uri": "https://webservices.netsuite.com/wsdl/v2017_2_0/netsuite.wsdl",
         "namespaces": {
           "platformMsgs": "urn:messages_2017_2.platform.webservices.netsuite.com",
