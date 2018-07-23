@@ -358,6 +358,9 @@ let GetProductMatrixFromQuery = function(ncUtil, channelProfile, flowContext, pa
       let getListPayload = {
         "record": []
       };
+      let matrixProduct = {
+        parentObject: parentObject
+      }
 
       // Push parent and child products into the 'getList' operation
       getListPayload.record.push({
@@ -384,10 +387,12 @@ let GetProductMatrixFromQuery = function(ncUtil, channelProfile, flowContext, pa
           });
        });
 
-      return getListPayload;
+       matrixProduct.getListPayload = getListPayload;
+
+       return matrixProduct;
     }
 
-    function callNetsuite(getListPayload) {
+    function callNetsuite(matrixProduct) {
       return new Promise((resolve, reject) => {
         logInfo("Calling NetSuite...");
         let operation = "getList"
@@ -396,9 +401,11 @@ let GetProductMatrixFromQuery = function(ncUtil, channelProfile, flowContext, pa
         let headers = nc.generateHeaders(channelProfile);
         soapClient.addSoapHeader(headers);
 
-        soapClient[operation](getListPayload, function(err, result) {
+        soapClient[operation](matrixProduct.getListPayload, function(err, result) {
           if (!err) {
-            resolve(result);
+            delete matrixProduct.getListPayload;
+            matrixProduct.result = result;
+            resolve(matrixProduct);
           } else {
             reject(err);
           }
@@ -406,26 +413,34 @@ let GetProductMatrixFromQuery = function(ncUtil, channelProfile, flowContext, pa
       });
     }
 
-    async function buildResponse(result) {
+    async function buildResponse(matrixProduct) {
       logInfo("Processing Response...");
-      if (nc.isObject(result)) {
-        if (result.readResponseList && result.readResponseList.readResponse) {
-          if (result.readResponseList.status.$attributes.isSuccess === "true") {
+      if (nc.isObject(matrixProduct.result)) {
+        if (matrixProduct.result.readResponseList && matrixProduct.result.readResponseList.readResponse) {
+          if (matrixProduct.result.readResponseList.status.$attributes.isSuccess === "true") {
             let docs = [];
 
-            if (result.readResponseList.readResponse.length > 0) {
-              let records = [];
-              for (let i = 0; i < result.readResponseList.readResponse.length; i++) {
-                let product = {
-                  record: result.readResponseList.readResponse[i].record
-                };
-                records.push( { "record": product } );
+            if (matrixProduct.result.readResponseList.readResponse.length > 0) {
+              let childRecords = [];
+              let product = { "record": {} };
+              for (let i = 0; i < matrixProduct.result.readResponseList.readResponse.length; i++) {
+                if (matrixProduct.result.readResponseList.readResponse[i].record.$attributes.internalId == matrixProduct.parentObject.parent) {
+                  product = {
+                    record: matrixProduct.result.readResponseList.readResponse[i].record
+                  };
+                } else {
+                  childRecords.push( { "record" : matrixProduct.result.readResponseList.readResponse[i].record });
+                }
+
+                if (i == matrixProduct.result.readResponseList.readResponse.length - 1) {
+                  product.record.matrixChildren = childRecords;
+                }
               }
 
               docs.push({
-                doc: { "records": records },
-                productRemoteID: result.readResponseList.readResponse[0].record.$attributes.internalId,
-                productBusinessReference: nc.extractBusinessReference(channelProfile.productBusinessReferences, result.readResponseList.readResponse[0])
+                doc: product,
+                productRemoteID: matrixProduct.result.readResponseList.readResponse[0].record.$attributes.internalId,
+                productBusinessReference: nc.extractBusinessReference(channelProfile.productBusinessReferences, matrixProduct.result.readResponseList.readResponse[0])
               });
 
               if (docs.length == 0) {
@@ -441,20 +456,20 @@ let GetProductMatrixFromQuery = function(ncUtil, channelProfile, flowContext, pa
               }
             } else {
               out.ncStatusCode = 204;
-              out.payload = result;
+              out.payload = matrixProduct.result;
             }
           } else {
-            if (result.searchResult.status.statusDetail) {
+            if (matrixProduct.result.searchResult.status.statusDetail) {
               out.ncStatusCode = 400;
-              out.payload.error = result.searchResult.status.statusDetail;
+              out.payload.error = matrixProduct.result.searchResult.status.statusDetail;
             } else {
               out.ncStatusCode = 400;
-              out.payload.error = result;
+              out.payload.error = matrixProduct.result;
             }
           }
         } else {
           out.ncStatusCode = 500;
-          out.payload.error = result;
+          out.payload.error = matrixProduct.result;
         }
       } else {
         out.ncStatusCode = 204;
