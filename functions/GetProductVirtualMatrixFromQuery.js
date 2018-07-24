@@ -447,61 +447,65 @@ let GetProductVirtualMatrixFromQuery = function(ncUtil, channelProfile, flowCont
 
     async function buildResponse(matrixProduct) {
       logInfo("Processing Response...");
-      if (nc.isObject(matrixProduct.result)) {
-        if (matrixProduct.result.readResponseList && matrixProduct.result.readResponseList.readResponse) {
-          if (matrixProduct.result.readResponseList.status.$attributes.isSuccess === "true") {
-            let docs = [];
+      if (typeof matrixProduct !== 'undefined' && matrixProduct) {
+        if (nc.isObject(matrixProduct.result)) {
+          if (matrixProduct.result.readResponseList && matrixProduct.result.readResponseList.readResponse) {
+            if (matrixProduct.result.readResponseList.status.$attributes.isSuccess === "true") {
+              let docs = [];
 
-            if (matrixProduct.result.readResponseList.readResponse.length > 0) {
-              let childRecords = [];
-              let product = { "record": {} };
-              for (let i = 0; i < matrixProduct.result.readResponseList.readResponse.length; i++) {
-                if (matrixProduct.result.readResponseList.readResponse[i].record.$attributes.internalId == matrixProduct.parentObject.parent) {
-                  product = {
-                    record: matrixProduct.result.readResponseList.readResponse[i].record
-                  };
+              if (matrixProduct.result.readResponseList.readResponse.length > 0) {
+                let childRecords = [];
+                let product = { "record": {} };
+                for (let i = 0; i < matrixProduct.result.readResponseList.readResponse.length; i++) {
+                  if (matrixProduct.result.readResponseList.readResponse[i].record.$attributes.internalId == matrixProduct.parentObject.parent) {
+                    product = {
+                      record: matrixProduct.result.readResponseList.readResponse[i].record
+                    };
+                  } else {
+                    childRecords.push( { "record" : matrixProduct.result.readResponseList.readResponse[i].record });
+                  }
+
+                  if (i == matrixProduct.result.readResponseList.readResponse.length - 1) {
+                    product.record.matrixChildren = childRecords;
+                  }
+                }
+
+                docs.push({
+                  doc: product,
+                  productRemoteID: matrixProduct.result.readResponseList.readResponse[0].record.$attributes.internalId,
+                  productBusinessReference: nc.extractBusinessReference(channelProfile.productBusinessReferences, matrixProduct.result.readResponseList.readResponse[0])
+                });
+
+                if (docs.length == 0) {
+                  out.ncStatusCode = 204;
                 } else {
-                  childRecords.push( { "record" : matrixProduct.result.readResponseList.readResponse[i].record });
+                  out.payload = docs;
+                  payload.doc.pagingContext.parentObjects.splice(0, 1);
+                  if (payload.doc.pagingContext.parentObjects.length > 0) {
+                    out.ncStatusCode = 206;
+                  } else {
+                    out.ncStatusCode = 200;
+                  }
                 }
-
-                if (i == matrixProduct.result.readResponseList.readResponse.length - 1) {
-                  product.record.matrixChildren = childRecords;
-                }
-              }
-
-              docs.push({
-                doc: product,
-                productRemoteID: matrixProduct.result.readResponseList.readResponse[0].record.$attributes.internalId,
-                productBusinessReference: nc.extractBusinessReference(channelProfile.productBusinessReferences, matrixProduct.result.readResponseList.readResponse[0])
-              });
-
-              if (docs.length == 0) {
-                out.ncStatusCode = 204;
               } else {
-                out.payload = docs;
-                payload.doc.pagingContext.parentObjects.splice(0, 1);
-                if (payload.doc.pagingContext.parentObjects.length > 0) {
-                  out.ncStatusCode = 206;
-                } else {
-                  out.ncStatusCode = 200;
-                }
+                out.ncStatusCode = 204;
+                out.payload = matrixProduct.result;
               }
             } else {
-              out.ncStatusCode = 204;
-              out.payload = matrixProduct.result;
+              if (matrixProduct.result.searchResult.status.statusDetail) {
+                out.ncStatusCode = 400;
+                out.payload.error = matrixProduct.result.searchResult.status.statusDetail;
+              } else {
+                out.ncStatusCode = 400;
+                out.payload.error = matrixProduct.result;
+              }
             }
           } else {
-            if (matrixProduct.result.searchResult.status.statusDetail) {
-              out.ncStatusCode = 400;
-              out.payload.error = matrixProduct.result.searchResult.status.statusDetail;
-            } else {
-              out.ncStatusCode = 400;
-              out.payload.error = matrixProduct.result;
-            }
+            out.ncStatusCode = 500;
+            out.payload.error = matrixProduct.result;
           }
         } else {
-          out.ncStatusCode = 500;
-          out.payload.error = matrixProduct.result;
+          out.ncStatusCode = 204;
         }
       } else {
         out.ncStatusCode = 204;

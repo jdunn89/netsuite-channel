@@ -629,14 +629,6 @@
             "title": "Account Number",
             "type": "string"
           },
-          "applicationID": {
-            "title": "Application ID",
-            "type": "string"
-          },
-          "applicationName": {
-            "title": "Application Name",
-            "type": "string"
-          },
           "consumerKey": {
             "title": "Consumer Key",
             "type": "string"
@@ -656,8 +648,6 @@
         },
         "required": [
           "account",
-          "applicationID",
-          "applicationName",
           "consumerKey",
           "consumerSecret",
           "tokenID",
@@ -669,14 +659,6 @@
 					"key": "account",
 					"title": "Account Number"
 				},
-        {
-          "key": "applicationID",
-          "title": "Application ID"
-        },
-        {
-          "key": "applicationName",
-          "title": "Application Name"
-        },
         {
           "key": "consumerKey",
           "type": "password",
