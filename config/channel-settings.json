@@ -164,11 +164,11 @@
           "doGetSimpleProducts"
         ],
         "configValues": {
-          "doGetMatrixProducts": true,
-          "doGetVirtualMatrixProducts": true,
+          "doGetMatrixProducts": false,
+          "doGetVirtualMatrixProducts": false,
           "doGetSimpleProducts": true,
-          "canGetMatrixProducts": true,
-          "canGetVirtualMatrixProducts": true,
+          "canGetMatrixProducts": false,
+          "canGetVirtualMatrixProducts": false,
           "canGetSimpleProducts": true,
           "filterField": "",
           "filterCriteria": "",
