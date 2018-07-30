@@ -148,20 +148,74 @@
             "canGetSimpleProducts": {
               "type": "boolean",
               "title": "GET Product, canGetSimpleProducts"
-            }
+            },
+            "anyOf": [
+              {
+                "properties": {
+                  "doGetVirtualMatrixProducts": {"enum": [true]},
+                  "required": ["virtual.virtualMatrixParentFlag", "virtual.virtualMatrixParentFlagCompare", "virtual.virtualMatrixParentFlagCriteria", "parent.parentIdField"]
+                }
+              }
+            ]
           }
         },
         "configView": [
-          "filterField",
-          "filterCriteria",
-          "filterCompare",
-          "parentIdField",
-          "virtualMatrixParentFlag",
-          "virtualMatrixParentFlagCriteria",
-          "virtualMatrixParentFlagCompare",
           "doGetMatrixProducts",
           "doGetVirtualMatrixProducts",
-          "doGetSimpleProducts"
+          "doGetSimpleProducts",
+          {
+            "type": "fieldset",
+            "title": "Cannot select both matrix and virtual matrix product options.",
+            "condition": "model.doGetMatrixProducts==true && model.doGetVirtualMatrixProducts==true"
+          },
+          {
+            "type": "fieldset",
+            "title": "Which products do you want to get?",
+            "items": [
+                {
+                    "key": "filterField",
+                    "title": "Filter Field Name"
+                },
+                "filterCompare",
+                {
+                    "key": "filterCriteria",
+                    "title": "Filter Criteria Value"
+                }
+            ],
+            "condition": "!(model.doGetMatrixProducts==true && model.doGetVirtualMatrixProducts==true)"
+          },
+          {
+            "key": "virtual",
+            "type": "fieldset",
+            "title": "How do you identify a virtual matrix parent?",
+            "items": [
+                {
+                    "key": "virtualMatrixParentFlag",
+                    "title": "Field ID"
+                },
+                {
+                    "key": "virtualMatrixParentFlagCompare",
+                    "title": "Compare"
+                },
+                {
+                    "key": "virtualMatrixParentFlagCriteria",
+                    "title": "Criteria Value"
+                }
+            ],
+            "condition": "model.doGetVirtualMatrixProducts==true && model.doGetMatrixProducts==false && !(model.doGetMatrixProducts==true && model.doGetVirtualMatrixProducts==true)"
+          },
+          {
+            "key": "parent",
+            "type": "fieldset",
+            "title": "How does a virtual matrix child declare it's parent?",
+            "items": [
+                 {
+                    "key": "parentIdField",
+                    "title": "Field ID"
+                }
+            ],
+            "condition": "model.doGetVirtualMatrixProducts==true && model.doGetMatrixProducts==false && !(model.doGetMatrixProducts==true && model.doGetVirtualMatrixProducts==true)"
+          }
         ],
         "configValues": {
           "doGetMatrixProducts": false,
@@ -185,15 +239,7 @@
           "productBusinessReferences": ["record.itemId"]
         },
         "remoteID": "record.$attributes.internalId",
-        "businessReferences": ["record.itemId"],
-        "children": [
-          {
-            "name": "PRODUCTQUANTITY",
-            "location": "record.configurable_product_links",
-            "remoteID": "id",
-            "businessReferences": ["sku"]
-          }
-        ]
+        "businessReferences": ["record.itemId"]
       }
     },
     {
@@ -273,9 +319,9 @@
       },
       "documentDef": {
         "schema": {},
-        "referenceLocation": {"productQuantityBusinessReferences": ["sku"]},
-        "remoteID": "id",
-        "businessReferences": ["sku"]
+        "referenceLocation": {"productQuantityBusinessReferences": ["record.itemId"]},
+        "remoteID": "record.$attributes.internalId",
+        "businessReferences": ["record.itemId"]
       }
     },
     {
@@ -355,9 +401,9 @@
       },
       "documentDef": {
         "schema": {},
-        "referenceLocation": {"productPricingBusinessReferences": ["sku"]},
-        "remoteID": "id",
-        "businessReferences": ["sku"]
+        "referenceLocation": {"productPricingBusinessReferences": ["record.itemId"]},
+        "remoteID": "record.$attributes.internalId",
+        "businessReferences": ["record.itemId"]
       }
     },
     {

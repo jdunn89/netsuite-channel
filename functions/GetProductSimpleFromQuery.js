@@ -143,54 +143,41 @@ let GetProductSimpleFromQuery = function(ncUtil, channelProfile, flowContext, pa
           if (flowContext.filterField && flowContext.filterCriteria) {
             let fieldName = flowContext.filterField;
 
-            searchPayload["searchRecord"]["basic"][fieldName] = {
-              "searchValue": flowContext.filterCriteria
-            }
+            let customField = fieldName.startsWith("custitem");
 
-            if (flowContext.filterCompare) {
-              searchPayload["searchRecord"]["basic"][fieldName]["$attributes"] = {
-                "operator": flowContext.filterCompare
+            if (customField) {
+              searchPayload["searchRecord"]["basic"]["customFieldList"] = {
+                "customField": []
+              }
+
+              let obj = {
+                "$attributes": {
+                  "$xsiType": {
+                    "xmlns": channelProfile.channelSettingsValues.namespaces.platformCore,
+                    "type": "SearchBooleanCustomField"
+                  },
+                  "scriptId": flowContext.filterField
+                },
+                "searchValue": flowContext.filterCriteria
+              }
+
+              if (flowContext.filterCompare) {
+                obj["$attributes"]["operator"] = flowContext.filterCompare;
+              }
+
+              searchPayload["searchRecord"]["basic"]["customFieldList"]["customField"].push(obj);
+
+            } else {
+              searchPayload["searchRecord"]["basic"][fieldName] = {
+                "searchValue": flowContext.filterCriteria
+              }
+
+              if (flowContext.filterCompare) {
+                searchPayload["searchRecord"]["basic"][fieldName]["$attributes"] = {
+                  "operator": flowContext.filterCompare
+                }
               }
             }
-          }
-
-          searchPayload["searchRecord"]["basic"]["customFieldList"] = {
-            "customField": []
-          }
-
-          // Set a filter to include a custom field referencing if a product is a virtual matrix parent - Must be set to not be returned with simple products
-          if (flowContext.virtualMatrixParentFlag && flowContext.virtualMatrixParentFlagCriteria) {
-            let obj = {
-              "$attributes": {
-                "$xsiType": {
-                  "xmlns": channelProfile.channelSettingsValues.namespaces.platformCore,
-                  "type": "SearchBooleanCustomField"
-                },
-                "operator": flowContext.virtualMatrixParentFlagCompare,
-                "scriptId": flowContext.virtualMatrixParentFlag
-              },
-              "searchValue": flowContext.virtualMatrixParentFlagCriteria
-            }
-
-            if (flowContext.virtualMatrixParentFlagCompare === "") {
-              delete obj.$attributes.operator;
-            }
-
-            searchPayload["searchRecord"]["basic"]["customFieldList"]["customField"].push(obj);
-          }
-
-          // Set a filter to include a custom field referencing a parent on the child product - Should not return child products if a values for this field exists
-          if (flowContext.parentIdField) {
-            searchPayload["searchRecord"]["basic"]["customFieldList"]["customField"].push({
-              "$attributes": {
-                "$xsiType": {
-                  "xmlns": channelProfile.channelSettingsValues.namespaces.platformCore,
-                  "type": "SearchStringCustomField"
-                },
-                "operator": "empty",
-                "scriptId": flowContext.parentIdField
-              }
-            });
           }
         }
 
@@ -314,22 +301,24 @@ let GetProductSimpleFromQuery = function(ncUtil, channelProfile, flowContext, pa
         if (result.searchResult.status.$attributes.isSuccess === "true") {
           let docs = [];
 
+          // recordList is only returned if there are results in the query
           if (result.searchResult.recordList) {
             if (nc.isObject(result.searchResult.recordList.record)) {
+              let product = {
+                record: result.searchResult.recordList.record
+              };
               docs.push({
-                doc: { "records": [ { "record": result.searchResult.recordList.record } ] },
-                productRemoteID: result.searchResult.recordList.record.$attributes.internalId,
-                productBusinessReference: nc.extractBusinessReference(channelProfile.productBusinessReferences, result.searchResult.recordList)
+                doc: product,
+                productRemoteID: product.record.$attributes.internalId,
+                productBusinessReference: nc.extractBusinessReference(channelProfile.productBusinessReferences, product)
               });
             } else {
               for (let i = 0; i < result.searchResult.recordList.record.length; i++) {
-                let records = [];
                 let product = {
                   record: result.searchResult.recordList.record[i]
                 };
-                records.push( { "record": product } );
                 docs.push({
-                  doc: { "records": records },
+                  doc: product,
                   productRemoteID: product.record.$attributes.internalId,
                   productBusinessReference: nc.extractBusinessReference(channelProfile.productBusinessReferences, product)
                 });

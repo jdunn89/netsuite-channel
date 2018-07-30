@@ -236,16 +236,44 @@ let GetProductMatrixFromQuery = function(ncUtil, channelProfile, flowContext, pa
         };
 
         // Flow Context Criteria Filters
-        if (flowContext && flowContext.filterField && flowContext.filterCriteria) {
-          let fieldName = flowContext.filterField;
+        if (flowContext) {
+          if (flowContext.filterField && flowContext.filterCriteria) {
+            let fieldName = flowContext.filterField;
 
-          searchPayload["searchRecord"]["basic"][fieldName] = {
-            "searchValue": flowContext.filterCriteria
-          }
+            let customField = fieldName.startsWith("custitem");
 
-          if (flowContext.filterCompare) {
-            searchPayload["searchRecord"]["basic"][fieldName]["$attributes"] = {
-              "operator": flowContext.filterCompare
+            if (customField) {
+              searchPayload["searchRecord"]["basic"]["customFieldList"] = {
+                "customField": []
+              }
+
+              let obj = {
+                "$attributes": {
+                  "$xsiType": {
+                    "xmlns": channelProfile.channelSettingsValues.namespaces.platformCore,
+                    "type": "SearchBooleanCustomField"
+                  },
+                  "scriptId": flowContext.filterField
+                },
+                "searchValue": flowContext.filterCriteria
+              }
+
+              if (flowContext.filterCompare) {
+                obj["$attributes"]["operator"] = flowContext.filterCompare;
+              }
+
+              searchPayload["searchRecord"]["basic"]["customFieldList"]["customField"].push(obj);
+
+            } else {
+              searchPayload["searchRecord"]["basic"][fieldName] = {
+                "searchValue": flowContext.filterCriteria
+              }
+
+              if (flowContext.filterCompare) {
+                searchPayload["searchRecord"]["basic"][fieldName]["$attributes"] = {
+                  "operator": flowContext.filterCompare
+                }
+              }
             }
           }
         }
@@ -457,7 +485,6 @@ let GetProductMatrixFromQuery = function(ncUtil, channelProfile, flowContext, pa
                 }
               } else {
                 out.ncStatusCode = 204;
-                out.payload = matrixProduct.result;
               }
             } else {
               if (matrixProduct.result.searchResult.status.statusDetail) {

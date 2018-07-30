@@ -245,19 +245,47 @@ let GetProductVirtualMatrixFromQuery = function(ncUtil, channelProfile, flowCont
           if (flowContext.filterField && flowContext.filterCriteria) {
             let fieldName = flowContext.filterField;
 
-            searchPayload["searchRecord"]["basic"][fieldName] = {
-              "searchValue": flowContext.filterCriteria
-            }
+            let customField = fieldName.startsWith("custitem");
 
-            if (flowContext.filterCompare) {
-              searchPayload["searchRecord"]["basic"][fieldName]["$attributes"] = {
-                "operator": flowContext.filterCompare
+            if (customField) {
+              searchPayload["searchRecord"]["basic"]["customFieldList"] = {
+                "customField": []
+              }
+
+              let obj = {
+                "$attributes": {
+                  "$xsiType": {
+                    "xmlns": channelProfile.channelSettingsValues.namespaces.platformCore,
+                    "type": "SearchBooleanCustomField"
+                  },
+                  "scriptId": flowContext.filterField
+                },
+                "searchValue": flowContext.filterCriteria
+              }
+
+              if (flowContext.filterCompare) {
+                obj["$attributes"]["operator"] = flowContext.filterCompare;
+              }
+
+              searchPayload["searchRecord"]["basic"]["customFieldList"]["customField"].push(obj);
+
+            } else {
+              searchPayload["searchRecord"]["basic"][fieldName] = {
+                "searchValue": flowContext.filterCriteria
+              }
+
+              if (flowContext.filterCompare) {
+                searchPayload["searchRecord"]["basic"][fieldName]["$attributes"] = {
+                  "operator": flowContext.filterCompare
+                }
               }
             }
           }
 
-          searchPayload["searchRecord"]["basic"]["customFieldList"] = {
-            "customField": []
+          if (!searchPayload["searchRecord"]["basic"]["customFieldList"]) {
+            searchPayload["searchRecord"]["basic"]["customFieldList"] = {
+              "customField": []
+            }
           }
 
           // Set a filter to include a custom field referencing if a product is a virtual matrix parent
@@ -489,7 +517,6 @@ let GetProductVirtualMatrixFromQuery = function(ncUtil, channelProfile, flowCont
                 }
               } else {
                 out.ncStatusCode = 204;
-                out.payload = matrixProduct.result;
               }
             } else {
               if (matrixProduct.result.searchResult.status.statusDetail) {
