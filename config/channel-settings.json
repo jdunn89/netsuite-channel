@@ -149,26 +149,78 @@
               "type": "boolean",
               "title": "GET Product, canGetSimpleProducts"
             }
-          }
+          },
+          "oneOf": [
+            {
+              "required": ["virtualMatrixParentFlag", "virtualMatrixParentFlagCompare", "virtualMatrixParentFlagCriteria", "parentIdField"],
+              "properties": {
+                "doGetVirtualMatrixProducts": {"enum": [true]}
+              }
+            }
+          ]
         },
         "configView": [
-          "filterField",
-          "filterCriteria",
-          "filterCompare",
-          "parentIdField",
-          "virtualMatrixParentFlag",
-          "virtualMatrixParentFlagCriteria",
-          "virtualMatrixParentFlagCompare",
           "doGetMatrixProducts",
           "doGetVirtualMatrixProducts",
-          "doGetSimpleProducts"
+          "doGetSimpleProducts",
+          {
+            "type": "fieldset",
+            "title": "Cannot select both matrix and virtual matrix product options.",
+            "condition": "model.doGetMatrixProducts==true && model.doGetVirtualMatrixProducts==true"
+          },
+          {
+            "type": "fieldset",
+            "title": "Which products do you want to get?",
+            "items": [
+                {
+                    "key": "filterField",
+                    "title": "Filter Field Name"
+                },
+                "filterCompare",
+                {
+                    "key": "filterCriteria",
+                    "title": "Filter Criteria Value"
+                }
+            ],
+            "condition": "!(model.doGetMatrixProducts==true && model.doGetVirtualMatrixProducts==true)"
+          },
+          {
+            "type": "fieldset",
+            "title": "How do you identify a virtual matrix parent?",
+            "items": [
+                {
+                    "key": "virtualMatrixParentFlag",
+                    "title": "Field ID"
+                },
+                {
+                    "key": "virtualMatrixParentFlagCompare",
+                    "title": "Compare"
+                },
+                {
+                    "key": "virtualMatrixParentFlagCriteria",
+                    "title": "Criteria Value"
+                }
+            ],
+            "condition": "model.doGetVirtualMatrixProducts==true && model.doGetMatrixProducts==false && !(model.doGetMatrixProducts==true && model.doGetVirtualMatrixProducts==true)"
+          },
+          {
+            "type": "fieldset",
+            "title": "How does a virtual matrix child declare it's parent?",
+            "items": [
+                 {
+                    "key": "parentIdField",
+                    "title": "Field ID"
+                }
+            ],
+            "condition": "model.doGetVirtualMatrixProducts==true && model.doGetMatrixProducts==false && !(model.doGetMatrixProducts==true && model.doGetVirtualMatrixProducts==true)"
+          }
         ],
         "configValues": {
-          "doGetMatrixProducts": true,
-          "doGetVirtualMatrixProducts": true,
+          "doGetMatrixProducts": false,
+          "doGetVirtualMatrixProducts": false,
           "doGetSimpleProducts": true,
-          "canGetMatrixProducts": true,
-          "canGetVirtualMatrixProducts": true,
+          "canGetMatrixProducts": false,
+          "canGetVirtualMatrixProducts": false,
           "canGetSimpleProducts": true,
           "filterField": "",
           "filterCriteria": "",
@@ -185,15 +237,7 @@
           "productBusinessReferences": ["record.itemId"]
         },
         "remoteID": "record.$attributes.internalId",
-        "businessReferences": ["record.itemId"],
-        "children": [
-          {
-            "name": "PRODUCTQUANTITY",
-            "location": "record.configurable_product_links",
-            "remoteID": "id",
-            "businessReferences": ["sku"]
-          }
-        ]
+        "businessReferences": ["record.itemId"]
       }
     },
     {
@@ -273,9 +317,9 @@
       },
       "documentDef": {
         "schema": {},
-        "referenceLocation": {"productQuantityBusinessReferences": ["sku"]},
-        "remoteID": "id",
-        "businessReferences": ["sku"]
+        "referenceLocation": {"productQuantityBusinessReferences": ["record.itemId"]},
+        "remoteID": "record.$attributes.internalId",
+        "businessReferences": ["record.itemId"]
       }
     },
     {
@@ -355,9 +399,9 @@
       },
       "documentDef": {
         "schema": {},
-        "referenceLocation": {"productPricingBusinessReferences": ["sku"]},
-        "remoteID": "id",
-        "businessReferences": ["sku"]
+        "referenceLocation": {"productPricingBusinessReferences": ["record.itemId"]},
+        "remoteID": "record.$attributes.internalId",
+        "businessReferences": ["record.itemId"]
       }
     },
     {
@@ -629,14 +673,6 @@
             "title": "Account Number",
             "type": "string"
           },
-          "applicationID": {
-            "title": "Application ID",
-            "type": "string"
-          },
-          "applicationName": {
-            "title": "Application Name",
-            "type": "string"
-          },
           "consumerKey": {
             "title": "Consumer Key",
             "type": "string"
@@ -656,8 +692,6 @@
         },
         "required": [
           "account",
-          "applicationID",
-          "applicationName",
           "consumerKey",
           "consumerSecret",
           "tokenID",
@@ -669,14 +703,6 @@
 					"key": "account",
 					"title": "Account Number"
 				},
-        {
-          "key": "applicationID",
-          "title": "Application ID"
-        },
-        {
-          "key": "applicationName",
-          "title": "Application Name"
-        },
         {
           "key": "consumerKey",
           "type": "password",

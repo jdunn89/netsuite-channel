@@ -1,18 +1,11 @@
 {
 	"name": "NetSuite Get Matrix Product",
   "schemaDef": {
-		"$id": "http://example.com/example.json",
 		"type": "object",
 		"$schema": "http://json-schema.org/draft-07/schema#",
 		"properties": {
-			"records": {
-				"type": "array",
-				"items": {
-					"type": "object",
-					"properties": {
-						"$ref": "#/definitions/record"
-					}
-				}
+			"record": {
+				"$ref": "#/definitions/record"
 			}
 		},
 		"definitions": {
@@ -577,26 +570,52 @@
 											}
 										},
 										"value": {
-											"type": "array",
-											"items": {
-												"type": "object",
-												"properties": {
-													"$attributes": {
-														"type": "object",
-														"properties": {
-															"internalId": {
-																"type": "string"
-															},
-															"typeId": {
-																"type": "string"
-															}
+											"anyOf": [
+												{
+													"type": "array",
+														"items": {
+																"type": "object",
+																"properties": {
+																		"$attributes": {
+																				"type": "object",
+																				"properties": {
+																						"internalId": {
+																								"type": "string"
+																						},
+																						"typeId": {
+																								"type": "string"
+																						}
+																				}
+																		},
+																		"name": {
+																				"type": "string"
+																		}
+																}
 														}
-													},
-													"name": {
-														"type": "string"
-													}
+												},
+												{
+													"type": "object",
+																"properties": {
+																	"$attributes": {
+																			"type": "object",
+																		"properties": {
+																			"internalId": {
+																					"type": "string"
+																			},
+																			"typeId": {
+																					"type": "string"
+																			}
+																		}
+																},
+																"name": {
+																		"type": "string"
+																}
+														}
+												},
+												{
+													"type": "string"
 												}
-											}
+											]
 										}
 									}
 								}
@@ -606,10 +625,7 @@
 					"matrixChildren": {
 						"type": "array",
 						"items": {
-							"type": "object",
-							"properties": {
-								"$ref": "#/definitions/record"
-							}
+							"$ref": "#/definitions/record"
 						}
 					}
 				}

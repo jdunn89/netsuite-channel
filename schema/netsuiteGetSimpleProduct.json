@@ -5,532 +5,484 @@
 		"definitions": { },
 		"$schema": "http://json-schema.org/draft-07/schema#",
 		"properties": {
-			"records": {
-				"type": "array",
-				"items": {
-					"type": "object",
-					"properties": {
-						"record": {
-							"type": "object",
-							"properties": {
-								"$attributes": {
-									"type": "object",
-									"properties": {
-										"$xsiType": {
-											"type": "object",
-											"properties": {
-												"listAcct": {
-													"type": "string"
-												},
-												"type": {
-													"type": "string"
-												}
-											}
-										},
-										"internalId": {
-											"type": "string"
-										}
+			"record": {
+				"type": "object",
+				"properties": {
+					"$attributes": {
+						"type": "object",
+						"properties": {
+							"$xsiType": {
+								"type": "object",
+								"properties": {
+									"listAcct": {
+										"type": "string"
+									},
+									"type": {
+										"type": "string"
 									}
-								},
-								"createdDate": {
-									"type": "string"
-								},
-								"lastModifiedDate": {
-									"type": "string"
-								},
-								"copyDescription": {
-									"type": "string"
-								},
-								"cogsAccount": {
-									"type": "object",
-									"properties": {
-										"$attributes": {
-											"type": "object",
-											"properties": {
-												"$xsiType": {
-													"type": "object",
-													"properties": {
-														"platformCore": {
-															"type": "string"
-														}
-													}
-												},
-												"internalId": {
-													"type": "string"
-												}
+								}
+							},
+							"internalId": {
+								"type": "string"
+							}
+						}
+					},
+					"createdDate": {
+						"type": "string"
+					},
+					"lastModifiedDate": {
+						"type": "string"
+					},
+					"copyDescription": {
+						"type": "string"
+					},
+					"cogsAccount": {
+						"type": "object",
+						"properties": {
+							"$attributes": {
+								"type": "object",
+								"properties": {
+									"$xsiType": {
+										"type": "object",
+										"properties": {
+											"platformCore": {
+												"type": "string"
 											}
-										},
-										"name": {
-											"type": "string"
 										}
+									},
+									"internalId": {
+										"type": "string"
 									}
-								},
-								"salesDescription": {
-									"type": "string"
-								},
-								"includeChildren": {
-									"type": "string"
-								},
-								"incomeAccount": {
-									"type": "object",
-									"properties": {
-										"$attributes": {
-											"type": "object",
-											"properties": {
-												"$xsiType": {
-													"type": "object",
-													"properties": {
-														"platformCore": {
-															"type": "string"
-														}
-													}
-												},
-												"internalId": {
-													"type": "string"
-												}
+								}
+							},
+							"name": {
+								"type": "string"
+							}
+						}
+					},
+					"salesDescription": {
+						"type": "string"
+					},
+					"includeChildren": {
+						"type": "string"
+					},
+					"incomeAccount": {
+						"type": "object",
+						"properties": {
+							"$attributes": {
+								"type": "object",
+								"properties": {
+									"$xsiType": {
+										"type": "object",
+										"properties": {
+											"platformCore": {
+												"type": "string"
 											}
-										},
-										"name": {
-											"type": "string"
 										}
+									},
+									"internalId": {
+										"type": "string"
 									}
-								},
-								"taxSchedule": {
-									"type": "object",
-									"properties": {
-										"$attributes": {
-											"type": "object",
-											"properties": {
-												"$xsiType": {
-													"type": "object",
-													"properties": {
-														"platformCore": {
-															"type": "string"
-														}
-													}
-												},
-												"internalId": {
-													"type": "string"
-												}
+								}
+							},
+							"name": {
+								"type": "string"
+							}
+						}
+					},
+					"taxSchedule": {
+						"type": "object",
+						"properties": {
+							"$attributes": {
+								"type": "object",
+								"properties": {
+									"$xsiType": {
+										"type": "object",
+										"properties": {
+											"platformCore": {
+												"type": "string"
 											}
-										},
-										"name": {
-											"type": "string"
 										}
+									},
+									"internalId": {
+										"type": "string"
 									}
-								},
-								"matrixType": {
-									"type": "string"
-								},
-								"assetAccount": {
-									"type": "object",
-									"properties": {
-										"$attributes": {
-											"type": "object",
-											"properties": {
-												"$xsiType": {
-													"type": "object",
-													"properties": {
-														"platformCore": {
-															"type": "string"
-														}
-													}
-												},
-												"internalId": {
-													"type": "string"
-												}
+								}
+							},
+							"name": {
+								"type": "string"
+							}
+						}
+					},
+					"matrixType": {
+						"type": "string"
+					},
+					"assetAccount": {
+						"type": "object",
+						"properties": {
+							"$attributes": {
+								"type": "object",
+								"properties": {
+									"$xsiType": {
+										"type": "object",
+										"properties": {
+											"platformCore": {
+												"type": "string"
 											}
-										},
-										"name": {
-											"type": "string"
 										}
+									},
+									"internalId": {
+										"type": "string"
 									}
-								},
-								"matchBillToReceipt": {
-									"type": "string"
-								},
-								"billQtyVarianceAcct": {
-									"type": "object",
-									"properties": {
-										"$attributes": {
-											"type": "object",
-											"properties": {
-												"$xsiType": {
-													"type": "object",
-													"properties": {
-														"platformCore": {
-															"type": "string"
-														}
-													}
-												},
-												"internalId": {
-													"type": "string"
-												}
+								}
+							},
+							"name": {
+								"type": "string"
+							}
+						}
+					},
+					"matchBillToReceipt": {
+						"type": "string"
+					},
+					"billQtyVarianceAcct": {
+						"type": "object",
+						"properties": {
+							"$attributes": {
+								"type": "object",
+								"properties": {
+									"$xsiType": {
+										"type": "object",
+										"properties": {
+											"platformCore": {
+												"type": "string"
 											}
-										},
-										"name": {
-											"type": "string"
 										}
+									},
+									"internalId": {
+										"type": "string"
 									}
-								},
-								"billPriceVarianceAcct": {
-									"type": "object",
-									"properties": {
-										"$attributes": {
-											"type": "object",
-											"properties": {
-												"$xsiType": {
-													"type": "object",
-													"properties": {
-														"platformCore": {
-															"type": "string"
-														}
-													}
-												},
-												"internalId": {
-													"type": "string"
-												}
+								}
+							},
+							"name": {
+								"type": "string"
+							}
+						}
+					},
+					"billPriceVarianceAcct": {
+						"type": "object",
+						"properties": {
+							"$attributes": {
+								"type": "object",
+								"properties": {
+									"$xsiType": {
+										"type": "object",
+										"properties": {
+											"platformCore": {
+												"type": "string"
 											}
-										},
-										"name": {
-											"type": "string"
 										}
+									},
+									"internalId": {
+										"type": "string"
 									}
-								},
-								"billExchRateVarianceAcct": {
-									"type": "object",
-									"properties": {
-										"$attributes": {
-											"type": "object",
-											"properties": {
-												"$xsiType": {
-													"type": "object",
-													"properties": {
-														"platformCore": {
-															"type": "string"
-														}
-													}
-												},
-												"internalId": {
-													"type": "string"
-												}
+								}
+							},
+							"name": {
+								"type": "string"
+							}
+						}
+					},
+					"billExchRateVarianceAcct": {
+						"type": "object",
+						"properties": {
+							"$attributes": {
+								"type": "object",
+								"properties": {
+									"$xsiType": {
+										"type": "object",
+										"properties": {
+											"platformCore": {
+												"type": "string"
 											}
-										},
-										"name": {
-											"type": "string"
 										}
+									},
+									"internalId": {
+										"type": "string"
 									}
-								},
-								"gainLossAccount": {
-									"type": "object",
-									"properties": {
-										"$attributes": {
-											"type": "object",
-											"properties": {
-												"$xsiType": {
-													"type": "object",
-													"properties": {
-														"platformCore": {
-															"type": "string"
-														}
-													}
-												},
-												"internalId": {
-													"type": "string"
-												}
+								}
+							},
+							"name": {
+								"type": "string"
+							}
+						}
+					},
+					"gainLossAccount": {
+						"type": "object",
+						"properties": {
+							"$attributes": {
+								"type": "object",
+								"properties": {
+									"$xsiType": {
+										"type": "object",
+										"properties": {
+											"platformCore": {
+												"type": "string"
 											}
-										},
-										"name": {
-											"type": "string"
 										}
+									},
+									"internalId": {
+										"type": "string"
 									}
-								},
-								"costingMethodDisplay": {
-									"type": "string"
-								},
-								"trackLandedCost": {
-									"type": "string"
-								},
-								"matrixItemNameTemplate": {
-									"type": "string"
-								},
-								"isDropShipItem": {
-									"type": "string"
-								},
-								"isSpecialOrderItem": {
-									"type": "string"
-								},
-								"roundUpAsComponent": {
-									"type": "string"
-								},
-								"enforceMinQtyInternally": {
-									"type": "string"
-								},
-								"shipIndividually": {
-									"type": "string"
-								},
-								"costCategory": {
-									"type": "object",
-									"properties": {
-										"$attributes": {
-											"type": "object",
-											"properties": {
-												"$xsiType": {
-													"type": "object",
-													"properties": {
-														"platformCore": {
-															"type": "string"
-														}
-													}
-												},
-												"internalId": {
-													"type": "string"
-												}
+								}
+							},
+							"name": {
+								"type": "string"
+							}
+						}
+					},
+					"costingMethodDisplay": {
+						"type": "string"
+					},
+					"trackLandedCost": {
+						"type": "string"
+					},
+					"matrixItemNameTemplate": {
+						"type": "string"
+					},
+					"isDropShipItem": {
+						"type": "string"
+					},
+					"isSpecialOrderItem": {
+						"type": "string"
+					},
+					"roundUpAsComponent": {
+						"type": "string"
+					},
+					"enforceMinQtyInternally": {
+						"type": "string"
+					},
+					"shipIndividually": {
+						"type": "string"
+					},
+					"costCategory": {
+						"type": "object",
+						"properties": {
+							"$attributes": {
+								"type": "object",
+								"properties": {
+									"$xsiType": {
+										"type": "object",
+										"properties": {
+											"platformCore": {
+												"type": "string"
 											}
-										},
-										"name": {
-											"type": "string"
 										}
+									},
+									"internalId": {
+										"type": "string"
 									}
-								},
-								"purchasePriceVarianceAcct": {
-									"type": "object",
-									"properties": {
-										"$attributes": {
-											"type": "object",
-											"properties": {
-												"$xsiType": {
-													"type": "object",
-													"properties": {
-														"platformCore": {
-															"type": "string"
-														}
-													}
-												},
-												"internalId": {
-													"type": "string"
-												}
+								}
+							},
+							"name": {
+								"type": "string"
+							}
+						}
+					},
+					"purchasePriceVarianceAcct": {
+						"type": "object",
+						"properties": {
+							"$attributes": {
+								"type": "object",
+								"properties": {
+									"$xsiType": {
+										"type": "object",
+										"properties": {
+											"platformCore": {
+												"type": "string"
 											}
-										},
-										"name": {
-											"type": "string"
 										}
+									},
+									"internalId": {
+										"type": "string"
 									}
-								},
-								"useMarginalRates": {
-									"type": "string"
-								},
-								"costEstimateType": {
-									"type": "string"
-								},
-								"overallQuantityPricingType": {
-									"type": "string"
-								},
-								"cost": {
-									"type": "string"
-								},
-								"useBins": {
-									"type": "string"
-								},
-								"autoLeadTime": {
-									"type": "string"
-								},
-								"autoPreferredStockLevel": {
-									"type": "string"
-								},
-								"seasonalDemand": {
-									"type": "string"
-								},
-								"autoReorderPoint": {
-									"type": "string"
-								},
-								"storeDisplayName": {
-									"type": "string"
-								},
-								"excludeFromSitemap": {
-									"type": "string"
-								},
-								"sitemapPriority": {
-									"type": "string"
-								},
-								"isDonationItem": {
-									"type": "string"
-								},
-								"showDefaultDonationAmount": {
-									"type": "string"
-								},
-								"dontShowPrice": {
-									"type": "string"
-								},
-								"onSpecial": {
-									"type": "string"
-								},
-								"outOfStockBehavior": {
-									"type": "string"
-								},
-								"urlComponent": {
-									"type": "string"
-								},
-								"customForm": {
-									"type": "object",
-									"properties": {
-										"$attributes": {
-											"type": "object",
-											"properties": {
-												"$xsiType": {
-													"type": "object",
-													"properties": {
-														"platformCore": {
-															"type": "string"
-														}
-													}
-												},
-												"internalId": {
-													"type": "string"
-												}
+								}
+							},
+							"name": {
+								"type": "string"
+							}
+						}
+					},
+					"useMarginalRates": {
+						"type": "string"
+					},
+					"costEstimateType": {
+						"type": "string"
+					},
+					"overallQuantityPricingType": {
+						"type": "string"
+					},
+					"cost": {
+						"type": "string"
+					},
+					"useBins": {
+						"type": "string"
+					},
+					"autoLeadTime": {
+						"type": "string"
+					},
+					"autoPreferredStockLevel": {
+						"type": "string"
+					},
+					"seasonalDemand": {
+						"type": "string"
+					},
+					"autoReorderPoint": {
+						"type": "string"
+					},
+					"storeDisplayName": {
+						"type": "string"
+					},
+					"excludeFromSitemap": {
+						"type": "string"
+					},
+					"sitemapPriority": {
+						"type": "string"
+					},
+					"isDonationItem": {
+						"type": "string"
+					},
+					"showDefaultDonationAmount": {
+						"type": "string"
+					},
+					"dontShowPrice": {
+						"type": "string"
+					},
+					"onSpecial": {
+						"type": "string"
+					},
+					"outOfStockBehavior": {
+						"type": "string"
+					},
+					"urlComponent": {
+						"type": "string"
+					},
+					"customForm": {
+						"type": "object",
+						"properties": {
+							"$attributes": {
+								"type": "object",
+								"properties": {
+									"$xsiType": {
+										"type": "object",
+										"properties": {
+											"platformCore": {
+												"type": "string"
 											}
-										},
-										"name": {
-											"type": "string"
 										}
+									},
+									"internalId": {
+										"type": "string"
 									}
-								},
-								"itemId": {
-									"type": "string"
-								},
-								"displayName": {
-									"type": "string"
-								},
-								"vendorName": {
-									"type": "string"
-								},
-								"isOnline": {
-									"type": "string"
-								},
-								"offerSupport": {
-									"type": "string"
-								},
-								"isInactive": {
-									"type": "string"
-								},
-								"availableToPartners": {
-									"type": "string"
-								},
-								"currency": {
-									"type": "string"
-								},
-								"supplyReplenishmentMethod": {
-									"type": "object",
-									"properties": {
-										"$attributes": {
-											"type": "object",
-											"properties": {
-												"$xsiType": {
-													"type": "object",
-													"properties": {
-														"platformCore": {
-															"type": "string"
-														}
-													}
-												},
-												"internalId": {
-													"type": "string"
-												}
+								}
+							},
+							"name": {
+								"type": "string"
+							}
+						}
+					},
+					"itemId": {
+						"type": "string"
+					},
+					"displayName": {
+						"type": "string"
+					},
+					"vendorName": {
+						"type": "string"
+					},
+					"isOnline": {
+						"type": "string"
+					},
+					"offerSupport": {
+						"type": "string"
+					},
+					"isInactive": {
+						"type": "string"
+					},
+					"availableToPartners": {
+						"type": "string"
+					},
+					"currency": {
+						"type": "string"
+					},
+					"supplyReplenishmentMethod": {
+						"type": "object",
+						"properties": {
+							"$attributes": {
+								"type": "object",
+								"properties": {
+									"$xsiType": {
+										"type": "object",
+										"properties": {
+											"platformCore": {
+												"type": "string"
 											}
-										},
-										"name": {
-											"type": "string"
 										}
+									},
+									"internalId": {
+										"type": "string"
 									}
-								},
-								"subsidiaryList": {
-									"type": "object",
-									"properties": {
-										"$attributes": {
-											"type": "object",
-											"properties": {
-												"$xsiType": {
-													"type": "object",
-													"properties": {
-														"platformCore": {
-															"type": "string"
-														}
-													}
-												}
-											}
-										},
-										"recordRef": {
-											"type": "object",
-											"properties": {
-												"$attributes": {
-													"type": "object",
-													"properties": {
-														"$xsiType": {
-															"type": "object",
-															"properties": {
-																"internalId": {
-																	"type": "string"
-																}
-															}
-														}
-													}
-												},
-												"name": {
-													"type": "string"
-												}
+								}
+							},
+							"name": {
+								"type": "string"
+							}
+						}
+					},
+					"subsidiaryList": {
+						"type": "object",
+						"properties": {
+							"$attributes": {
+								"type": "object",
+								"properties": {
+									"$xsiType": {
+										"type": "object",
+										"properties": {
+											"platformCore": {
+												"type": "string"
 											}
 										}
 									}
-								},
-								"itemOptionsList": {
-									"type": "object",
-									"properties": {
-										"itemOptions": {
-											"type": "array",
-											"items": {
+								}
+							},
+							"recordRef": {
+								"type": "object",
+								"properties": {
+									"$attributes": {
+										"type": "object",
+										"properties": {
+											"$xsiType": {
 												"type": "object",
 												"properties": {
-													"$attributes": {
-														"type": "object",
-														"properties": {
-															"$xsiType": {
-																"type": "object",
-																"properties": {
-																	"platformCore": {
-																		"type": "string"
-																	}
-																}
-															},
-															"internalId": {
-																"type": "string"
-															}
-														}
-													},
-													"name": {
+													"internalId": {
 														"type": "string"
 													}
 												}
 											}
 										}
+									},
+									"name": {
+										"type": "string"
 									}
-								},
-								"translationsList": {
-									"type": "object",
-									"properties": {
-										"translation": {
-											"type": "object",
-											"properties": {
-												"locale": {
-													"type": "string"
-												},
-												"language": {
-													"type": "string"
-												}
-											}
-										}
-									}
-								},
-								"customFieldList": {
+								}
+							}
+						}
+					},
+					"itemOptionsList": {
+						"type": "object",
+						"properties": {
+							"itemOptions": {
+								"type": "array",
+								"items": {
 									"type": "object",
 									"properties": {
 										"$attributes": {
@@ -543,57 +495,123 @@
 															"type": "string"
 														}
 													}
+												},
+												"internalId": {
+													"type": "string"
 												}
 											}
 										},
-										"customField": {
-											"type": "array",
-											"items": {
-												"type": "object",
-												"properties": {
-													"$attributes": {
-														"type": "object",
-														"properties": {
-															"$xsiType": {
-																"type": "object",
-																"properties": {
-																	"type": {
-																		"type": "string"
-																	}
-																}
-															},
-															"internalId": {
-																"type": "string"
-															},
-															"scriptId": {
-																"type": "string"
-															}
-														}
-													},
-													"value": {
-														"type": "array",
-														"items": {
-															"type": "object",
-															"properties": {
-																"$attributes": {
-																	"type": "object",
-																	"properties": {
-																		"internalId": {
-																			"type": "string"
-																		},
-																		"typeId": {
-																			"type": "string"
-																		}
-																	}
-																},
-																"name": {
-																	"type": "string"
-																}
-															}
+										"name": {
+											"type": "string"
+										}
+									}
+								}
+							}
+						}
+					},
+					"translationsList": {
+						"type": "object",
+						"properties": {
+							"translation": {
+								"type": "object",
+								"properties": {
+									"locale": {
+										"type": "string"
+									},
+									"language": {
+										"type": "string"
+									}
+								}
+							}
+						}
+					},
+					"customFieldList": {
+						"type": "object",
+						"properties": {
+							"$attributes": {
+								"type": "object",
+								"properties": {
+									"$xsiType": {
+										"type": "object",
+										"properties": {
+											"platformCore": {
+												"type": "string"
+											}
+										}
+									}
+								}
+							},
+							"customField": {
+								"type": "array",
+								"items": {
+									"type": "object",
+									"properties": {
+										"$attributes": {
+											"type": "object",
+											"properties": {
+												"$xsiType": {
+													"type": "object",
+													"properties": {
+														"type": {
+															"type": "string"
 														}
 													}
+												},
+												"internalId": {
+													"type": "string"
+												},
+												"scriptId": {
+													"type": "string"
 												}
 											}
+										},
+										"value": {
+											"anyOf": [
+												{
+													"type": "array",
+														"items": {
+																"type": "object",
+																"properties": {
+																		"$attributes": {
+																				"type": "object",
+																				"properties": {
+																						"internalId": {
+																								"type": "string"
+																						},
+																						"typeId": {
+																								"type": "string"
+																						}
+																				}
+																		},
+																		"name": {
+																				"type": "string"
+																		}
+																}
+														}
+												},
+												{
+													"type": "object",
+																"properties": {
+																	"$attributes": {
+																			"type": "object",
+																		"properties": {
+																			"internalId": {
+																					"type": "string"
+																			},
+																			"typeId": {
+																					"type": "string"
+																			}
+																		}
+																},
+																"name": {
+																		"type": "string"
+																}
+														}
+												},
+												{
+													"type": "string"
+												}
+											]
 										}
 									}
 								}

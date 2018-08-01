@@ -132,24 +132,53 @@ let GetProductQuantityFromQuery = function(ncUtil, channelProfile, flowContext, 
           }
         };
 
-        if (flowContext && flowContext.filterField && flowContext.filterCriteria) {
-          let fieldName = flowContext.filterField;
+        if (flowContext) {
+          // Flow Context Criteria Filters
+          if (flowContext.filterField && flowContext.filterCriteria) {
+            let fieldName = flowContext.filterField;
 
-          searchPayload["searchRecord"]["basic"][fieldName] = {
-            "searchValue": flowContext.filterCriteria
-          }
+            let customField = fieldName.startsWith("custitem");
 
-          if (flowContext.filterCompare) {
-            searchPayload["searchRecord"]["basic"][fieldName]["$attributes"] = {
-              "operator": flowContext.filterCompare
+            if (customField) {
+              searchPayload["searchRecord"]["basic"]["customFieldList"] = {
+                "customField": []
+              }
+
+              let obj = {
+                "$attributes": {
+                  "$xsiType": {
+                    "xmlns": channelProfile.channelSettingsValues.namespaces.platformCore,
+                    "type": "SearchBooleanCustomField"
+                  },
+                  "scriptId": flowContext.filterField
+                },
+                "searchValue": flowContext.filterCriteria
+              }
+
+              if (flowContext.filterCompare) {
+                obj["$attributes"]["operator"] = flowContext.filterCompare;
+              }
+
+              searchPayload["searchRecord"]["basic"]["customFieldList"]["customField"].push(obj);
+
+            } else {
+              searchPayload["searchRecord"]["basic"][fieldName] = {
+                "searchValue": flowContext.filterCriteria
+              }
+
+              if (flowContext.filterCompare) {
+                searchPayload["searchRecord"]["basic"][fieldName]["$attributes"] = {
+                  "operator": flowContext.filterCompare
+                }
+              }
             }
           }
         }
 
-        if (payload.doc.pagingContext) {
+        if (payload.pagingContext) {
           searchPayload = {
-            "searchId": payload.doc.pagingContext.searchId,
-            "pageIndex": payload.doc.pagingContext.index
+            "searchId": payload.pagingContext.searchId,
+            "pageIndex": payload.pagingContext.index
           }
           return searchPayload;
         }
@@ -266,33 +295,34 @@ let GetProductQuantityFromQuery = function(ncUtil, channelProfile, flowContext, 
         if (result.searchResult.status.$attributes.isSuccess === "true") {
           let docs = [];
 
+          // recordList is only returned if there are results in the query
           if (result.searchResult.recordList) {
             if (nc.isObject(result.searchResult.recordList.record)) {
+              let product = {
+                record: result.searchResult.recordList.record
+              };
               docs.push({
-                doc: { "records": [ { "record": result.searchResult.recordList.record } ] },
-                productQuantityRemoteID: result.searchResult.recordList.record.$attributes.internalId,
-                productQuantityBusinessReference: nc.extractBusinessReference(channelProfile.productQuantityBusinessReferences, result.searchResult.recordList)
+                doc: product,
+                productQuantityRemoteID: product.record.$attributes.internalId,
+                productQuantityBusinessReference: nc.extractBusinessReference(channelProfile.productQuantityBusinessReferences, product)
               });
             } else {
-              let records = [];
               for (let i = 0; i < result.searchResult.recordList.record.length; i++) {
                 let product = {
                   record: result.searchResult.recordList.record[i]
                 };
-                records.push(product);
+                docs.push({
+                  doc: product,
+                  productQuantityRemoteID: product.record.$attributes.internalId,
+                  productQuantityBusinessReference: nc.extractBusinessReference(channelProfile.productQuantityBusinessReferences, product)
+                });
               }
-
-              docs.push({
-                doc: { "records": records },
-                productQuantityRemoteID: records[0].record.$attributes.internalId,
-                productQuantityBusinessReference: nc.extractBusinessReference(channelProfile.productQuantityBusinessReferences, records[0])
-              });
             }
 
             out.payload = docs;
 
             if (result.searchResult.pageIndex < result.searchResult.totalPages) {
-              payload.doc.pagingContext = {
+              payload.pagingContext = {
                 searchId: result.searchResult.searchId,
                 index: result.searchResult.pageIndex + 1
               }
