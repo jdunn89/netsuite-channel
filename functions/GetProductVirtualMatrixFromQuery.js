@@ -22,7 +22,7 @@ let GetProductVirtualMatrixFromQuery = function(ncUtil, channelProfile, flowCont
     }
 
     validateFunction().then(() => {
-      if (payload.doc.pagingContext) {
+      if (payload.pagingContext) {
         // Check for a pagingContext object
         // Contains the parent/child matrix IDs from the initial search
 
@@ -408,13 +408,13 @@ let GetProductVirtualMatrixFromQuery = function(ncUtil, channelProfile, flowCont
     }
 
     function createGetListRequest(parentObjects) {
-      if (!payload.doc.pagingContext) {
-        payload.doc.pagingContext = {
+      if (!payload.pagingContext) {
+        payload.pagingContext = {
           parentObjects: parentObjects
         }
       }
 
-      let parentObject = payload.doc.pagingContext.parentObjects[0];
+      let parentObject = payload.pagingContext.parentObjects[0];
       let getListPayload = {
         "record": []
       };
@@ -508,8 +508,8 @@ let GetProductVirtualMatrixFromQuery = function(ncUtil, channelProfile, flowCont
                   out.ncStatusCode = 204;
                 } else {
                   out.payload = docs;
-                  payload.doc.pagingContext.parentObjects.splice(0, 1);
-                  if (payload.doc.pagingContext.parentObjects.length > 0) {
+                  payload.pagingContext.parentObjects.splice(0, 1);
+                  if (payload.pagingContext.parentObjects.length > 0) {
                     out.ncStatusCode = 206;
                   } else {
                     out.ncStatusCode = 200;

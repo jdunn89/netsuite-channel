@@ -570,26 +570,52 @@
 											}
 										},
 										"value": {
-											"type": "array",
-											"items": {
-												"type": "object",
-												"properties": {
-													"$attributes": {
-														"type": "object",
-														"properties": {
-															"internalId": {
-																"type": "string"
-															},
-															"typeId": {
-																"type": "string"
-															}
+											"anyOf": [
+												{
+													"type": "array",
+														"items": {
+																"type": "object",
+																"properties": {
+																		"$attributes": {
+																				"type": "object",
+																				"properties": {
+																						"internalId": {
+																								"type": "string"
+																						},
+																						"typeId": {
+																								"type": "string"
+																						}
+																				}
+																		},
+																		"name": {
+																				"type": "string"
+																		}
+																}
 														}
-													},
-													"name": {
-														"type": "string"
-													}
+												},
+												{
+													"type": "object",
+																"properties": {
+																	"$attributes": {
+																			"type": "object",
+																		"properties": {
+																			"internalId": {
+																					"type": "string"
+																			},
+																			"typeId": {
+																					"type": "string"
+																			}
+																		}
+																},
+																"name": {
+																		"type": "string"
+																}
+														}
+												},
+												{
+													"type": "string"
 												}
-											}
+											]
 										}
 									}
 								}
@@ -599,15 +625,13 @@
 					"matrixChildren": {
 						"type": "array",
 						"items": {
-							"type": "object",
-							"properties": {
-								"$ref": "#/definitions/record"
-							}
+							"$ref": "#/definitions/record"
 						}
 					}
 				}
 			}
-		}
+		},
+		"additionalProperties": false
 	},
   "tags": [
     "Get",

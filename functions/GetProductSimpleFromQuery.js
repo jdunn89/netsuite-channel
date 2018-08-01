@@ -181,10 +181,10 @@ let GetProductSimpleFromQuery = function(ncUtil, channelProfile, flowContext, pa
           }
         }
 
-        if (payload.doc.pagingContext) {
+        if (payload.pagingContext) {
           searchPayload = {
-            "searchId": payload.doc.pagingContext.searchId,
-            "pageIndex": payload.doc.pagingContext.index
+            "searchId": payload.pagingContext.searchId,
+            "pageIndex": payload.pagingContext.index
           }
           return searchPayload;
         }
@@ -328,7 +328,7 @@ let GetProductSimpleFromQuery = function(ncUtil, channelProfile, flowContext, pa
             out.payload = docs;
 
             if (result.searchResult.pageIndex < result.searchResult.totalPages) {
-              payload.doc.pagingContext = {
+              payload.pagingContext = {
                 searchId: result.searchResult.searchId,
                 index: result.searchResult.pageIndex + 1
               }

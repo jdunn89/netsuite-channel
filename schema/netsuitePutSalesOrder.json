@@ -834,7 +834,8 @@
           }
         }
       }
-    }
+    },
+		"additionalProperties": false
   },
   "tags": [
     "Put",
