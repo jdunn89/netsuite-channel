@@ -630,8 +630,7 @@
 					}
 				}
 			}
-		},
-		"additionalProperties": false
+		}
 	},
   "tags": [
     "Get",

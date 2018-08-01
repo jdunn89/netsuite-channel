@@ -230,8 +230,7 @@
           }
         }
       }
-    },
-		"additionalProperties": false
+    }
   },
   "tags": [
     "Put",

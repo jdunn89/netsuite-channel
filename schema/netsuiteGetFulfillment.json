@@ -408,8 +408,7 @@
           }
         }
       }
-    },
-		"additionalProperties": false
+    }
   },
   "tags": [
     "Get",
