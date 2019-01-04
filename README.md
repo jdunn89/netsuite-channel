@@ -1,5 +1,4 @@
 # NetSuite Channel
-
 ## v0.0.6
 
 ### Channel Settings
