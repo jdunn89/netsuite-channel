@@ -2,6 +2,9 @@ container:
   image: node:latest
 
 unit_test_task:
+  environment:
+    COVERALLS_SERVICE_NAME: sdk-tests
+    COVERALLS_REPO_TOKEN: ENCRYPTED[453282ffe46f581e8b6d7469a9b8d2ad53b6dd92cbbd332dd41b8c768ed844ef0947262c04e25e6e00bec3eb10a79671]
   node_modules_cache:
     folder: node_modules
     fingerprint_script: cat package-lock.json
