@@ -2,8 +2,6 @@ container:
   image: node:latest
 
 unit_test_task:
-  environment:
-    COVERALLS_SERVICE_NAME: sdk-tests
   node_modules_cache:
     folder: node_modules
     fingerprint_script: cat package-lock.json
